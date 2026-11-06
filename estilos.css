@@ -549,3 +549,8 @@ a.ficha:hover { border-color: var(--rojo); color: var(--tinta); transform: trans
 @media (max-width: 560px) { .descarga-ok { right: 16px; bottom: 16px; padding: 16px; gap: 12px; }
   .descarga-ok__avatar { width: 48px; height: 48px; } }
 @media (prefers-reduced-motion: reduce) { .descarga-ok, .descarga-ok--visible .descarga-ok__avatar { transition: none; animation: none; } }
+
+/* Botón de la Microsoft Store */
+.boton--store { display: inline-flex; align-items: center; gap: 10px; }
+.boton--store svg { flex: none; }
+.descargar__recomendado { margin-top: 14px; font-size: .95rem; opacity: .92; }
