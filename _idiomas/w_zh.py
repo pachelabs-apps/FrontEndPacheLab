@@ -149,4 +149,6 @@ D = {
 147: "如对本政策有疑问，请写信至 <a href=\"mailto:pache.labs@gmail.com\">pache.labs@gmail.com</a>。",
 148: "Nicolás Pacheco，Pache Labs。阿根廷。",
 149: "<a href=\"index.html\">程序</a><a href=\"https://github.com/pachelabs-apps/Pache_PDF\">源代码</a>",
+150: "你好，我是 Labcin",
+151: "点我试试",
 }

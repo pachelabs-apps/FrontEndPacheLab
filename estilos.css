@@ -614,3 +614,7 @@ a.ficha:hover { border-color: var(--rojo); color: var(--tinta); transform: trans
 @media (max-width: 420px) {
   .menu > a[href$="#descargar"], .menu > a[href$="#sugerencias"], .menu > a[href="#programas"] { display: none; }
 }
+/* Labcin en "Quién está detrás" */
+.autor { align-items: center; }
+.autor__labcin { display: grid; justify-items: center; padding-top: 40px; }
+@media (max-width: 560px) { .autor__labcin { justify-items: start; } }

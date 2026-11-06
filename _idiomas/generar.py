@@ -22,7 +22,7 @@ DOMINIO = "https://pachelabs.net/"
 INLINE = {'a', 'strong', 'b', 'em', 'i', 'code', 'span', 'br', 'small', 'abbr', 'kbd', 'sup'}
 SKIP = {'script', 'style', 'svg', 'noscript'}
 ATTRS = ('alt', 'placeholder', 'aria-label', 'title')
-LOCALES = ('img/', 'fuentes/', 'estilos.css', 'sitio.js')
+LOCALES = ('img/', 'fuentes/', 'estilos.css', 'sitio.js', 'labsin.js')
 
 
 def norm(s):

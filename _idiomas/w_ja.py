@@ -149,4 +149,6 @@ D = {
 147: "このポリシーについてご質問があれば、<a href=\"mailto:pache.labs@gmail.com\">pache.labs@gmail.com</a> までご連絡ください。",
 148: "Nicolás Pacheco、Pache Labs。アルゼンチン。",
 149: "<a href=\"index.html\">プログラム</a><a href=\"https://github.com/pachelabs-apps/Pache_PDF\">ソースコード</a>",
+150: "こんにちは、Labcin です",
+151: "タップしてね",
 }
