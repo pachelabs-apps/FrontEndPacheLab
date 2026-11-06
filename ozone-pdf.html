@@ -6,11 +6,18 @@
 <title>Ozone PDF: herramientas PDF gratis y sin internet · Pache Labs</title>
 <meta name="description" content="Ozone PDF: uní, dividí, comprimí, protegé y escaneá PDF gratis en tu computadora, sin subir tus documentos a internet.">
 <link rel="icon" href="img/favicon.png">
+<meta property="og:title" content="Ozone PDF: herramientas PDF gratis y sin internet">
+<meta property="og:image" content="https://pachelabs.net/img/compartir.jpg">
+<meta property="og:url" content="https://pachelabs.net/ozone-pdf.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://pachelabs.net/ozone-pdf.html">
 <link rel="stylesheet" href="estilos.css">
 <!--
-  LINKS PARA COMPLETAR antes de publicar (buscá "COMPLETAR" en este archivo):
+  LINKS (buscá "COMPLETAR" para lo que falta):
+  - Descargas: apuntan al último Release del repo, con nombres de archivo fijos:
+    Instalar_Ozone_PDF.exe y Ozone_PDF.msi (subilos con esos nombres en cada versión).
   - Microsoft Store: el link de la ficha de Ozone PDF (Partner Center lo muestra al publicar).
-  - GitHub: usuario/repositorio (acá se usa github.com/pachelabs/ozone-pdf).
+  - Repositorio del código: github.com/pachelabs-apps/Pache_PDF.
   - Cafecito y GitHub Sponsors: tus links de donación.
 -->
 </head>
@@ -215,10 +222,9 @@
     <h2 class="aparecer">Descargá Ozone PDF</h2>
     <p class="aparecer">Gratis, para Windows 10 y 11 de 64 bits.</p>
     <div class="acciones acciones--centro aparecer">
-      <!-- COMPLETAR: link de la ficha en la Microsoft Store -->
-      <a class="boton boton--blanco" href="https://apps.microsoft.com/">Conseguilo en Microsoft Store</a>
-      <!-- COMPLETAR: link al instalador de la última versión -->
-      <a class="boton boton--linea-blanca" href="https://github.com/pachelabs/ozone-pdf/releases/latest">Descargar instalador (.exe)</a>
+      <a class="boton boton--blanco" href="https://github.com/pachelabs-apps/Pache_PDF/releases/latest/download/Instalar_Ozone_PDF.exe">Descargar para Windows (.exe)</a>
+      <!-- COMPLETAR cuando esté publicado en la Microsoft Store: descomentar y poner el link
+      <a class="boton boton--linea-blanca" href="https://apps.microsoft.com/detail/XXXX">Conseguilo en Microsoft Store</a> -->
     </div>
     <div class="para-org aparecer">
       <div class="para-org__texto">
@@ -226,19 +232,18 @@
         <span>Usá el instalador <b>.msi</b> para instalarlo en todas las PCs con GPO, Intune o SCCM.</span>
       </div>
       <div class="para-org__botones">
-        <!-- COMPLETAR: link al .msi de la última versión -->
-        <a class="boton boton--blanco" href="https://github.com/pachelabs/ozone-pdf/releases/latest">Descargar instalador .msi</a>
+        <a class="boton boton--blanco" href="https://github.com/pachelabs-apps/Pache_PDF/releases/latest/download/Ozone_PDF.msi">Descargar instalador .msi</a>
         <a class="para-org__ver" href="#organizaciones">Ver cómo instalarlo</a>
       </div>
     </div>
     <p class="descargar__extra aparecer">
-      <a href="https://github.com/pachelabs/ozone-pdf/tree/v1.1.0">Código fuente de la versión 1.1.0</a><!-- COMPLETAR -->
+      <a href="https://github.com/pachelabs-apps/Pache_PDF/tree/v1.1.0">Código fuente de la versión 1.1.0</a>
     </p>
     <details class="aviso-windows aparecer">
       <summary>¿Windows te muestra un aviso al instalar?</summary>
       <p>Con el instalador .exe, Windows puede mostrar "Windows protegió su PC" porque el programa
         es nuevo y todavía no lo descargó mucha gente. Tocá <em>Más información</em> y después
-        <em>Ejecutar de todas formas</em>. Desde la Microsoft Store no aparece ese aviso.</p>
+        <em>Ejecutar de todas formas</em>. Cuando esté disponible en la Microsoft Store, desde ahí no va a aparecer ese aviso.</p>
     </details>
   </div>
 </section>
@@ -255,14 +260,13 @@
       <li>Cada versión nueva reemplaza a la anterior sola.</li>
       <li>No tiene telemetría, licencias por equipo ni servidores que mantener.</li>
     </ul>
-    <!-- COMPLETAR: link al .msi de la última versión -->
-    <a class="boton boton--rojo" href="https://github.com/pachelabs/ozone-pdf/releases/latest">Descargar el .msi</a>
+    <a class="boton boton--rojo" href="https://github.com/pachelabs-apps/Pache_PDF/releases/latest/download/Ozone_PDF.msi">Descargar el .msi</a>
   </div>
   <div class="consola aparecer">
     <p class="consola__titulo">Instalación sin ventanas</p>
-    <pre><code>msiexec /i Ozone_PDF_1.1.0.msi /qn</code></pre>
+    <pre><code>msiexec /i Ozone_PDF.msi /qn</code></pre>
     <p class="consola__titulo">Desinstalación</p>
-    <pre><code>msiexec /x Ozone_PDF_1.1.0.msi /qn</code></pre>
+    <pre><code>msiexec /x Ozone_PDF.msi /qn</code></pre>
     <p class="consola__nota">Comprobar la regla de firewall:</p>
     <pre><code>Get-NetFirewallRule -DisplayName "Ozone PDF - sin red"</code></pre>
   </div>
@@ -311,7 +315,7 @@
   </div>
   <div class="apoyar__botones aparecer">
     <a class="boton boton--rojo" href="https://cafecito.app/pachelabs" rel="noopener">Invitame un cafecito</a>
-    <a class="boton boton--linea" href="https://github.com/sponsors/">Apoyar desde el exterior (GitHub Sponsors)</a><!-- COMPLETAR -->
+    <a class="boton boton--linea" href="https://github.com/sponsors/pachelabs-apps">Apoyar desde el exterior (GitHub Sponsors)</a>
   </div>
 </section>
 
@@ -324,8 +328,8 @@
     <nav aria-label="Legales">
       <a href="privacidad.html">Privacidad</a>
       <a href="https://cafecito.app/pachelabs" rel="noopener">Invitame un cafecito</a>
-      <a href="https://github.com/pachelabs/ozone-pdf/blob/main/LICENSE.txt">Licencia (AGPL-3.0)</a><!-- COMPLETAR -->
-      <a href="https://github.com/pachelabs/ozone-pdf">Código fuente</a><!-- COMPLETAR -->
+      <a href="https://github.com/pachelabs-apps/Pache_PDF/blob/main/LICENSE.txt">Licencia (AGPL-3.0)</a>
+      <a href="https://github.com/pachelabs-apps/Pache_PDF">Código fuente</a>
     </nav>
     <p class="pie__chico">Este sitio no usa cookies ni herramientas de seguimiento.</p>
   </div>
