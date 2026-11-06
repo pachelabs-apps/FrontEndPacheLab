@@ -4,36 +4,73 @@
 (function () {
   "use strict";
   // 0) Formulario de sugerencias: se envía sin salir de la página (FormSubmit, modo AJAX).
-  //    Sin JavaScript, el formulario se envía igual de la forma clásica.
+  //    Si el envío en segundo plano falla o tarda demasiado, se manda de la forma clásica
+  //    (abre la página de FormSubmit), así el mensaje nunca se pierde.
   document.querySelectorAll("form[data-sugerencias]").forEach(function (f) {
-    f.addEventListener("submit", function (e) {
-      if (!window.fetch || !window.FormData) return;
-      e.preventDefault();
-      var estado = f.querySelector(".formulario__estado");
-      var boton = f.querySelector("button[type=submit]");
-      if (f.elements._honey && f.elements._honey.value) return;  // trampa para robots
-      boton.disabled = true;
+    var estado = f.querySelector(".formulario__estado");
+    var boton = f.querySelector("button[type=submit]");
+    // tarjeta de agradecimiento con el avatar de Pache Labs
+    function agradecer() {
       estado.className = "formulario__estado";
-      estado.textContent = "Enviando...";
+      estado.textContent = "";
+      var viejo = f.querySelector(".gracias");
+      if (viejo) viejo.remove();
+      var t = document.createElement("div");
+      t.className = "gracias";
+      t.setAttribute("role", "status");
+      t.innerHTML = '<img class="gracias__avatar" src="img/avatar.webp" alt="" width="72" height="72">' +
+        '<div class="gracias__globo"><strong>¡Gracias por la sugerencia!</strong>' +
+        '<span>Ya me llegó y la voy a leer. Si dejaste tu email, te respondo.</span></div>';
+      boton.insertAdjacentElement("afterend", t);
+      setTimeout(function () { t.classList.add("gracias--visible"); }, 30);
+      t.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+    if (/[?&]enviado=1/.test(location.search)) agradecer();
+    function avisar(texto, clase) {
+      estado.className = "formulario__estado" + (clase ? " " + clase : "");
+      estado.textContent = texto;
+    }
+    // si falta el mensaje, decirlo claro (además del globito del navegador)
+    f.addEventListener("invalid", function () {
+      avisar("Escribí tu mensaje antes de enviar.", "error");
+    }, true);
+    f.addEventListener("submit", function (e) {
+      if (f.elements._honey && f.elements._honey.value) { e.preventDefault(); return; }
+      if (location.protocol === "file:") {
+        e.preventDefault();
+        avisar("El formulario funciona cuando la página está publicada en internet, no abierta como archivo desde la PC.", "error");
+        return;
+      }
+      if (!window.fetch || !window.FormData || f.dataset.clasico) return;  // envío clásico
+      e.preventDefault();
+      boton.disabled = true;
+      avisar("Enviando...");
       var datos = {};
       new FormData(f).forEach(function (v, k) { datos[k] = v; });
+      var control = window.AbortController ? new AbortController() : null;
+      var reloj = setTimeout(function () { if (control) control.abort(); }, 15000);
       fetch(f.action.replace("formsubmit.co/", "formsubmit.co/ajax/"), {
         method: "POST",
         headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: JSON.stringify(datos)
+        body: JSON.stringify(datos),
+        signal: control ? control.signal : undefined
       }).then(function (r) {
         return r.json().then(function (j) {
-          if (!r.ok || String(j.success) !== "true") throw new Error("envío rechazado");
+          if (!r.ok || String(j.success) !== "true") throw new Error(j.message || "rechazado");
         });
       }).then(function () {
+        clearTimeout(reloj);
         f.reset();
-        estado.textContent = "¡Gracias! Tu mensaje ya me llegó.";
-        estado.classList.add("ok");
+        agradecer();
+        boton.disabled = false;
       }).catch(function () {
-        estado.innerHTML = 'No se pudo enviar. Probá de nuevo o escribime a ' +
-          '<a href="mailto:pache.labs@gmail.com">pache.labs@gmail.com</a>.';
-        estado.classList.add("error");
-      }).then(function () { boton.disabled = false; });
+        clearTimeout(reloj);
+        // plan B: envío clásico, que muestra la página de FormSubmit
+        avisar("Abriendo el envío seguro de FormSubmit...");
+        f.dataset.clasico = "1";
+        boton.disabled = false;
+        HTMLFormElement.prototype.submit.call(f);
+      });
     });
   });
 

@@ -505,3 +505,20 @@ a.ficha:hover { border-color: var(--rojo); color: var(--tinta); transform: trans
   .app { grid-template-columns: minmax(0, 1fr); }
   .app__ir { justify-self: stretch; justify-content: center; }
 }
+
+/* Agradecimiento del formulario: el avatar de Pache Labs con un globito */
+.gracias { display: flex; align-items: center; gap: 14px; margin-top: 4px;
+  opacity: 0; transform: translateY(10px) scale(.97); transition: opacity .45s ease, transform .45s cubic-bezier(.2, .8, .2, 1.2); }
+.gracias--visible { opacity: 1; transform: none; }
+.gracias__avatar { flex: none; width: 72px; height: 72px; border-radius: 50%;
+  background: var(--rojo-claro); box-shadow: 0 0 0 3px var(--rojo); }
+.gracias--visible .gracias__avatar { animation: gracias-saludo .9s ease .25s; }
+.gracias__globo { position: relative; flex: 1; padding: 12px 16px; border-radius: 16px;
+  background: var(--rojo-claro); color: var(--tinta); border: 2px solid var(--rojo); }
+.gracias__globo::before { content: ""; position: absolute; left: -9px; top: 50%; width: 14px; height: 14px;
+  background: var(--rojo-claro); border-left: 2px solid var(--rojo); border-bottom: 2px solid var(--rojo);
+  transform: translateY(-50%) rotate(45deg); }
+.gracias__globo strong { display: block; color: var(--rojo-oscuro); font-size: 1.1rem; }
+.gracias__globo span { display: block; margin-top: 2px; font-size: .95rem; color: var(--tinta); }
+@keyframes gracias-saludo { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-10deg); } 60% { transform: rotate(8deg); } }
+@media (prefers-reduced-motion: reduce) { .gracias, .gracias--visible .gracias__avatar { transition: none; animation: none; } }
