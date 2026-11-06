@@ -151,4 +151,5 @@ D = {
 149: "<a href=\"index.html\">プログラム</a><a href=\"https://github.com/pachelabs-apps/Pache_PDF\">ソースコード</a>",
 150: "こんにちは、Labcin です",
 151: "タップしてね",
+152: "あはは！",
 }
