@@ -45,9 +45,19 @@
     }
     if (/[?&]enviado=1/.test(location.search)) agradecer();
     // si falta el mensaje, decirlo claro (además del globito del navegador)
-    f.addEventListener("invalid", function () {
-      avisar("Escribí tu mensaje antes de enviar.", "error");
+    f.addEventListener("invalid", function (e) {
+      var campo = e.target;
+      campo.classList.add("campo--error");
+      avisar(campo.name === "mensaje" ? "Falta escribir tu mensaje: contame tu idea arriba y volvé a enviar."
+        : "Revisá el campo marcado en rojo.", "error");
+      if (!f.querySelector(".campo--error:focus")) campo.focus();
     }, true);
+    f.addEventListener("input", function (e) {
+      if (e.target.classList.contains("campo--error") && e.target.checkValidity()) {
+        e.target.classList.remove("campo--error");
+        if (!f.querySelector(".campo--error")) avisar("");
+      }
+    });
     f.addEventListener("submit", function (e) {
       if (f.elements.botcheck && f.elements.botcheck.checked) { e.preventDefault(); return; }  // robots
       if (location.protocol === "file:") {
@@ -82,6 +92,46 @@
       }).then(function () { boton.disabled = false; });
     });
   });
+
+  // 0b) Al tocar "Descargar": un gracias con el avatar y, si quiere, cómo apoyar.
+  //     No frena la descarga y se cierra con la X, con Escape o sola si no se usa.
+  var tarjetaDescarga = null;
+  function cerrarDescarga() {
+    if (!tarjetaDescarga) return;
+    var t = tarjetaDescarga; tarjetaDescarga = null;
+    t.classList.remove("descarga-ok--visible");
+    setTimeout(function () { t.remove(); }, 350);
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest('a[href*="/releases/"][href*="/download/"]');
+    if (!a) return;
+    cerrarDescarga();
+    var esMsi = /\.msi(\?|$)/i.test(a.href);
+    var t = document.createElement("aside");
+    t.className = "descarga-ok";
+    t.setAttribute("role", "status");
+    t.setAttribute("aria-live", "polite");
+    t.innerHTML =
+      '<button class="descarga-ok__cerrar" type="button" aria-label="Cerrar">×</button>' +
+      '<img class="descarga-ok__avatar" src="img/avatar.webp" alt="" width="64" height="64">' +
+      '<div class="descarga-ok__texto">' +
+        '<strong>¡Gracias por descargar Ozone PDF!</strong>' +
+        '<p>La descarga ya empezó. Cuando termine, abrí <b>' + (esMsi ? "Ozone_PDF.msi" : "Instalar_Ozone_PDF.exe") +
+        '</b> para instalarlo.</p>' +
+        '<p class="descarga-ok__suave">Es y va a seguir siendo gratis. Si te sirve y tenés ganas, podés ' +
+        'invitarme un cafecito o contarme qué mejorarías. Totalmente opcional.</p>' +
+        '<div class="descarga-ok__acciones">' +
+          '<a class="boton boton--rojo" href="https://cafecito.app/pachelabs" rel="noopener" target="_blank">☕ Invitame un cafecito</a>' +
+          '<a class="descarga-ok__link" href="#sugerencias">Dejar una sugerencia</a>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(t);
+    tarjetaDescarga = t;
+    t.querySelector(".descarga-ok__cerrar").addEventListener("click", cerrarDescarga);
+    t.querySelector(".descarga-ok__link").addEventListener("click", cerrarDescarga);
+    setTimeout(function () { t.classList.add("descarga-ok--visible"); }, 30);
+  });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") cerrarDescarga(); });
 
   var raiz = document.documentElement;
   var sinMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

@@ -522,3 +522,30 @@ a.ficha:hover { border-color: var(--rojo); color: var(--tinta); transform: trans
 .gracias__globo span { display: block; margin-top: 2px; font-size: .95rem; color: var(--tinta); }
 @keyframes gracias-saludo { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(-10deg); } 60% { transform: rotate(8deg); } }
 @media (prefers-reduced-motion: reduce) { .gracias, .gracias--visible .gracias__avatar { transition: none; animation: none; } }
+
+/* Campo que falta completar */
+.formulario .campo--error { border-color: var(--rojo) !important; box-shadow: 0 0 0 3px rgba(211, 38, 29, .22); }
+.formulario__estado.error { padding: 10px 14px; border-radius: 10px; background: var(--rojo-claro); border: 1px solid var(--rojo); }
+.formulario__estado:empty { padding: 0; border: 0; background: none; }
+
+/* Gracias por descargar: tarjeta flotante con el avatar */
+.descarga-ok { position: fixed; right: 24px; bottom: 24px; z-index: 60; width: min(440px, calc(100vw - 32px));
+  display: flex; gap: 16px; align-items: flex-start; padding: 20px 22px 20px 20px; border-radius: 18px;
+  background: var(--papel); color: var(--tinta); border: 2px solid var(--rojo);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, .28);
+  opacity: 0; transform: translateY(24px) scale(.97); transition: opacity .35s ease, transform .4s cubic-bezier(.2, .8, .2, 1.15); }
+.descarga-ok--visible { opacity: 1; transform: none; }
+.descarga-ok__avatar { flex: none; width: 64px; height: 64px; border-radius: 50%; box-shadow: 0 0 0 3px var(--rojo); background: var(--rojo-claro); }
+.descarga-ok--visible .descarga-ok__avatar { animation: gracias-saludo .9s ease .3s; }
+.descarga-ok__texto strong { display: block; font-size: 1.15rem; color: var(--rojo-oscuro); padding-right: 22px; }
+.descarga-ok__texto p { margin: 6px 0 0; font-size: .95rem; line-height: 1.45; }
+.descarga-ok__suave { color: var(--tinta-suave); }
+.descarga-ok__acciones { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-top: 14px; }
+.descarga-ok__acciones .boton { padding: 10px 16px; font-size: .95rem; }
+.descarga-ok__link { font-weight: 700; font-size: .95rem; }
+.descarga-ok__cerrar { position: absolute; top: 8px; right: 10px; width: 32px; height: 32px; border: 0; border-radius: 50%;
+  background: transparent; color: var(--tinta-suave); font-size: 1.5rem; line-height: 1; cursor: pointer; }
+.descarga-ok__cerrar:hover, .descarga-ok__cerrar:focus-visible { background: var(--rojo-claro); color: var(--rojo-oscuro); }
+@media (max-width: 560px) { .descarga-ok { right: 16px; bottom: 16px; padding: 16px; gap: 12px; }
+  .descarga-ok__avatar { width: 48px; height: 48px; } }
+@media (prefers-reduced-motion: reduce) { .descarga-ok, .descarga-ok--visible .descarga-ok__avatar { transition: none; animation: none; } }
