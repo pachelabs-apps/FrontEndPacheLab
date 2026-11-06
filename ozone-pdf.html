@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ozone PDF: herramientas PDF gratis y sin internet · Pache Labs</title>
+<meta name="description" content="Ozone PDF: uní, dividí, comprimí, protegé y escaneá PDF gratis en tu computadora, sin subir tus documentos a internet.">
+<link rel="icon" href="img/favicon.png">
+<link rel="stylesheet" href="estilos.css">
+<!--
+  LINKS PARA COMPLETAR antes de publicar (buscá "COMPLETAR" en este archivo):
+  - Microsoft Store: el link de la ficha de Ozone PDF (Partner Center lo muestra al publicar).
+  - GitHub: usuario/repositorio (acá se usa github.com/pachelabs/ozone-pdf).
+  - Cafecito y GitHub Sponsors: tus links de donación.
+-->
+</head>
+<body>
+
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<header class="barra">
+  <div class="barra__interior">
+    <a class="marca" href="index.html" aria-label="Pache Labs, inicio">
+      <img class="marca__avatar" src="img/marca.png" alt="" width="40" height="40">
+      <span class="marca__nombre">Pache<span class="marca__punto">.</span>Labs</span>
+    </a>
+    <nav class="menu" aria-label="Principal">
+      <details class="programas">
+        <summary>Programas</summary>
+        <div class="programas__lista">
+          <a href="ozone-pdf.html" class="programas__item" aria-current="page">
+            <img src="img/ozone-pdf.png" alt="" width="40" height="40">
+            <span><strong>Ozone PDF</strong><small>Herramientas PDF sin internet</small></span>
+          </a>
+        </div>
+      </details>
+      <a href="#descargar">Descargar</a>
+      <a href="#organizaciones" class="menu__opcional">Organizaciones</a>
+      <a href="#sugerencias" class="menu__opcional">Sugerencias</a>
+      <a href="#apoyar">Apoyar</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+
+<!-- ============ PORTADA DE OZONE PDF ============ -->
+<section class="portada" id="inicio">
+  <div class="portada__texto">
+    <div class="producto">
+      <img src="img/ozone-pdf.png" alt="" width="56" height="56" class="producto__icono">
+      <span class="producto__nombre">Ozone PDF</span>
+    </div>
+    <h1>Tus PDF, sin subirlos a internet.</h1>
+    <p class="portada__bajada">Uní, dividí, comprimí, protegé y escaneá documentos gratis.
+      Todo pasa en tu computadora.</p>
+    <div class="acciones">
+      <a class="boton boton--rojo" href="#descargar">Descargar gratis</a>
+      <a class="boton boton--linea" href="#como-funciona">Ver cómo funciona</a>
+    </div>
+    <p class="portada__nota">Para Windows 10 y 11. Gratis y de código abierto.</p>
+  </div>
+
+  <figure class="portada__imagen">
+    <div class="ventana">
+      <div class="ventana__barra" aria-hidden="true">
+        <img src="img/favicon.png" alt="" width="16" height="16"><span>Ozone PDF</span>
+        <i></i><i></i><i></i>
+      </div>
+      <img src="img/unir.webp" width="1060" height="700"
+           alt="Ozone PDF con tres documentos listos para unir: un contrato, un recibo de sueldo y un DNI.">
+    </div>
+    <div class="sello" aria-hidden="true">
+      <span>No sale de</span><span>tu compu</span>
+    </div>
+  </figure>
+</section>
+
+<!-- ============ OZONE PDF: HISTORIA ============ -->
+<section class="historia" id="como-funciona">
+  <div class="historia__cabeza aparecer">
+    <h2>Por qué lo hice</h2>
+    <p>Lo armé porque en el trabajo veía que, para unir o achicar un PDF, terminábamos
+      subiendo contratos y recibos a páginas que no sabemos quién maneja. Hoy, con ataques
+      informáticos cada vez más frecuentes y una inteligencia artificial que los hace más fáciles,
+      un documento subido a internet es un documento expuesto. Ozone PDF hace lo mismo que esas
+      páginas, pero todo pasa en tu computadora.</p>
+  </div>
+
+  <div class="recorrido">
+    <div class="recorrido__pasos">
+
+      <article class="paso aparecer" data-imagen="unir">
+        <h3>Juntá varios PDF en uno</h3>
+        <p>Arrastrá los archivos a la ventana, ordenalos como quieras y listo: sale un solo PDF.
+          Tu original queda igual, siempre se guarda una copia nueva.</p>
+        <figure class="paso__imagen"><div class="ventana"><img src="img/unir.webp" width="1060" height="700" loading="lazy" alt="Lista de tres PDF para unir, con flechas para cambiar el orden."></div></figure>
+      </article>
+
+      <article class="paso aparecer" data-imagen="dividir">
+        <h3>Partilo para que entre en el mail</h3>
+        <p>¿El sistema no acepta archivos de más de 25 MB? Dividilo por tamaño, por rangos de
+          páginas o cada tantas hojas. También podés comprimirlo para que pese menos.</p>
+        <figure class="paso__imagen"><div class="ventana"><img src="img/dividir.webp" width="1060" height="700" loading="lazy" alt="Dividir PDF configurado para partes de 25 MB como máximo."></div></figure>
+      </article>
+
+      <article class="paso aparecer" data-imagen="escanear">
+        <h3>Escaneá con la cámara</h3>
+        <p>Poné la hoja frente a la cámara de la notebook: el programa la detecta (la marca en
+          verde), la recorta y la endereza. Sacás una foto por página y te arma el PDF.</p>
+        <figure class="paso__imagen"><div class="ventana ventana--camara"><img src="img/escanear.webp" width="806" height="615" loading="lazy" alt="Ventana de la cámara con una hoja detectada y marcada con un borde verde."></div></figure>
+      </article>
+
+      <article class="paso aparecer" data-imagen="proteger">
+        <h3>Ponele contraseña</h3>
+        <p>Protegé un PDF con cifrado AES-256 antes de mandarlo, o sacale la contraseña a uno
+          que ya conocés.</p>
+        <figure class="paso__imagen"><div class="ventana"><img src="img/proteger.webp" width="1060" height="700" loading="lazy" alt="Proteger PDF con los campos de contraseña completos."></div></figure>
+      </article>
+
+      <article class="paso aparecer" data-imagen="oscuro">
+        <h3>Encontrá todo rápido</h3>
+        <p>Escribí lo que necesitás en el buscador ("juntar", "contraseña", "foto") y aparece
+          la herramienta. Tiene modo oscuro y se acomoda al tema de Windows.</p>
+        <figure class="paso__imagen"><div class="ventana"><img src="img/oscuro.webp" width="1060" height="700" loading="lazy" alt="Ozone PDF en modo oscuro."></div></figure>
+      </article>
+    </div>
+
+    <div class="recorrido__escenario" aria-hidden="true">
+      <div class="ventana">
+        <div class="ventana__barra"><img src="img/favicon.png" alt="" width="16" height="16"><span>Ozone PDF</span><i></i><i></i><i></i></div>
+        <div class="escenario__cuadros">
+          <img src="img/unir.webp" data-imagen="unir" class="activo" alt="" width="1060" height="700">
+          <img src="img/dividir.webp" data-imagen="dividir" alt="" width="1060" height="700" loading="lazy">
+          <img src="img/escanear.webp" data-imagen="escanear" alt="" width="806" height="615" loading="lazy">
+          <img src="img/proteger.webp" data-imagen="proteger" alt="" width="1060" height="700" loading="lazy">
+          <img src="img/oscuro.webp" data-imagen="oscuro" alt="" width="1060" height="700" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SIN INTERNET ============ -->
+<section class="sinred">
+  <div class="sinred__dibujo aparecer" aria-hidden="true">
+    <svg viewBox="0 0 420 300" role="presentation">
+      <!-- computadora -->
+      <rect x="40" y="40" width="220" height="150" rx="14" class="d-borde"/>
+      <rect x="56" y="56" width="188" height="118" rx="6" class="d-pantalla"/>
+      <path d="M120 190 h60 l10 34 h-80 z" class="d-borde"/>
+      <rect x="92" y="222" width="116" height="10" rx="5" class="d-borde"/>
+      <!-- hoja PDF en pantalla -->
+      <path d="M118 74 h46 l18 18 v66 h-64 z" class="d-hoja"/>
+      <path d="M164 74 v18 h18" class="d-pliegue"/>
+      <text x="150" y="132" class="d-texto">PDF</text>
+      <!-- cable desenchufado -->
+      <path d="M260 120 C 300 120, 300 180, 330 180" class="d-cable d-cable--pc"/>
+      <path d="M352 180 C 372 180, 380 150, 400 150" class="d-cable"/>
+      <g class="d-ficha"><rect x="326" y="170" width="16" height="20" rx="3"/><rect x="342" y="174" width="6" height="4"/><rect x="342" y="182" width="6" height="4"/></g>
+      <!-- escudo -->
+      <path d="M300 40 l40 -14 l40 14 v34 c0 26 -18 44 -40 54 c-22 -10 -40 -28 -40 -54 z" class="d-escudo"/>
+      <path d="M322 70 l12 12 l24 -26" class="d-tilde"/>
+    </svg>
+  </div>
+  <div class="sinred__texto">
+    <h2 class="aparecer">Sin internet, de verdad</h2>
+    <ul class="hechos">
+      <li class="aparecer"><strong>No tiene con qué conectarse.</strong> El programa se arma sin
+        las partes de Python que usan la red, y cada versión se prueba para comprobarlo.</li>
+      <li class="aparecer"><strong>Y por las dudas, el firewall.</strong> El instalador agrega una
+        regla en el firewall de Windows que le bloquea cualquier conexión.</li>
+      <li class="aparecer"><strong>Lo podés revisar.</strong> El código es abierto: cualquiera puede
+        ver qué hace cada parte.</li>
+      <li class="aparecer"><strong>Limpia lo que no se ve.</strong> Los PDF que genera salen sin
+        autor, adjuntos ni datos ocultos del original.</li>
+    </ul>
+    <div class="compromiso">
+      <h3>Nuestro compromiso</h3>
+      <p>La seguridad no es una función más: es la razón por la que existe Pache Labs. Cada
+        versión se prueba para comprobar que el programa no se conecta a internet, el código
+        queda abierto para que cualquiera lo revise y nunca vamos a agregar publicidad, cuentas
+        ni rastreo. Si algún día un cambio pusiera en riesgo tus datos, no sale.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TODAS LAS HERRAMIENTAS ============ -->
+<section class="herramientas" aria-labelledby="titulo-herr">
+  <h2 id="titulo-herr" class="aparecer">Las 15 herramientas</h2>
+  <div class="herramientas__grupos">
+    <div class="grupo aparecer">
+      <h3>Organizar</h3>
+      <ul><li>Unir PDF</li><li>Dividir PDF</li><li>Extraer páginas</li><li>Eliminar páginas</li><li>Ordenar páginas</li><li>Rotar PDF</li></ul>
+    </div>
+    <div class="grupo aparecer">
+      <h3>Mejorar</h3>
+      <ul><li>Comprimir PDF</li><li>Numerar páginas</li><li>Marca de agua</li></ul>
+    </div>
+    <div class="grupo aparecer">
+      <h3>Convertir</h3>
+      <ul><li>PDF a imagen (JPG o PNG)</li><li>Imagen a PDF</li><li>Fotos a PDF con la cámara</li><li>PDF a texto</li></ul>
+    </div>
+    <div class="grupo aparecer">
+      <h3>Proteger</h3>
+      <ul><li>Poner contraseña</li><li>Quitar contraseña</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DESCARGAR ============ -->
+<section class="descargar" id="descargar">
+  <div class="descargar__interior">
+    <img src="img/ozone-pdf.png" alt="" width="96" height="96" class="aparecer">
+    <h2 class="aparecer">Descargá Ozone PDF</h2>
+    <p class="aparecer">Gratis, para Windows 10 y 11 de 64 bits.</p>
+    <div class="acciones acciones--centro aparecer">
+      <!-- COMPLETAR: link de la ficha en la Microsoft Store -->
+      <a class="boton boton--blanco" href="https://apps.microsoft.com/">Conseguilo en Microsoft Store</a>
+      <!-- COMPLETAR: link al instalador de la última versión -->
+      <a class="boton boton--linea-blanca" href="https://github.com/pachelabs/ozone-pdf/releases/latest">Descargar instalador (.exe)</a>
+    </div>
+    <div class="para-org aparecer">
+      <div class="para-org__texto">
+        <strong>¿Sos una organización?</strong>
+        <span>Usá el instalador <b>.msi</b> para instalarlo en todas las PCs con GPO, Intune o SCCM.</span>
+      </div>
+      <div class="para-org__botones">
+        <!-- COMPLETAR: link al .msi de la última versión -->
+        <a class="boton boton--blanco" href="https://github.com/pachelabs/ozone-pdf/releases/latest">Descargar instalador .msi</a>
+        <a class="para-org__ver" href="#organizaciones">Ver cómo instalarlo</a>
+      </div>
+    </div>
+    <p class="descargar__extra aparecer">
+      <a href="https://github.com/pachelabs/ozone-pdf/tree/v1.1.0">Código fuente de la versión 1.1.0</a><!-- COMPLETAR -->
+    </p>
+    <details class="aviso-windows aparecer">
+      <summary>¿Windows te muestra un aviso al instalar?</summary>
+      <p>Con el instalador .exe, Windows puede mostrar "Windows protegió su PC" porque el programa
+        es nuevo y todavía no lo descargó mucha gente. Tocá <em>Más información</em> y después
+        <em>Ejecutar de todas formas</em>. Desde la Microsoft Store no aparece ese aviso.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ============ ORGANIZACIONES ============ -->
+<section class="organizaciones" id="organizaciones" aria-labelledby="titulo-org">
+  <div class="organizaciones__texto aparecer">
+    <h2 id="titulo-org">Para instalarlo en una organización</h2>
+    <p>Si sos del área de sistemas y querés instalarlo en todas las PCs, hay un instalador
+      <strong>.msi</strong> pensado para eso. Funciona con directivas de grupo (GPO), Intune o SCCM.</p>
+    <ul class="hechos hechos--chicos">
+      <li>Se instala para todos los usuarios del equipo, en <code>C:\Program Files\Ozone PDF</code>.</li>
+      <li>Crea la misma regla de firewall que bloquea la salida a internet del programa, y la borra al desinstalarlo.</li>
+      <li>Cada versión nueva reemplaza a la anterior sola.</li>
+      <li>No tiene telemetría, licencias por equipo ni servidores que mantener.</li>
+    </ul>
+    <!-- COMPLETAR: link al .msi de la última versión -->
+    <a class="boton boton--rojo" href="https://github.com/pachelabs/ozone-pdf/releases/latest">Descargar el .msi</a>
+  </div>
+  <div class="consola aparecer">
+    <p class="consola__titulo">Instalación sin ventanas</p>
+    <pre><code>msiexec /i Ozone_PDF_1.1.0.msi /qn</code></pre>
+    <p class="consola__titulo">Desinstalación</p>
+    <pre><code>msiexec /x Ozone_PDF_1.1.0.msi /qn</code></pre>
+    <p class="consola__nota">Comprobar la regla de firewall:</p>
+    <pre><code>Get-NetFirewallRule -DisplayName "Ozone PDF - sin red"</code></pre>
+  </div>
+</section>
+
+<!-- ============ SUGERENCIAS ============ -->
+<!-- El formulario se envía con FormSubmit (formsubmit.co) y llega a pache.labs@gmail.com.
+     La primera vez, FormSubmit manda un mail a esa casilla para confirmar: hay que tocar
+     el botón del mail. Después se puede reemplazar el correo de la dirección por el código
+     que FormSubmit da en ese mail, para que no quede visible en la página. -->
+<section class="sugerencias" id="sugerencias" aria-labelledby="titulo-sugerencias">
+  <div class="sugerencias__texto aparecer">
+    <h2 id="titulo-sugerencias">Contame qué mejorarías</h2>
+    <p>¿Encontraste un error, te falta una herramienta o tenés una idea? Leo todos los mensajes.</p>
+    <p class="sugerencias__mail">También podés escribirme a <a href="mailto:pache.labs@gmail.com">pache.labs@gmail.com</a>.</p>
+  </div>
+  <form class="formulario aparecer" action="https://formsubmit.co/pache.labs@gmail.com" method="POST" data-sugerencias>
+    <input type="hidden" name="_subject" value="Sugerencia desde la web de Pache Labs">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="_honey" class="formulario__trampa" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="formulario__fila">
+      <label><span>Tu nombre <span class="opcional">(opcional)</span></span>
+        <input type="text" name="nombre" autocomplete="name" maxlength="80"></label>
+      <label><span>Tu email <span class="opcional">(opcional, para responderte)</span></span>
+        <input type="email" name="email" autocomplete="email" maxlength="120"></label>
+    </div>
+    <label>Sobre qué es
+      <select name="tema"><option>Ozone PDF</option><option>Idea para un programa nuevo</option><option>Otra cosa</option></select></label>
+    <label>Tu mensaje
+      <textarea name="mensaje" rows="5" required maxlength="3000" placeholder="Contame qué te gustaría que haga, qué falló o qué mejorarías."></textarea></label>
+    <button class="boton boton--rojo" type="submit">Enviar sugerencia</button>
+    <p class="formulario__estado" role="status" aria-live="polite"></p>
+    <p class="formulario__nota">El mensaje me llega por mail a través de FormSubmit, un servicio de envío de formularios.
+      Lo uso solo para leerte y, si dejaste tu email, responderte.</p>
+  </form>
+</section>
+
+<!-- ============ APOYAR ============ -->
+<section class="apoyar" id="apoyar">
+  <div class="apoyar__texto aparecer">
+    <h2>¿Te sirvió?</h2>
+    <p>Ozone PDF es gratis y va a seguir siéndolo. Si querés darme una mano para que haga
+      más programas como este, podés invitarme un café. Y si no, contárselo a alguien que lo
+      necesite también ayuda un montón.</p>
+  </div>
+  <div class="apoyar__botones aparecer">
+    <a class="boton boton--rojo" href="https://cafecito.app/pachelabs" rel="noopener">Invitame un cafecito</a>
+    <a class="boton boton--linea" href="https://github.com/sponsors/">Apoyar desde el exterior (GitHub Sponsors)</a><!-- COMPLETAR -->
+  </div>
+</section>
+
+</main>
+
+<footer class="pie">
+  <div class="pie__interior">
+    <img class="pie__logo" src="img/logo-pie.png" alt="Pache.Labs" width="280" height="79">
+    <p><strong>Pache Labs</strong>, por Nicolás Pacheco. Hecho en Argentina. <a href="mailto:pache.labs@gmail.com">pache.labs@gmail.com</a></p>
+    <nav aria-label="Legales">
+      <a href="privacidad.html">Privacidad</a>
+      <a href="https://cafecito.app/pachelabs" rel="noopener">Invitame un cafecito</a>
+      <a href="https://github.com/pachelabs/ozone-pdf/blob/main/LICENSE.txt">Licencia (AGPL-3.0)</a><!-- COMPLETAR -->
+      <a href="https://github.com/pachelabs/ozone-pdf">Código fuente</a><!-- COMPLETAR -->
+    </nav>
+    <p class="pie__chico">Este sitio no usa cookies ni herramientas de seguimiento.</p>
+  </div>
+</footer>
+
+<script src="sitio.js"></script>
+</body>
+</html>
