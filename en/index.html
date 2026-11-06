@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Pache Labs: free programs that work offline</title>
+<meta content="Free programs for everyday work: no ads, no accounts and no uploading your files to the internet." name="description"/>
+<link href="../img/favicon-pl.png" rel="icon"/>
+<link href="../img/apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta content="Pache.Labs: free programs that work offline" property="og:title"/>
+<meta content="https://pachelabs.net/img/compartir.jpg" property="og:image"/>
+<meta content="https://pachelabs.net/en/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="https://pachelabs.net/en/" rel="canonical"/>
+<link href="../estilos.css?v=11" rel="stylesheet"/>
+<script>
+  // Presentación con el logo al abrir Pache Labs: una vez por visita, y nunca si la
+  // persona pidió reducir el movimiento.
+  (function () {
+    var visto = false;
+    try { visto = sessionStorage.getItem("intro") === "1"; sessionStorage.setItem("intro", "1"); } catch (e) {}
+    if (!visto && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      var raiz = document.documentElement;
+      raiz.classList.add("con-intro");
+      var quitar = function () { raiz.classList.remove("con-intro"); };
+      setTimeout(quitar, 4100);              // termina sola
+      document.addEventListener("click", function (e) {   // o con un clic se saltea
+        if (e.target.closest && e.target.closest(".intro")) quitar();
+      });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") quitar(); });
+    }
+  })();
+</script>
+<link href="https://pachelabs.net/" hreflang="es" rel="alternate"/><link href="https://pachelabs.net/en/" hreflang="en" rel="alternate"/><link href="https://pachelabs.net/de/" hreflang="de" rel="alternate"/><link href="https://pachelabs.net/zh/" hreflang="zh" rel="alternate"/><link href="https://pachelabs.net/ja/" hreflang="ja" rel="alternate"/><link href="https://pachelabs.net/ru/" hreflang="ru" rel="alternate"/><link href="https://pachelabs.net/" hreflang="x-default" rel="alternate"/></head>
+<body class="inicio">
+<div aria-hidden="true" class="intro">
+<div class="intro__marca">
+<div class="intro__frasco">
+<img alt="" class="intro__avatar" height="160" src="../img/intro-avatar-solo.png" width="160"/>
+<span class="burbuja b1"></span><span class="burbuja b2"></span><span class="burbuja b3"></span>
+<span class="burbuja b4"></span><span class="burbuja b5">&lt;&gt;</span>
+</div>
+<p class="intro__nombre">Pache<span>.</span>Labs</p>
+</div>
+</div>
+<a class="saltar" href="#contenido">Skip to content</a>
+<header class="barra">
+<div class="barra__interior">
+<a aria-current="page" aria-label="Pache Labs, home" class="marca" href="index.html">
+<img alt="" class="marca__avatar" height="40" src="../img/marca.png" width="40"/>
+<span class="marca__nombre">Pache<span class="marca__punto">.</span>Labs</span>
+</a>
+<nav aria-label="Main" class="menu"><a href="#programas">Programs</a> <a href="#sugerencias">Suggestions</a> <a href="ozone-pdf.html#apoyar">Support</a></nav>
+<details class="idiomas"><summary aria-label="Language"><span aria-hidden="true">🌐</span> EN</summary><ul class="idiomas__lista"><li><a href="../index.html" hreflang="es" lang="es">Español</a></li><li><a aria-current="true" href="../en/index.html" hreflang="en" lang="en">English</a></li><li><a href="../de/index.html" hreflang="de" lang="de">Deutsch</a></li><li><a href="../zh/index.html" hreflang="zh" lang="zh">中文</a></li><li><a href="../ja/index.html" hreflang="ja" lang="ja">日本語</a></li><li><a href="../ru/index.html" hreflang="ru" lang="ru">Русский</a></li></ul></details></div>
+</header>
+<main id="contenido">
+<section class="bienvenida">
+<h1>Free programs that stay on your computer.</h1>
+<p>I make simple tools for everyday work. They have no ads, they don't ask you for an account and they don't upload your files anywhere.</p>
+</section>
+<section aria-labelledby="titulo-catalogo" class="catalogo" id="programas">
+<h2 id="titulo-catalogo">Programs</h2>
+<ul class="catalogo__lista">
+<li>
+<a class="app" href="ozone-pdf.html">
+<img alt="" class="app__icono" height="112" src="../img/ozone-pdf.png" width="112"/>
+<div class="app__texto">
+<h3>Ozone PDF</h3>
+<p>Merge, split, compress, protect and scan documents with your camera. Like the PDF websites, but without uploading anything.</p>
+<ul class="app__datos">
+<li>Windows 10 and 11</li>
+<li>Free</li>
+<li>Offline</li>
+<li>On Microsoft Store</li>
+<li>Version 1.1.0</li>
+</ul>
+</div>
+<span class="app__ir">See Ozone PDF</span>
+<img alt="" class="app__vista" height="700" src="../img/unir.webp" width="1060"/>
+</a>
+</li>
+</ul>
+</section>
+<section aria-labelledby="titulo-motivo" class="motivo">
+<h2 id="titulo-motivo">Why offline</h2>
+<div class="motivo__texto">
+<p>Cyberattacks keep growing, and artificial intelligence makes finding and exploiting flaws faster and easier than ever. When you upload a document to a website, it is no longer in your hands: it can be stored on a server, leak in a hack or be used in ways you never chose.</p>
+<p>That is why I make tools that work offline. If your sensitive data (an ID, a payslip, a contract) never leaves your computer, it is not exposed anywhere.</p>
+</div>
+</section>
+<section aria-labelledby="titulo-autor" class="autor">
+<img alt="" class="autor__avatar" height="112" src="../img/avatar.webp" width="112"/>
+<div class="autor__texto">
+<h2 id="titulo-autor">Who is behind it</h2>
+<p>I'm Nicolás Pacheco, though everyone calls me Pache. I'm 32, a Senior Software Developer and a Systems Analyst graduated from ORT.</p>
+<p>Pache Labs is my personal project: tools I build in my free time to solve real problems, free and designed so your data stays with you.</p>
+</div>
+</section>
+<!-- ============ SUGERENCIAS ============ -->
+<!-- El formulario se envía con Web3Forms (web3forms.com) y llega a pache.labs@gmail.com.
+     La clave de acceso (access_key) solo sirve para mandar mensajes a esa casilla: es
+     normal que sea pública. Si falla, el sitio le abre al usuario su programa de mail. -->
+<section aria-labelledby="titulo-sugerencias" class="sugerencias" id="sugerencias">
+<div class="sugerencias__texto aparecer">
+<h2 id="titulo-sugerencias">What program would help you?</h2>
+<p>If there is something you do today by uploading files to a website and you would like to do it offline, tell me. The ideas that come up most often are the next ones I build.</p>
+<p class="sugerencias__mail">You can also write to me at <a href="mailto:pache.labs@gmail.com">pache.labs@gmail.com</a>.</p>
+</div>
+<form action="https://api.web3forms.com/submit" class="formulario aparecer" data-sugerencias="" method="POST">
+<input name="access_key" type="hidden" value="b36c1ac2-8f0d-4e89-9bd6-2f04fdd1b7f8"/>
+<input name="subject" type="hidden" value="Sugerencia desde la web de Pache Labs"/>
+<input name="from_name" type="hidden" value="Web de Pache Labs"/>
+<input name="redirect" type="hidden" value="https://pachelabs.net/en/?enviado=1#sugerencias"/>
+<input aria-hidden="true" autocomplete="off" class="formulario__trampa" name="botcheck" tabindex="-1" type="checkbox"/>
+<div class="formulario__fila">
+<label><span>Your name <span class="opcional">(optional)</span></span>
+<input autocomplete="name" maxlength="80" name="nombre" type="text"/></label>
+<label><span>Your email <span class="opcional">(optional, so I can reply)</span></span>
+<input autocomplete="email" maxlength="120" name="email" type="email"/></label>
+</div>
+<label>Sobre qué es
+      <select name="tema"><option>Idea for a new program</option><option>Ozone PDF</option><option>Something else</option></select></label>
+<label>Tu mensaje
+      <textarea maxlength="3000" name="mensaje" placeholder="Tell me what you would like it to do, what failed or what you would improve." required="" rows="5"></textarea></label>
+<button class="boton boton--rojo" type="submit">Send suggestion</button>
+<p aria-live="polite" class="formulario__estado" role="status"></p>
+<p class="formulario__nota">The message reaches me by email through Web3Forms, a form delivery service. I only use it to read you and, if you left your email, to reply.</p>
+</form>
+</section>
+</main>
+<footer class="pie">
+<div class="pie__interior">
+<img alt="Pache.Labs" class="pie__logo" height="79" src="../img/logo-pie.png" width="280"/>
+<p><strong>Pache Labs</strong>, by Nicolás Pacheco. Made in Argentina. <a href="mailto:pache.labs@gmail.com">pache.labs@gmail.com</a></p>
+<nav aria-label="Legal"><a href="privacidad.html">Privacy</a> <a href="https://cafecito.app/pachelabs" rel="noopener">Buy me a coffee</a> <a href="https://github.com/pachelabs-apps">GitHub</a></nav>
+<p class="pie__chico">This site uses no cookies or tracking tools.</p>
+</div>
+</footer>
+<script src="../sitio.js?v=11"></script>
+</body>
+</html>

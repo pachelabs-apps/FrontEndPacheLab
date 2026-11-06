@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Pache Labs：オフラインで使える無料のプログラム</title>
+<meta content="毎日の仕事に使える無料のプログラム：広告なし、アカウント不要、ファイルをインターネットにアップロードしません。" name="description"/>
+<link href="../img/favicon-pl.png" rel="icon"/>
+<link href="../img/apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta content="Pache.Labs：オフラインで使える無料のプログラム" property="og:title"/>
+<meta content="https://pachelabs.net/img/compartir.jpg" property="og:image"/>
+<meta content="https://pachelabs.net/ja/" property="og:url"/>
+<meta content="website" property="og:type"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="https://pachelabs.net/ja/" rel="canonical"/>
+<link href="../estilos.css?v=11" rel="stylesheet"/>
+<script>
+  // Presentación con el logo al abrir Pache Labs: una vez por visita, y nunca si la
+  // persona pidió reducir el movimiento.
+  (function () {
+    var visto = false;
+    try { visto = sessionStorage.getItem("intro") === "1"; sessionStorage.setItem("intro", "1"); } catch (e) {}
+    if (!visto && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      var raiz = document.documentElement;
+      raiz.classList.add("con-intro");
+      var quitar = function () { raiz.classList.remove("con-intro"); };
+      setTimeout(quitar, 4100);              // termina sola
+      document.addEventListener("click", function (e) {   // o con un clic se saltea
+        if (e.target.closest && e.target.closest(".intro")) quitar();
+      });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") quitar(); });
+    }
+  })();
+</script>
+<link href="https://pachelabs.net/" hreflang="es" rel="alternate"/><link href="https://pachelabs.net/en/" hreflang="en" rel="alternate"/><link href="https://pachelabs.net/de/" hreflang="de" rel="alternate"/><link href="https://pachelabs.net/zh/" hreflang="zh" rel="alternate"/><link href="https://pachelabs.net/ja/" hreflang="ja" rel="alternate"/><link href="https://pachelabs.net/ru/" hreflang="ru" rel="alternate"/><link href="https://pachelabs.net/" hreflang="x-default" rel="alternate"/></head>
+<body class="inicio">
+<div aria-hidden="true" class="intro">
+<div class="intro__marca">
+<div class="intro__frasco">
+<img alt="" class="intro__avatar" height="160" src="../img/intro-avatar-solo.png" width="160"/>
+<span class="burbuja b1"></span><span class="burbuja b2"></span><span class="burbuja b3"></span>
+<span class="burbuja b4"></span><span class="burbuja b5">&lt;&gt;</span>
+</div>
+<p class="intro__nombre">Pache<span>.</span>Labs</p>
+</div>
+</div>
+<a class="saltar" href="#contenido">本文へスキップ</a>
+<header class="barra">
+<div class="barra__interior">
+<a aria-current="page" aria-label="Pache Labs ホーム" class="marca" href="index.html">
+<img alt="" class="marca__avatar" height="40" src="../img/marca.png" width="40"/>
+<span class="marca__nombre">Pache<span class="marca__punto">.</span>Labs</span>
+</a>
+<nav aria-label="メイン" class="menu"><a href="#programas">プログラム</a> <a href="#sugerencias">ご意見</a> <a href="ozone-pdf.html#apoyar">応援する</a></nav>
+<details class="idiomas"><summary aria-label="言語"><span aria-hidden="true">🌐</span> JA</summary><ul class="idiomas__lista"><li><a href="../index.html" hreflang="es" lang="es">Español</a></li><li><a href="../en/index.html" hreflang="en" lang="en">English</a></li><li><a href="../de/index.html" hreflang="de" lang="de">Deutsch</a></li><li><a href="../zh/index.html" hreflang="zh" lang="zh">中文</a></li><li><a aria-current="true" href="../ja/index.html" hreflang="ja" lang="ja">日本語</a></li><li><a href="../ru/index.html" hreflang="ru" lang="ru">Русский</a></li></ul></details></div>
+</header>
+<main id="contenido">
+<section class="bienvenida">
+<h1>あなたのパソコンの中だけで動く、無料のプログラム。</h1>
+<p>毎日の仕事に役立つシンプルなツールを作っています。広告はなく、アカウントも求めず、ファイルをどこにもアップロードしません。</p>
+</section>
+<section aria-labelledby="titulo-catalogo" class="catalogo" id="programas">
+<h2 id="titulo-catalogo">プログラム</h2>
+<ul class="catalogo__lista">
+<li>
+<a class="app" href="ozone-pdf.html">
+<img alt="" class="app__icono" height="112" src="../img/ozone-pdf.png" width="112"/>
+<div class="app__texto">
+<h3>Ozone PDF</h3>
+<p>書類の結合、分割、圧縮、保護、そしてカメラでのスキャン。PDF のウェブサイトと同じことが、何もアップロードせずにできます。</p>
+<ul class="app__datos">
+<li>Windows 10・11</li>
+<li>無料</li>
+<li>オフライン</li>
+<li>Microsoft Store で配信中</li>
+<li>バージョン 1.1.0</li>
+</ul>
+</div>
+<span class="app__ir">Ozone PDF を見る</span>
+<img alt="" class="app__vista" height="700" src="../img/unir.webp" width="1060"/>
+</a>
+</li>
+</ul>
+</section>
+<section aria-labelledby="titulo-motivo" class="motivo">
+<h2 id="titulo-motivo">なぜオフラインなのか</h2>
+<div class="motivo__texto">
+<p>サイバー攻撃は増え続けており、人工知能によって脆弱性を見つけて悪用することが、かつてないほど速く簡単になっています。書類をウェブサイトにアップロードした時点で、それはもうあなたの手を離れます。サーバーに保存されたり、ハッキングで流出したり、望まない形で使われたりするかもしれません。</p>
+<p>だからこそ、オフラインで動くツールを作っています。機密データ（身分証、給与明細、契約書）がパソコンから一度も出なければ、どこにも漏れることはありません。</p>
+</div>
+</section>
+<section aria-labelledby="titulo-autor" class="autor">
+<img alt="" class="autor__avatar" height="112" src="../img/avatar.webp" width="112"/>
+<div class="autor__texto">
+<h2 id="titulo-autor">作っている人</h2>
+<p>Nicolás Pacheco です。みんなからは Pache と呼ばれています。32 歳、シニアソフトウェア開発者で、ORT を卒業したシステムアナリストです。</p>
+<p>Pache Labs は私の個人プロジェクトです。実際の問題を解決するために空き時間で作っているツールで、無料、そしてあなたのデータがあなたの手元に残るように作っています。</p>
+</div>
+</section>
+<!-- ============ SUGERENCIAS ============ -->
+<!-- El formulario se envía con Web3Forms (web3forms.com) y llega a pache.labs@gmail.com.
+     La clave de acceso (access_key) solo sirve para mandar mensajes a esa casilla: es
+     normal que sea pública. Si falla, el sitio le abre al usuario su programa de mail. -->
+<section aria-labelledby="titulo-sugerencias" class="sugerencias" id="sugerencias">
+<div class="sugerencias__texto aparecer">
+<h2 id="titulo-sugerencias">どんなプログラムがあると助かりますか？</h2>
+<p>今はファイルをウェブサイトにアップロードしてやっていることを、オフラインでできたらいいと思うなら、ぜひ教えてください。多く寄せられたアイデアから次に作ります。</p>
+<p class="sugerencias__mail"><a href="mailto:pache.labs@gmail.com">pache.labs@gmail.com</a> にメールでもご連絡いただけます。</p>
+</div>
+<form action="https://api.web3forms.com/submit" class="formulario aparecer" data-sugerencias="" method="POST">
+<input name="access_key" type="hidden" value="b36c1ac2-8f0d-4e89-9bd6-2f04fdd1b7f8"/>
+<input name="subject" type="hidden" value="Sugerencia desde la web de Pache Labs"/>
+<input name="from_name" type="hidden" value="Web de Pache Labs"/>
+<input name="redirect" type="hidden" value="https://pachelabs.net/ja/?enviado=1#sugerencias"/>
+<input aria-hidden="true" autocomplete="off" class="formulario__trampa" name="botcheck" tabindex="-1" type="checkbox"/>
+<div class="formulario__fila">
+<label><span>お名前 <span class="opcional">（任意）</span></span>
+<input autocomplete="name" maxlength="80" name="nombre" type="text"/></label>
+<label><span>メールアドレス <span class="opcional">（任意・返信用）</span></span>
+<input autocomplete="email" maxlength="120" name="email" type="email"/></label>
+</div>
+<label>Sobre qué es
+      <select name="tema"><option>新しいプログラムのアイデア</option><option>Ozone PDF</option><option>その他</option></select></label>
+<label>Tu mensaje
+      <textarea maxlength="3000" name="mensaje" placeholder="やってほしいこと、うまくいかなかったこと、改善してほしいことを教えてください。" required="" rows="5"></textarea></label>
+<button class="boton boton--rojo" type="submit">送信する</button>
+<p aria-live="polite" class="formulario__estado" role="status"></p>
+<p class="formulario__nota">メッセージは、フォーム送信サービスの Web3Forms を通じてメールで届きます。読むため、そしてメールアドレスを書いてくださった場合に返信するためだけに使います。</p>
+</form>
+</section>
+</main>
+<footer class="pie">
+<div class="pie__interior">
+<img alt="Pache.Labs" class="pie__logo" height="79" src="../img/logo-pie.png" width="280"/>
+<p><strong>Pache Labs</strong>、Nicolás Pacheco 作。アルゼンチン製。<a href="mailto:pache.labs@gmail.com">pache.labs@gmail.com</a></p>
+<nav aria-label="法的情報"><a href="privacidad.html">プライバシー</a> <a href="https://cafecito.app/pachelabs" rel="noopener">コーヒーをおごる</a> <a href="https://github.com/pachelabs-apps">GitHub</a></nav>
+<p class="pie__chico">このサイトは Cookie やトラッキングツールを使用していません。</p>
+</div>
+</footer>
+<script src="../sitio.js?v=11"></script>
+</body>
+</html>

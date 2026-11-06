@@ -3,6 +3,88 @@
 // solo que sin animaciones (el formulario se envía de la forma clásica).
 (function () {
   "use strict";
+  // Idioma de la página (las versiones traducidas están en /en/, /de/, /zh/, /ja/ y /ru/)
+  var IDIOMA = (document.documentElement.lang || "es").slice(0, 2);
+  var hoja = document.querySelector('link[rel="stylesheet"]');
+  var BASE = hoja && hoja.getAttribute("href").indexOf("../") === 0 ? "../" : "";
+  var TEXTOS = {
+    "en": {
+      "¡Gracias por la sugerencia!": "Thanks for the suggestion!",
+      "Ya me llegó y la voy a leer. Si dejaste tu email, te respondo.": "It reached me and I'll read it. If you left your email, I'll reply.",
+      "El servicio de envío no responde en este momento. Te abrí tu programa de mail con el mensaje ya escrito; si no se abrió, {tocá acá} o escribime a {correo}.": "The sending service is not responding right now. I opened your email program with the message already written; if it didn't open, {click here} or write to me at {correo}.",
+      "Falta escribir tu mensaje: contame tu idea arriba y volvé a enviar.": "Your message is missing: tell me your idea above and send it again.",
+      "Revisá el campo marcado en rojo.": "Check the field marked in red.",
+      "El formulario funciona cuando la página está publicada en internet, no abierta como archivo desde la PC.": "The form works when the page is published online, not opened as a file from your PC.",
+      "Enviando...": "Sending...",
+      "Cerrar": "Close",
+      "¡Gracias por descargar Ozone PDF!": "Thanks for downloading Ozone PDF!",
+      "La descarga ya empezó. Cuando termine, abrí {archivo} para instalarlo.": "The download has started. When it finishes, open {archivo} to install it.",
+      "Es y va a seguir siendo gratis. Si te sirve y tenés ganas, podés invitarme un cafecito o contarme qué mejorarías. Totalmente opcional.": "It is and will stay free. If it helps you and you feel like it, you can buy me a coffee or tell me what you would improve. Totally optional.",
+      "Invitame un cafecito": "Buy me a coffee",
+      "Dejar una sugerencia": "Leave a suggestion"
+    },
+    "de": {
+      "¡Gracias por la sugerencia!": "Danke für den Vorschlag!",
+      "Ya me llegó y la voy a leer. Si dejaste tu email, te respondo.": "Er ist angekommen und ich lese ihn. Wenn Sie Ihre E-Mail angegeben haben, antworte ich Ihnen.",
+      "El servicio de envío no responde en este momento. Te abrí tu programa de mail con el mensaje ya escrito; si no se abrió, {tocá acá} o escribime a {correo}.": "Der Versanddienst antwortet gerade nicht. Ich habe Ihr E-Mail-Programm mit der fertigen Nachricht geöffnet; falls es sich nicht geöffnet hat, {klicken Sie hier} oder schreiben Sie mir an {correo}.",
+      "Falta escribir tu mensaje: contame tu idea arriba y volvé a enviar.": "Die Nachricht fehlt: Beschreiben Sie oben Ihre Idee und senden Sie erneut.",
+      "Revisá el campo marcado en rojo.": "Prüfen Sie das rot markierte Feld.",
+      "El formulario funciona cuando la página está publicada en internet, no abierta como archivo desde la PC.": "Das Formular funktioniert, wenn die Seite online veröffentlicht ist, nicht als Datei vom PC geöffnet.",
+      "Enviando...": "Wird gesendet...",
+      "Cerrar": "Schließen",
+      "¡Gracias por descargar Ozone PDF!": "Danke, dass Sie Ozone PDF herunterladen!",
+      "La descarga ya empezó. Cuando termine, abrí {archivo} para instalarlo.": "Der Download hat begonnen. Wenn er fertig ist, öffnen Sie {archivo}, um es zu installieren.",
+      "Es y va a seguir siendo gratis. Si te sirve y tenés ganas, podés invitarme un cafecito o contarme qué mejorarías. Totalmente opcional.": "Es ist und bleibt kostenlos. Wenn es Ihnen hilft und Sie Lust haben, können Sie mir einen Kaffee spendieren oder mir sagen, was Sie verbessern würden. Ganz freiwillig.",
+      "Invitame un cafecito": "Spendier mir einen Kaffee",
+      "Dejar una sugerencia": "Vorschlag hinterlassen"
+    },
+    "zh": {
+      "¡Gracias por la sugerencia!": "感谢您的建议！",
+      "Ya me llegó y la voy a leer. Si dejaste tu email, te respondo.": "我已经收到，会认真阅读。如果您留了邮箱，我会回复您。",
+      "El servicio de envío no responde en este momento. Te abrí tu programa de mail con el mensaje ya escrito; si no se abrió, {tocá acá} o escribime a {correo}.": "发送服务暂时没有响应。已为您打开邮件程序并写好了消息；如果没有打开，请{点击这里}，或写信到 {correo}。",
+      "Falta escribir tu mensaje: contame tu idea arriba y volvé a enviar.": "还没有填写消息：请在上方写下您的想法后再发送。",
+      "Revisá el campo marcado en rojo.": "请检查标红的字段。",
+      "El formulario funciona cuando la página está publicada en internet, no abierta como archivo desde la PC.": "表单只能在网页发布到网上后使用，不能在电脑上以文件方式打开使用。",
+      "Enviando...": "正在发送...",
+      "Cerrar": "关闭",
+      "¡Gracias por descargar Ozone PDF!": "感谢下载 Ozone PDF！",
+      "La descarga ya empezó. Cuando termine, abrí {archivo} para instalarlo.": "下载已开始。完成后，打开 {archivo} 进行安装。",
+      "Es y va a seguir siendo gratis. Si te sirve y tenés ganas, podés invitarme un cafecito o contarme qué mejorarías. Totalmente opcional.": "它现在免费，以后也会一直免费。如果对您有帮助，也愿意的话，可以请我喝杯咖啡，或者告诉我可以改进什么。完全自愿。",
+      "Invitame un cafecito": "请我喝杯咖啡",
+      "Dejar una sugerencia": "留下建议"
+    },
+    "ja": {
+      "¡Gracias por la sugerencia!": "ご意見ありがとうございます！",
+      "Ya me llegó y la voy a leer. Si dejaste tu email, te respondo.": "無事に届きました。必ず読みます。メールアドレスを書いてくださった方には返信します。",
+      "El servicio de envío no responde en este momento. Te abrí tu programa de mail con el mensaje ya escrito; si no se abrió, {tocá acá} o escribime a {correo}.": "送信サービスが現在応答していません。メッセージを入力した状態でメールソフトを開きました。開かない場合は{こちらをクリック}するか、{correo} までご連絡ください。",
+      "Falta escribir tu mensaje: contame tu idea arriba y volvé a enviar.": "メッセージが入力されていません。上にアイデアを書いて、もう一度送信してください。",
+      "Revisá el campo marcado en rojo.": "赤で示された項目を確認してください。",
+      "El formulario funciona cuando la página está publicada en internet, no abierta como archivo desde la PC.": "フォームは、ページをインターネットで公開したときに使えます。パソコンからファイルとして開いた場合は使えません。",
+      "Enviando...": "送信中...",
+      "Cerrar": "閉じる",
+      "¡Gracias por descargar Ozone PDF!": "Ozone PDF をダウンロードいただきありがとうございます！",
+      "La descarga ya empezó. Cuando termine, abrí {archivo} para instalarlo.": "ダウンロードを開始しました。完了したら {archivo} を開いてインストールしてください。",
+      "Es y va a seguir siendo gratis. Si te sirve y tenés ganas, podés invitarme un cafecito o contarme qué mejorarías. Totalmente opcional.": "無料で、これからも無料です。役に立ち、もしよければ、コーヒーをおごっていただくか、改善点を教えてください。まったくの任意です。",
+      "Invitame un cafecito": "コーヒーをおごる",
+      "Dejar una sugerencia": "ご意見を送る"
+    },
+    "ru": {
+      "¡Gracias por la sugerencia!": "Спасибо за предложение!",
+      "Ya me llegó y la voy a leer. Si dejaste tu email, te respondo.": "Оно дошло, я его прочитаю. Если вы оставили email, я отвечу.",
+      "El servicio de envío no responde en este momento. Te abrí tu programa de mail con el mensaje ya escrito; si no se abrió, {tocá acá} o escribime a {correo}.": "Сервис отправки сейчас не отвечает. Я открыл вашу почтовую программу с уже написанным сообщением; если она не открылась, {нажмите здесь} или напишите мне на {correo}.",
+      "Falta escribir tu mensaje: contame tu idea arriba y volvé a enviar.": "Не хватает сообщения: опишите свою идею выше и отправьте снова.",
+      "Revisá el campo marcado en rojo.": "Проверьте поле, отмеченное красным.",
+      "El formulario funciona cuando la página está publicada en internet, no abierta como archivo desde la PC.": "Форма работает, когда страница опубликована в интернете, а не открыта как файл с компьютера.",
+      "Enviando...": "Отправка...",
+      "Cerrar": "Закрыть",
+      "¡Gracias por descargar Ozone PDF!": "Спасибо, что скачали Ozone PDF!",
+      "La descarga ya empezó. Cuando termine, abrí {archivo} para instalarlo.": "Загрузка началась. Когда она закончится, откройте {archivo}, чтобы установить программу.",
+      "Es y va a seguir siendo gratis. Si te sirve y tenés ganas, podés invitarme un cafecito o contarme qué mejorarías. Totalmente opcional.": "Программа бесплатная и останется такой. Если она вам пригодилась и есть желание, можете угостить меня кофе или рассказать, что улучшить. Совершенно необязательно.",
+      "Invitame un cafecito": "Угостить меня кофе",
+      "Dejar una sugerencia": "Оставить предложение"
+    }
+  };
+  function tx(s) { return (TEXTOS[IDIOMA] && TEXTOS[IDIOMA][s]) || s; }
   // 0) Formulario de sugerencias: se envía sin salir de la página con Web3Forms.
   //    Si el servicio no responde, se abre el programa de mail del usuario con el mensaje
   //    ya escrito, así la sugerencia nunca se pierde.
@@ -22,9 +104,9 @@
       var t = document.createElement("div");
       t.className = "gracias";
       t.setAttribute("role", "status");
-      t.innerHTML = '<img class="gracias__avatar" src="img/avatar.webp" alt="" width="72" height="72">' +
-        '<div class="gracias__globo"><strong>¡Gracias por la sugerencia!</strong>' +
-        '<span>Ya me llegó y la voy a leer. Si dejaste tu email, te respondo.</span></div>';
+      t.innerHTML = '<img class="gracias__avatar" src="' + BASE + 'img/avatar.webp" alt="" width="72" height="72">' +
+        '<div class="gracias__globo"><strong>' + tx("¡Gracias por la sugerencia!") + '</strong>' +
+        '<span>' + tx("Ya me llegó y la voy a leer. Si dejaste tu email, te respondo.") + '</span></div>';
       boton.insertAdjacentElement("afterend", t);
       setTimeout(function () { t.classList.add("gracias--visible"); }, 30);
       t.scrollIntoView({ behavior: "smooth", block: "nearest" });
@@ -38,9 +120,9 @@
         (el.email && el.email.value ? "\nEmail: " + el.email.value : "");
       var link = "mailto:" + CORREO + "?subject=" + encodeURIComponent("Sugerencia para Pache Labs") +
         "&body=" + encodeURIComponent(cuerpo);
-      avisar('El servicio de envío no responde en este momento. Te abrí tu programa de mail con el ' +
-        'mensaje ya escrito; si no se abrió, <a href="' + link + '">tocá acá</a> o escribime a ' +
-        '<a href="mailto:' + CORREO + '">' + CORREO + '</a>.', "error");
+      avisar(tx("El servicio de envío no responde en este momento. Te abrí tu programa de mail con el mensaje ya escrito; si no se abrió, {tocá acá} o escribime a {correo}.")
+        .replace(/\{([^}]*)\}/, '<a href="' + link + '">$1</a>')
+        .replace("{correo}", '<a href="mailto:' + CORREO + '">' + CORREO + '</a>'), "error");
       window.location.href = link;
     }
     if (/[?&]enviado=1/.test(location.search)) agradecer();
@@ -48,8 +130,8 @@
     f.addEventListener("invalid", function (e) {
       var campo = e.target;
       campo.classList.add("campo--error");
-      avisar(campo.name === "mensaje" ? "Falta escribir tu mensaje: contame tu idea arriba y volvé a enviar."
-        : "Revisá el campo marcado en rojo.", "error");
+      avisar(campo.name === "mensaje" ? tx("Falta escribir tu mensaje: contame tu idea arriba y volvé a enviar.")
+        : tx("Revisá el campo marcado en rojo."), "error");
       if (!f.querySelector(".campo--error:focus")) campo.focus();
     }, true);
     f.addEventListener("input", function (e) {
@@ -62,13 +144,13 @@
       if (f.elements.botcheck && f.elements.botcheck.checked) { e.preventDefault(); return; }  // robots
       if (location.protocol === "file:") {
         e.preventDefault();
-        avisar("El formulario funciona cuando la página está publicada en internet, no abierta como archivo desde la PC.", "error");
+        avisar(tx("El formulario funciona cuando la página está publicada en internet, no abierta como archivo desde la PC."), "error");
         return;
       }
       if (!window.fetch || !window.FormData) return;  // navegador viejo: envío clásico
       e.preventDefault();
       boton.disabled = true;
-      avisar("Enviando...");
+      avisar(tx("Enviando..."));
       var datos = {};
       new FormData(f).forEach(function (v, k) { if (k !== "redirect" && k !== "botcheck") datos[k] = v; });
       var control = window.AbortController ? new AbortController() : null;
@@ -112,17 +194,16 @@
     t.setAttribute("role", "status");
     t.setAttribute("aria-live", "polite");
     t.innerHTML =
-      '<button class="descarga-ok__cerrar" type="button" aria-label="Cerrar">×</button>' +
-      '<img class="descarga-ok__avatar" src="img/avatar.webp" alt="" width="64" height="64">' +
+      '<button class="descarga-ok__cerrar" type="button" aria-label="' + tx("Cerrar") + '">×</button>' +
+      '<img class="descarga-ok__avatar" src="' + BASE + 'img/avatar.webp" alt="" width="64" height="64">' +
       '<div class="descarga-ok__texto">' +
-        '<strong>¡Gracias por descargar Ozone PDF!</strong>' +
-        '<p>La descarga ya empezó. Cuando termine, abrí <b>' + (esMsi ? "Ozone_PDF.msi" : "Instalar_Ozone_PDF.exe") +
-        '</b> para instalarlo.</p>' +
-        '<p class="descarga-ok__suave">Es y va a seguir siendo gratis. Si te sirve y tenés ganas, podés ' +
-        'invitarme un cafecito o contarme qué mejorarías. Totalmente opcional.</p>' +
+        '<strong>' + tx("¡Gracias por descargar Ozone PDF!") + '</strong>' +
+        '<p>' + tx("La descarga ya empezó. Cuando termine, abrí {archivo} para instalarlo.")
+          .replace("{archivo}", "<b>" + (esMsi ? "Ozone_PDF.msi" : "Instalar_Ozone_PDF.exe") + "</b>") + '</p>' +
+        '<p class="descarga-ok__suave">' + tx("Es y va a seguir siendo gratis. Si te sirve y tenés ganas, podés invitarme un cafecito o contarme qué mejorarías. Totalmente opcional.") + '</p>' +
         '<div class="descarga-ok__acciones">' +
-          '<a class="boton boton--rojo" href="https://cafecito.app/pachelabs" rel="noopener" target="_blank">☕ Invitame un cafecito</a>' +
-          '<a class="descarga-ok__link" href="#sugerencias">Dejar una sugerencia</a>' +
+          '<a class="boton boton--rojo" href="https://cafecito.app/pachelabs" rel="noopener" target="_blank">☕ ' + tx("Invitame un cafecito") + '</a>' +
+          '<a class="descarga-ok__link" href="#sugerencias">' + tx("Dejar una sugerencia") + '</a>' +
         '</div>' +
       '</div>';
     document.body.appendChild(t);
@@ -165,6 +246,12 @@
   }, { rootMargin: "-45% 0px -45% 0px", threshold: 0 });
   pasos.forEach(function (p) { centro.observe(p); });
   if (pasos.length) mostrar(pasos[0].dataset.imagen);
+
+  // 3b) El menú de idiomas se cierra al tocar afuera o con Escape
+  document.querySelectorAll(".idiomas").forEach(function (m) {
+    document.addEventListener("click", function (e) { if (!m.contains(e.target)) m.removeAttribute("open"); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") m.removeAttribute("open"); });
+  });
 
   // 3) El menú "Programas" se cierra al elegir una opción, al tocar afuera o con Escape
   var menu = document.querySelector(".programas");
