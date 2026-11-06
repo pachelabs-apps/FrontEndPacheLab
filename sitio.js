@@ -3,16 +3,20 @@
 // solo que sin animaciones (el formulario se envía de la forma clásica).
 (function () {
   "use strict";
-  // 0) Formulario de sugerencias: se envía sin salir de la página (FormSubmit, modo AJAX).
-  //    Si el envío en segundo plano falla o tarda demasiado, se manda de la forma clásica
-  //    (abre la página de FormSubmit), así el mensaje nunca se pierde.
+  // 0) Formulario de sugerencias: se envía sin salir de la página con Web3Forms.
+  //    Si el servicio no responde, se abre el programa de mail del usuario con el mensaje
+  //    ya escrito, así la sugerencia nunca se pierde.
+  var CORREO = "pache.labs@gmail.com";
   document.querySelectorAll("form[data-sugerencias]").forEach(function (f) {
     var estado = f.querySelector(".formulario__estado");
     var boton = f.querySelector("button[type=submit]");
+    function avisar(html, clase) {
+      estado.className = "formulario__estado" + (clase ? " " + clase : "");
+      estado.innerHTML = html;
+    }
     // tarjeta de agradecimiento con el avatar de Pache Labs
     function agradecer() {
-      estado.className = "formulario__estado";
-      estado.textContent = "";
+      avisar("");
       var viejo = f.querySelector(".gracias");
       if (viejo) viejo.remove();
       var t = document.createElement("div");
@@ -25,52 +29,57 @@
       setTimeout(function () { t.classList.add("gracias--visible"); }, 30);
       t.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }
-    if (/[?&]enviado=1/.test(location.search)) agradecer();
-    function avisar(texto, clase) {
-      estado.className = "formulario__estado" + (clase ? " " + clase : "");
-      estado.textContent = texto;
+    // plan B: abrir el programa de mail con el mensaje ya escrito
+    function porMail() {
+      var el = f.elements;
+      var cuerpo = (el.mensaje ? el.mensaje.value : "") + "\n\n" +
+        "Tema: " + (el.tema ? el.tema.value : "") +
+        (el.nombre && el.nombre.value ? "\nNombre: " + el.nombre.value : "") +
+        (el.email && el.email.value ? "\nEmail: " + el.email.value : "");
+      var link = "mailto:" + CORREO + "?subject=" + encodeURIComponent("Sugerencia para Pache Labs") +
+        "&body=" + encodeURIComponent(cuerpo);
+      avisar('El servicio de envío no responde en este momento. Te abrí tu programa de mail con el ' +
+        'mensaje ya escrito; si no se abrió, <a href="' + link + '">tocá acá</a> o escribime a ' +
+        '<a href="mailto:' + CORREO + '">' + CORREO + '</a>.', "error");
+      window.location.href = link;
     }
+    if (/[?&]enviado=1/.test(location.search)) agradecer();
     // si falta el mensaje, decirlo claro (además del globito del navegador)
     f.addEventListener("invalid", function () {
       avisar("Escribí tu mensaje antes de enviar.", "error");
     }, true);
     f.addEventListener("submit", function (e) {
-      if (f.elements._honey && f.elements._honey.value) { e.preventDefault(); return; }
+      if (f.elements.botcheck && f.elements.botcheck.checked) { e.preventDefault(); return; }  // robots
       if (location.protocol === "file:") {
         e.preventDefault();
         avisar("El formulario funciona cuando la página está publicada en internet, no abierta como archivo desde la PC.", "error");
         return;
       }
-      if (!window.fetch || !window.FormData || f.dataset.clasico) return;  // envío clásico
+      if (!window.fetch || !window.FormData) return;  // navegador viejo: envío clásico
       e.preventDefault();
       boton.disabled = true;
       avisar("Enviando...");
       var datos = {};
-      new FormData(f).forEach(function (v, k) { datos[k] = v; });
+      new FormData(f).forEach(function (v, k) { if (k !== "redirect" && k !== "botcheck") datos[k] = v; });
       var control = window.AbortController ? new AbortController() : null;
       var reloj = setTimeout(function () { if (control) control.abort(); }, 15000);
-      fetch(f.action.replace("formsubmit.co/", "formsubmit.co/ajax/"), {
+      fetch(f.action, {
         method: "POST",
         headers: { "Content-Type": "application/json", "Accept": "application/json" },
         body: JSON.stringify(datos),
         signal: control ? control.signal : undefined
       }).then(function (r) {
         return r.json().then(function (j) {
-          if (!r.ok || String(j.success) !== "true") throw new Error(j.message || "rechazado");
+          if (!r.ok || !j.success) throw new Error(j.message || "rechazado");
         });
       }).then(function () {
         clearTimeout(reloj);
         f.reset();
         agradecer();
-        boton.disabled = false;
       }).catch(function () {
         clearTimeout(reloj);
-        // plan B: envío clásico, que muestra la página de FormSubmit
-        avisar("Abriendo el envío seguro de FormSubmit...");
-        f.dataset.clasico = "1";
-        boton.disabled = false;
-        HTMLFormElement.prototype.submit.call(f);
-      });
+        porMail();
+      }).then(function () { boton.disabled = false; });
     });
   });
 

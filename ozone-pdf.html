@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://pachelabs.net/ozone-pdf.html">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://pachelabs.net/ozone-pdf.html">
-<link rel="stylesheet" href="estilos.css?v=4">
+<link rel="stylesheet" href="estilos.css?v=5">
 <!--
   LINKS (buscá "COMPLETAR" para lo que falta):
   - Descargas: apuntan al último Release del repo, con nombres de archivo fijos:
@@ -273,22 +273,21 @@
 </section>
 
 <!-- ============ SUGERENCIAS ============ -->
-<!-- El formulario se envía con FormSubmit (formsubmit.co) y llega a pache.labs@gmail.com.
-     La primera vez, FormSubmit manda un mail a esa casilla para confirmar: hay que tocar
-     el botón del mail. Después se puede reemplazar el correo de la dirección por el código
-     que FormSubmit da en ese mail, para que no quede visible en la página. -->
+<!-- El formulario se envía con Web3Forms (web3forms.com) y llega a pache.labs@gmail.com.
+     La clave de acceso (access_key) solo sirve para mandar mensajes a esa casilla: es
+     normal que sea pública. Si falla, el sitio le abre al usuario su programa de mail. -->
 <section class="sugerencias" id="sugerencias" aria-labelledby="titulo-sugerencias">
   <div class="sugerencias__texto aparecer">
     <h2 id="titulo-sugerencias">Contame qué mejorarías</h2>
     <p>¿Encontraste un error, te falta una herramienta o tenés una idea? Leo todos los mensajes.</p>
     <p class="sugerencias__mail">También podés escribirme a <a href="mailto:pache.labs@gmail.com">pache.labs@gmail.com</a>.</p>
   </div>
-  <form class="formulario aparecer" action="https://formsubmit.co/pache.labs@gmail.com" method="POST" data-sugerencias>
-    <input type="hidden" name="_subject" value="Sugerencia desde la web de Pache Labs">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://pachelabs.net/ozone-pdf.html?enviado=1#sugerencias">
-    <input type="text" name="_honey" class="formulario__trampa" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <form class="formulario aparecer" action="https://api.web3forms.com/submit" method="POST" data-sugerencias>
+    <input type="hidden" name="access_key" value="b36c1ac2-8f0d-4e89-9bd6-2f04fdd1b7f8">
+    <input type="hidden" name="subject" value="Sugerencia desde la web de Pache Labs">
+    <input type="hidden" name="from_name" value="Web de Pache Labs">
+    <input type="hidden" name="redirect" value="https://pachelabs.net/ozone-pdf.html?enviado=1#sugerencias">
+    <input type="checkbox" name="botcheck" class="formulario__trampa" tabindex="-1" autocomplete="off" aria-hidden="true">
     <div class="formulario__fila">
       <label><span>Tu nombre <span class="opcional">(opcional)</span></span>
         <input type="text" name="nombre" autocomplete="name" maxlength="80"></label>
@@ -301,7 +300,7 @@
       <textarea name="mensaje" rows="5" required maxlength="3000" placeholder="Contame qué te gustaría que haga, qué falló o qué mejorarías."></textarea></label>
     <button class="boton boton--rojo" type="submit">Enviar sugerencia</button>
     <p class="formulario__estado" role="status" aria-live="polite"></p>
-    <p class="formulario__nota">El mensaje me llega por mail a través de FormSubmit, un servicio de envío de formularios.
+    <p class="formulario__nota">El mensaje me llega por mail a través de Web3Forms, un servicio de envío de formularios.
       Lo uso solo para leerte y, si dejaste tu email, responderte.</p>
   </form>
 </section>
@@ -336,6 +335,6 @@
   </div>
 </footer>
 
-<script src="sitio.js?v=4"></script>
+<script src="sitio.js?v=5"></script>
 </body>
 </html>
