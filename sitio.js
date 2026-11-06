@@ -93,6 +93,46 @@
     });
   });
 
+  // 0b) Al tocar "Descargar": un gracias con el avatar y, si quiere, cómo apoyar.
+  //     No frena la descarga y se cierra con la X, con Escape o sola si no se usa.
+  var tarjetaDescarga = null;
+  function cerrarDescarga() {
+    if (!tarjetaDescarga) return;
+    var t = tarjetaDescarga; tarjetaDescarga = null;
+    t.classList.remove("descarga-ok--visible");
+    setTimeout(function () { t.remove(); }, 350);
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest('a[href*="/releases/"][href*="/download/"]');
+    if (!a) return;
+    cerrarDescarga();
+    var esMsi = /\.msi(\?|$)/i.test(a.href);
+    var t = document.createElement("aside");
+    t.className = "descarga-ok";
+    t.setAttribute("role", "status");
+    t.setAttribute("aria-live", "polite");
+    t.innerHTML =
+      '<button class="descarga-ok__cerrar" type="button" aria-label="Cerrar">×</button>' +
+      '<img class="descarga-ok__avatar" src="img/avatar.webp" alt="" width="64" height="64">' +
+      '<div class="descarga-ok__texto">' +
+        '<strong>¡Gracias por descargar Ozone PDF!</strong>' +
+        '<p>La descarga ya empezó. Cuando termine, abrí <b>' + (esMsi ? "Ozone_PDF.msi" : "Instalar_Ozone_PDF.exe") +
+        '</b> para instalarlo.</p>' +
+        '<p class="descarga-ok__suave">Es y va a seguir siendo gratis. Si te sirve y tenés ganas, podés ' +
+        'invitarme un cafecito o contarme qué mejorarías. Totalmente opcional.</p>' +
+        '<div class="descarga-ok__acciones">' +
+          '<a class="boton boton--rojo" href="https://cafecito.app/pachelabs" rel="noopener" target="_blank">☕ Invitame un cafecito</a>' +
+          '<a class="descarga-ok__link" href="#sugerencias">Dejar una sugerencia</a>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(t);
+    tarjetaDescarga = t;
+    t.querySelector(".descarga-ok__cerrar").addEventListener("click", cerrarDescarga);
+    t.querySelector(".descarga-ok__link").addEventListener("click", cerrarDescarga);
+    setTimeout(function () { t.classList.add("descarga-ok--visible"); }, 30);
+  });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") cerrarDescarga(); });
+
   var raiz = document.documentElement;
   var sinMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (!("IntersectionObserver" in window)) return;
