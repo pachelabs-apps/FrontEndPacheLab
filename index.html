@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://pachelabs.net/">
-<link rel="stylesheet" href="estilos.css?v=9">
+<link rel="stylesheet" href="estilos.css?v=10">
 <script>
   // Presentación con el logo al abrir Pache Labs: una vez por visita, y nunca si la
   // persona pidió reducir el movimiento.
@@ -24,7 +24,7 @@
       var raiz = document.documentElement;
       raiz.classList.add("con-intro");
       var quitar = function () { raiz.classList.remove("con-intro"); };
-      setTimeout(quitar, 2300);              // termina sola
+      setTimeout(quitar, 4100);              // termina sola
       document.addEventListener("click", function (e) {   // o con un clic se saltea
         if (e.target.closest && e.target.closest(".intro")) quitar();
       });
@@ -168,6 +168,6 @@
   </div>
 </footer>
 
-<script src="sitio.js?v=9"></script>
+<script src="sitio.js?v=10"></script>
 </body>
 </html>
