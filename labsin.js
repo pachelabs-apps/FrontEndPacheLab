@@ -110,7 +110,8 @@
     " box-shadow:0 12px 30px -10px rgba(23,24,28,.35);border:2px solid #17181C;opacity:0;transform:translateY(8px) scale(.9);transform-origin:0% 100%;",
     " transition:opacity .3s ease,transform .35s cubic-bezier(.2,1.4,.4,1);pointer-events:none}",
     ".labsin__globo.visible{opacity:1;transform:none}",
-    ".labsin__globo--largo{left:4%;top:-46px;white-space:normal;width:max-content;max-width:228px;border-radius:18px 18px 4px 18px;font-size:.98rem;line-height:1.3}",
+    ".labsin__globo--largo{top:-34px;white-space:normal;width:15.5em;max-width:calc(100vw - 32px);text-wrap:balance;font-size:.95rem;line-height:1.3}",
+    "@media (min-width:561px) and (max-width:760px){.labsin__globo--largo{top:-62px}}",
     "@media (max-width:560px){.labsin{width:190px}.labsin__globo{font-size:.95rem;left:52%}}"
   ].join("");
 
