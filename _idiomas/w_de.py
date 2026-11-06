@@ -152,4 +152,5 @@ D = {
 150: "Hallo, ich bin Labcin",
 151: "Tipp mich an",
 152: "Hahaha!",
+153: "Ich hoffe, eines meiner Programme kann dir helfen!",
 }

@@ -48,6 +48,7 @@
     '   <path d="M154,279.9 Q161,271.8 168,279.9" fill="none" stroke="#141416" stroke-width="8" stroke-linecap="round"/>',
     '   <path d="M94.9,307.8 L115.8,275.3 L127.4,275.3 L106.5,307.8 Z M171.4,307.8 L192.3,275.3 L203.9,275.3 L183,307.8 Z" fill="#fff" opacity=".28"/>',
     '   <path d="M91.4,273 L154,273" stroke="#fff" stroke-opacity=".35" stroke-width="2"/><path d="M168,273 L230.6,273" stroke="#fff" stroke-opacity=".35" stroke-width="2"/></g>',
+  '  <g class="lb-lagrimas" opacity="0"><path class="lb-lagrima" d="M90,314 Q84,324 90,328 Q96,324 90,314 Z" fill="#9FD8FF"/><path class="lb-lagrima" d="M232,314 Q226,324 232,328 Q238,324 232,314 Z" fill="#9FD8FF"/></g>',
   '  <path class="lb-boca" d="M140,330 Q161,346 182,330" fill="none" stroke="#141416" stroke-width="5" stroke-linecap="round"/>',
     '  <path class="lb-boca-risa" d="M138,328 Q161,328 184,328 Q178,350 161,350 Q144,350 138,328 Z" fill="#141416" opacity="0"/>',
     '  <path class="lb-lengua" d="M150,343 Q161,337 172,343 Q166,349 161,349 Q156,349 150,343 Z" fill="#FF7A6E" opacity="0"/>',
@@ -92,6 +93,7 @@
     ".labsin .lb-brazo--der{transform-origin:0% 0%}",
     ".labsin .lb-brazo--izq{transform-origin:100% 0%}",
     ".labsin .lb-pierna{transform-origin:50% 0%}",
+    ".labsin .lb-lagrimas{transition:opacity .25s ease}",
     ".labsin .lb-liquido{transform-origin:50% 100%}",
     ".labsin .lb-cara{transform-origin:50% 50%}",
     ".labsin .lb-ojos,.labsin .lb-ojos-risa,.labsin .lb-boca,.labsin .lb-boca-risa,.labsin .lb-lengua{transition:opacity .18s ease}",
@@ -108,6 +110,7 @@
     " box-shadow:0 12px 30px -10px rgba(23,24,28,.35);border:2px solid #17181C;opacity:0;transform:translateY(8px) scale(.9);transform-origin:0% 100%;",
     " transition:opacity .3s ease,transform .35s cubic-bezier(.2,1.4,.4,1);pointer-events:none}",
     ".labsin__globo.visible{opacity:1;transform:none}",
+    ".labsin__globo--largo{left:4%;top:-46px;white-space:normal;width:max-content;max-width:228px;border-radius:18px 18px 4px 18px;font-size:.98rem;line-height:1.3}",
     "@media (max-width:560px){.labsin{width:190px}.labsin__globo{font-size:.95rem;left:52%}}"
   ].join("");
 
@@ -128,6 +131,8 @@
     var frase = globo ? globo.textContent.trim() : "Hola, soy Labcin";
     var risaEl = cont.querySelector(".labsin__risa");
     var risaTexto = risaEl ? risaEl.textContent.trim() : "¡Ja, ja, ja!";
+    var s2El = cont.querySelector(".labsin__saludo2");
+    var saludo2 = s2El ? s2El.textContent.trim() : "";
     cont.insertAdjacentHTML("afterbegin", SVG);
     var svg = cont.querySelector("svg");
     // ids únicos por si hay más de un Labsin en la página
@@ -145,12 +150,16 @@
       if (n.nodeType === 1 && n.tagName !== "defs" && !n.classList.contains("lb-sombra")) cuerpo.appendChild(n);
     });
     svg.appendChild(cuerpo);
+    // el cuerpo gira y cae desde la base del frasco
+    cuerpo.style.transformBox = "view-box"; cuerpo.style.transformOrigin = "160px 352px";
+    var sombraEl = svg.querySelector(".lb-sombra"); if (sombraEl) { sombraEl.style.transformBox = "view-box"; sombraEl.style.transformOrigin = "160px 402px"; }
 
     var brazoDer = q(".lb-brazo--der"), brazoIzq = q(".lb-brazo--izq");
     var piernas = svg.querySelectorAll(".lb-pierna");
     var liquido = q(".lb-liquido"), cara = q(".lb-cara"), boca = q(".lb-boca");
     var vidrio = q(".lb-vidrio"), piezasG = q(".lb-piezas"), grietasG = q(".lb-grietas");
     var gotasG = q(".lb-gotas"), brillosG = q(".lb-brillos"), burbujas = q(".lb-burbujas");
+    var sombra = svg.querySelector(".lb-sombra"), lagrimas = q(".lb-lagrimas");
     var ojos = q(".lb-ojos"), ojosRisa = q(".lb-ojos-risa"), bocaRisa = q(".lb-boca-risa"), lengua = q(".lb-lengua");
 
     // --- piezas de vidrio: cortes en abanico desde el punto del golpe ---
@@ -188,7 +197,7 @@
 
     // --- saludo ---
     var saludando = false;
-    function saludar() {
+    function saludar(conMensaje) {
       if (saludando) return Promise.resolve();
       saludando = true;
       if (globo) { globo.textContent = frase; globo.classList.add("visible"); }
@@ -204,9 +213,23 @@
       ], { duration: 2600 });
       anim(cara, [{ transform: "rotate(0)" }, { transform: "rotate(-4deg)" }, { transform: "rotate(3deg)" }, { transform: "rotate(0)" }], { duration: 2000, easing: "ease-in-out" });
       return w.finished.then(function () {
-        return espera(600);
+        if (!(conMensaje && saludo2 && globo)) return espera(600);
+        // segundo mensaje: cambia el globo con un pequeño rebote
+        if (riendo || ocupado) return;
+        globo.classList.remove("visible");
+        return espera(320).then(function () {
+          if (riendo || ocupado) return;
+          globo.textContent = saludo2;
+          globo.classList.add("labsin__globo--largo", "visible");
+          anim(cara, [{ transform: "rotate(0)" }, { transform: "rotate(5deg)" }, { transform: "rotate(-2deg)" }, { transform: "rotate(0)" }],
+               { duration: 900, easing: "ease-in-out", fill: "none" });
+          return espera(3600);
+        });
       }).then(function () {
-        if (globo) globo.classList.remove("visible");
+        if (globo && !riendo && !ocupado) globo.classList.remove("visible");
+        return espera(350);
+      }).then(function () {
+        if (globo && !riendo && !ocupado) globo.classList.remove("labsin__globo--largo");
         saludando = false;
       });
     }
@@ -314,47 +337,99 @@
       boca.style.opacity = si ? "0" : ""; bocaRisa.style.opacity = si ? "1" : "0"; lengua.style.opacity = si ? "1" : "0";
     }
     [ojosRisa, bocaRisa, lengua].forEach(function (n) { n.removeAttribute("opacity"); n.style.opacity = "0"; });
+    // Se cae sentado hacia atrás muerto de risa, patalea y se levanta de un saltito.
     function reir() {
-      if (riendo) return;
+      if (riendo) return Promise.resolve();
       riendo = true;
-      if (globo) { globo.textContent = risaTexto; globo.classList.add("visible"); }
-      cara_risa(true);
-      var DUR = 2000, suave = "cubic-bezier(.45,0,.55,1)";
-      // las manos van a la panza y la acompañan en cada carcajada
-      function manos(final) {
-        var f = [{ transform: "rotate(0deg)", easing: "cubic-bezier(.3,1.1,.5,1)" }];
-        for (var i = 1; i <= 5; i++) f.push({ transform: "rotate(" + (final + (i % 2 ? 0 : (final > 0 ? -6 : 6))) + "deg)", offset: .12 + i * .13, easing: suave });
-        f[f.length - 1].offset = .82;
-        f.push({ transform: "rotate(0deg)" });
+      var DUR = 3400;
+      var caer = "cubic-bezier(.55,0,1,.45)", rebote = "cubic-bezier(.2,.9,.3,1)", suave = "cubic-bezier(.45,0,.55,1)";
+      var salto = "cubic-bezier(.2,.8,.35,1)", bajar = "cubic-bezier(.6,0,.9,.5)";
+      function T(y, r, sx, sy) { return "translateY(" + y + "px) rotate(" + r + "deg) scale(" + sx + "," + sy + ")"; }
+      // momentos clave (fracción de DUR)
+      var BOB = [];
+      for (var t = .33, k = 0; t < .7; t += .062, k++) BOB.push({ t: t, arriba: k % 2 === 0 });
+      // cuerpo
+      var fc = [
+        { offset: 0, transform: T(0, 0, 1, 1), easing: suave },
+        { offset: .06, transform: T(3, 2, 1.05, .95), easing: caer },
+        { offset: .17, transform: T(44, -10, .96, 1.05), easing: rebote },
+        { offset: .21, transform: T(47, -12, 1.1, .88), easing: rebote },
+        { offset: .27, transform: T(42, -7, .98, 1.03), easing: suave },
+        { offset: .31, transform: T(44, -9, 1, 1), easing: suave }
+      ];
+      BOB.forEach(function (b) { fc.push({ offset: b.t, transform: b.arriba ? T(39, -4, .98, 1.03) : T(45, -10, 1.03, .97), easing: suave }); });
+      fc.push({ offset: .72, transform: T(44, -8, 1, 1), easing: suave },
+              { offset: .79, transform: T(49, -2, 1.07, .91), easing: salto },
+              { offset: .87, transform: T(-16, 3, .94, 1.08), easing: bajar },
+              { offset: .93, transform: T(2, 0, 1.06, .94), easing: rebote },
+              { offset: 1, transform: T(0, 0, 1, 1) });
+      // piernas: se abren hacia adelante al sentarse y patalean
+      function piernas_(sg) {
+        var f = [{ offset: 0, transform: "rotate(0deg)" }, { offset: .06, transform: "rotate(" + (-6 * sg) + "deg)", easing: caer },
+                 { offset: .17, transform: "rotate(" + (68 * sg) + "deg)", easing: rebote },
+                 { offset: .21, transform: "rotate(" + (84 * sg) + "deg)", easing: rebote },
+                 { offset: .27, transform: "rotate(" + (70 * sg) + "deg)", easing: suave }];
+        BOB.forEach(function (b, i) { f.push({ offset: b.t, transform: "rotate(" + ((((i + (sg > 0 ? 0 : 1)) % 2) ? 58 : 82) * sg) + "deg)", easing: suave }); });
+        f.push({ offset: .72, transform: "rotate(" + (72 * sg) + "deg)", easing: suave },
+               { offset: .79, transform: "rotate(" + (36 * sg) + "deg)", easing: salto },
+               { offset: .87, transform: "rotate(" + (-10 * sg) + "deg)", easing: bajar },
+               { offset: .93, transform: "rotate(" + (4 * sg) + "deg)", easing: rebote },
+               { offset: 1, transform: "rotate(0deg)" });
         return f;
       }
-      anim(brazoDer, manos(40), { duration: DUR, fill: "none" });
-      anim(brazoIzq, manos(-42), { duration: DUR, fill: "none" });
-      // carcajadas: rebote suave del cuerpo con un leve balanceo
-      var f = [{ transform: "translateY(0) rotate(0deg) scale(1,1)", easing: suave }];
-      for (var i = 1; i <= 6; i++) {
-        var arriba = i % 2 === 1;
-        f.push({ transform: arriba ? "translateY(-6px) rotate(" + (i % 4 === 1 ? -2 : 2) + "deg) scale(.98,1.03)" : "translateY(1px) rotate(0deg) scale(1.03,.97)",
-                 offset: .1 + i * .12, easing: suave });
+      // brazos: a la panza, acompañan cada carcajada y se abren para el salto
+      function brazo_(final, sg) {
+        var f = [{ offset: 0, transform: "rotate(0deg)", easing: rebote }, { offset: .1, transform: "rotate(" + final + "deg)", easing: suave }];
+        BOB.forEach(function (b) { f.push({ offset: b.t, transform: "rotate(" + (final + (b.arriba ? -7 * sg : 0)) + "deg)", easing: suave }); });
+        f.push({ offset: .76, transform: "rotate(" + final + "deg)", easing: salto },
+               { offset: .87, transform: "rotate(" + (-28 * sg) + "deg)", easing: suave },
+               { offset: 1, transform: "rotate(0deg)" });
+        return f;
       }
-      f.push({ transform: "translateY(0) rotate(0deg) scale(1,1)" });
-      anim(cuerpo, f, { duration: DUR, fill: "none" });
-      return espera(DUR - 450).then(function () {
-        cara_risa(false);
-        return espera(650);
-      }).then(function () {
+      var fs = [{ offset: 0, transform: "scale(1,1)", opacity: 1 }, { offset: .17, transform: "scale(1.14,1.2)", opacity: 1, easing: suave },
+                { offset: .79, transform: "scale(1.16,1.2)", opacity: 1, easing: salto }, { offset: .87, transform: "scale(.72,.7)", opacity: .6, easing: bajar },
+                { offset: .93, transform: "scale(1.04,1)", opacity: 1 }, { offset: 1, transform: "scale(1,1)", opacity: 1 }];
+      var o = { duration: DUR, fill: "none" };
+      // anticipación: primero se tienta, después se cae
+      cara_risa(true);
+      anim(cuerpo, fc, o);
+      piernas.forEach(function (pn, i) { anim(pn, piernas_(i ? -1 : 1), o); });
+      anim(brazoDer, brazo_(40, 1), o);
+      anim(brazoIzq, brazo_(-42, -1), o);
+      if (sombra) anim(sombra, fs, o);
+      setTimeout(function () {
+        if (globo) { globo.classList.remove("labsin__globo--largo"); globo.textContent = risaTexto; globo.classList.add("visible"); }
+        lagrimas.style.opacity = "1";
+        lagrimas.querySelectorAll(".lb-lagrima").forEach(function (l, i) {
+          anim(l, [{ transform: "translateY(0) scale(.4)", opacity: 0 }, { transform: "translateY(2px) scale(1)", opacity: 1, offset: .3 },
+                   { transform: "translateY(14px) scale(.8)", opacity: 0 }], { duration: 700, iterations: 2, delay: i * 180, easing: "ease-in" });
+        });
+      }, DUR * .2);
+      return espera(DUR * .74).then(function () {
+        lagrimas.style.opacity = "0";
         if (globo) globo.classList.remove("visible");
-        riendo = false;
-      });
+        return espera(DUR * .14);
+      }).then(function () {
+        cara_risa(false);
+        return espera(DUR * .14);
+      }).then(function () { riendo = false; });
     }
 
     // 1.º y 2.º toque: se ríe. 3.º toque: se rompe y se cura.
-    var toques = 0;
+    var toques = 0, romperDespues = false;
     function tocar() {
-      if (ocupado || riendo) return;
+      if (ocupado) return;
       if (sinMovimiento) { saludar(); return; }
+      if (riendo) {
+        // si lo tocan de nuevo mientras se ríe, se rompe apenas se levanta
+        if (toques >= 2) romperDespues = true;
+        return;
+      }
       toques += 1;
-      if (toques >= 3) { toques = 0; romper(); } else { reir(); }
+      if (toques >= 3) { toques = 0; romper(); return; }
+      reir().then(function () {
+        if (romperDespues) { romperDespues = false; toques = 0; romper(); }
+      });
     }
     cont.addEventListener("click", tocar);
     cont.addEventListener("keydown", function (e) {
@@ -367,7 +442,7 @@
     function saludoInicial() {
       if (saludo) return;
       saludo = true;
-      setTimeout(saludar, 400);
+      setTimeout(function () { saludar(true); }, 400);
     }
     function cuandoTermineIntro(fn) {
       var raiz = document.documentElement;
