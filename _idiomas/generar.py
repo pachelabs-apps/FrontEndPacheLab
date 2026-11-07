@@ -15,14 +15,14 @@ from bs4 import BeautifulSoup, NavigableString, Comment, Tag
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 SITIO = os.path.dirname(AQUI)
-PAGINAS = ["index.html", "ozone-pdf.html", "privacidad.html"]
+PAGINAS = ["index.html", "ozone-pdf.html", "privacidad.html", "juegos.html", "labcin-salta.html", "atrapa-tus-datos.html"]
 IDIOMAS = [("es", "Español"), ("en", "English"), ("de", "Deutsch"), ("zh", "中文"),
            ("ja", "日本語"), ("ru", "Русский")]
 DOMINIO = "https://pachelabs.net/"
 INLINE = {'a', 'strong', 'b', 'em', 'i', 'code', 'span', 'br', 'small', 'abbr', 'kbd', 'sup'}
 SKIP = {'script', 'style', 'svg', 'noscript'}
 ATTRS = ('alt', 'placeholder', 'aria-label', 'title')
-LOCALES = ('img/', 'fuentes/', 'estilos.css', 'sitio.js', 'labsin.js')
+LOCALES = ('img/', 'fuentes/', 'estilos.css', 'sitio.js', 'labsin.js', 'juegos.js')
 
 
 def norm(s):

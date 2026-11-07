@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="es-AR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Atrapá tus datos: Pache Labs</title>
+<meta content="Un juego para aprender a cuidar tu privacidad: atrapá tus datos y esquivá los virus. Gratis, sin publicidad." name="description"/>
+<link href="img/favicon-pl.png" rel="icon"/>
+<link href="img/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="estilos.css?v=14" rel="stylesheet"/>
+<link href="https://pachelabs.net/atrapa-tus-datos.html" hreflang="es" rel="alternate"/><link href="https://pachelabs.net/en/atrapa-tus-datos.html" hreflang="en" rel="alternate"/><link href="https://pachelabs.net/de/atrapa-tus-datos.html" hreflang="de" rel="alternate"/><link href="https://pachelabs.net/zh/atrapa-tus-datos.html" hreflang="zh" rel="alternate"/><link href="https://pachelabs.net/ja/atrapa-tus-datos.html" hreflang="ja" rel="alternate"/><link href="https://pachelabs.net/ru/atrapa-tus-datos.html" hreflang="ru" rel="alternate"/><link href="https://pachelabs.net/atrapa-tus-datos.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="barra">
+<div class="barra__interior">
+<a aria-label="Pache Labs, inicio" class="marca" href="index.html">
+<img alt="" class="marca__avatar" height="40" src="img/marca.png" width="40"/>
+<span class="marca__nombre">Pache<span class="marca__punto">.</span>Labs</span>
+</a>
+<nav aria-label="Principal" class="menu"><a href="index.html#programas">Programas</a><a aria-current="page" href="juegos.html">Juegos</a></nav>
+<details class="idiomas"><summary aria-label="Idioma"><span aria-hidden="true">🌐</span> ES</summary><ul class="idiomas__lista"><li><a aria-current="true" href="atrapa-tus-datos.html" hreflang="es" lang="es">Español</a></li><li><a href="en/atrapa-tus-datos.html" hreflang="en" lang="en">English</a></li><li><a href="de/atrapa-tus-datos.html" hreflang="de" lang="de">Deutsch</a></li><li><a href="zh/atrapa-tus-datos.html" hreflang="zh" lang="zh">中文</a></li><li><a href="ja/atrapa-tus-datos.html" hreflang="ja" lang="ja">日本語</a></li><li><a href="ru/atrapa-tus-datos.html" hreflang="ru" lang="ru">Русский</a></li></ul></details></div>
+</header>
+<main class="juego" data-juego="datos" id="contenido">
+<a class="juego__volver" href="juegos.html">← Juegos</a>
+<h1>Atrapá tus datos</h1>
+<p class="juego__bajada">Caen tus datos: DNI, contraseñas, fotos y más. Atrapalos con Labcin antes de que lleguen al piso y esquivá los virus. Cada error te deja un consejo para cuidar tu privacidad.</p>
+<div class="juego__marcador"><span>Datos <b data-puntos="">0</b></span><span>Récord <b data-record="">0</b></span><span>Nivel <b data-nivel="">1</b></span><span aria-label="Vidas" data-vidas="">❤️❤️❤️</span><button class="juego__sonido" data-sonido="" type="button"></button></div>
+<canvas aria-label="Juego Atrapá tus datos. Mové a Labcin con el mouse, el dedo o las flechas." class="juego__lienzo" role="img" tabindex="0"></canvas>
+<div class="juego__acciones"><p aria-live="polite" class="juego__tip" data-tip=""></p><button class="boton boton--rojo" data-compartir="" hidden="" type="button">Compartir</button></div>
+<section class="juego__ayuda">
+<h2>Cómo se juega</h2>
+<ul>
+<li>Mové a Labcin con el mouse, arrastrando el dedo o con <kbd>←</kbd> <kbd>→</kbd>.</li>
+<li>Atrapá 🪪 🔑 📷 💳 📍 ✉️ y esquivá 🦠 🎣 🕵️. Si se te cae un dato o atrapás un virus, perdés una vida.</li>
+<li>Cada 10 datos subís de nivel y todo cae más rápido. Pausá con <kbd>P</kbd> o <kbd>Esc</kbd>.</li>
+</ul>
+<p style="margin-top:14px">En la vida real, la mejor forma de proteger tus datos es no subirlos a cualquier lado. Por eso <a href="ozone-pdf.html">Ozone PDF</a> trabaja sin internet.</p>
+</section>
+</main>
+<footer class="pie">
+<div class="pie__interior">
+<img alt="Pache.Labs" class="pie__logo" height="79" src="img/logo-pie.png" width="280"/>
+<p><strong>Pache Labs</strong>, por Nicolás Pacheco. Hecho en Argentina. <a href="mailto:pache.labs@gmail.com">pache.labs@gmail.com</a></p>
+<nav aria-label="Legales"><a href="index.html">Programas</a><a href="https://github.com/pachelabs-apps/Pache_PDF">Código fuente</a></nav>
+</div>
+</footer>
+<script src="juegos.js?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>抓住你的数据：Pache Labs</title>
+<meta content="学习保护隐私的小游戏：抓住你的数据，躲开病毒。免费，无广告。" name="description"/>
+<link href="../img/favicon-pl.png" rel="icon"/>
+<link href="../img/apple-touch-icon.png" rel="apple-touch-icon"/>
+<link href="../estilos.css?v=14" rel="stylesheet"/>
+<link href="https://pachelabs.net/atrapa-tus-datos.html" hreflang="es" rel="alternate"/><link href="https://pachelabs.net/en/atrapa-tus-datos.html" hreflang="en" rel="alternate"/><link href="https://pachelabs.net/de/atrapa-tus-datos.html" hreflang="de" rel="alternate"/><link href="https://pachelabs.net/zh/atrapa-tus-datos.html" hreflang="zh" rel="alternate"/><link href="https://pachelabs.net/ja/atrapa-tus-datos.html" hreflang="ja" rel="alternate"/><link href="https://pachelabs.net/ru/atrapa-tus-datos.html" hreflang="ru" rel="alternate"/><link href="https://pachelabs.net/atrapa-tus-datos.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<header class="barra">
+<div class="barra__interior">
+<a aria-label="Pache Labs 首页" class="marca" href="index.html">
+<img alt="" class="marca__avatar" height="40" src="../img/marca.png" width="40"/>
+<span class="marca__nombre">Pache<span class="marca__punto">.</span>Labs</span>
+</a>
+<nav aria-label="主菜单" class="menu"><a href="index.html#programas">软件</a><a aria-current="page" href="juegos.html">游戏</a></nav>
+<details class="idiomas"><summary aria-label="语言"><span aria-hidden="true">🌐</span> ZH</summary><ul class="idiomas__lista"><li><a href="../atrapa-tus-datos.html" hreflang="es" lang="es">Español</a></li><li><a href="../en/atrapa-tus-datos.html" hreflang="en" lang="en">English</a></li><li><a href="../de/atrapa-tus-datos.html" hreflang="de" lang="de">Deutsch</a></li><li><a aria-current="true" href="../zh/atrapa-tus-datos.html" hreflang="zh" lang="zh">中文</a></li><li><a href="../ja/atrapa-tus-datos.html" hreflang="ja" lang="ja">日本語</a></li><li><a href="../ru/atrapa-tus-datos.html" hreflang="ru" lang="ru">Русский</a></li></ul></details></div>
+</header>
+<main class="juego" data-juego="datos" id="contenido">
+<a class="juego__volver" href="juegos.html">← 游戏</a>
+<h1>抓住你的数据</h1>
+<p class="juego__bajada">你的数据正在掉落：身份证、密码、照片等等。在它们落地之前用 Labcin 接住，并躲开病毒。每次失误都会给你一条隐私小贴士。</p>
+<div class="juego__marcador"><span>数据 <b data-puntos="">0</b></span><span>最高分 <b data-record="">0</b></span><span>关卡 <b data-nivel="">1</b></span><span aria-label="生命" data-vidas="">❤️❤️❤️</span><button class="juego__sonido" data-sonido="" type="button"></button></div>
+<canvas aria-label="抓住你的数据游戏。用鼠标、手指或方向键移动 Labcin。" class="juego__lienzo" role="img" tabindex="0"></canvas>
+<div class="juego__acciones"><p aria-live="polite" class="juego__tip" data-tip=""></p><button class="boton boton--rojo" data-compartir="" hidden="" type="button">分享</button></div>
+<section class="juego__ayuda">
+<h2>玩法</h2>
+<ul>
+<li>用鼠标、拖动手指或 <kbd>←</kbd> <kbd>→</kbd> 移动 Labcin。</li>
+<li>接住 🪪 🔑 📷 💳 📍 ✉️，躲开 🦠 🎣 🕵️。漏掉数据或接到病毒都会失去一条命。</li>
+<li>每接住 10 个数据升一级，东西会掉得更快。按 <kbd>P</kbd> 或 <kbd>Esc</kbd> 暂停。</li>
+</ul>
+<p style="margin-top:14px">在现实生活中，保护数据最好的办法就是不要随便上传。所以 <a href="ozone-pdf.html">Ozone PDF</a> 不联网也能用。</p>
+</section>
+</main>
+<footer class="pie">
+<div class="pie__interior">
+<img alt="Pache.Labs" class="pie__logo" height="79" src="../img/logo-pie.png" width="280"/>
+<p><strong>Pache Labs</strong>，作者 Nicolás Pacheco。阿根廷制作。<a href="mailto:pache.labs@gmail.com">pache.labs@gmail.com</a></p>
+<nav aria-label="法律信息"><a href="index.html">程序</a><a href="https://github.com/pachelabs-apps/Pache_PDF">源代码</a></nav>
+</div>
+</footer>
+<script src="../juegos.js?v=1"></script>
+</body>
+</html>
