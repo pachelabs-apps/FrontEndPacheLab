@@ -9,6 +9,10 @@
   var BASE = hoja && hoja.getAttribute("href").indexOf("../") === 0 ? "../" : "";
   var TEXTOS = {
     "en": {
+      "Tenés la última versión de Ozone PDF ({v}).": "You have the latest version of Ozone PDF ({v}).",
+      "Hay una versión nueva: {n}. Vos tenés la {v}.": "There's a new version: {n}. You have {v}.",
+      "Bajala acá abajo: se instala encima de la que tenés y mantiene tu configuración.": "Download it below: it installs over the one you have and keeps your settings.",
+      "Si lo instalaste desde Microsoft Store, se actualiza solo.": "If you installed it from Microsoft Store, it updates by itself.",
       "¡Gracias por la sugerencia!": "Thanks for the suggestion!",
       "Ya me llegó y la voy a leer. Si dejaste tu email, te respondo.": "It reached me and I'll read it. If you left your email, I'll reply.",
       "El servicio de envío no responde en este momento. Te abrí tu programa de mail con el mensaje ya escrito; si no se abrió, {tocá acá} o escribime a {correo}.": "The sending service is not responding right now. I opened your email program with the message already written; if it didn't open, {click here} or write to me at {correo}.",
@@ -24,6 +28,10 @@
       "Dejar una sugerencia": "Leave a suggestion"
     },
     "de": {
+      "Tenés la última versión de Ozone PDF ({v}).": "Sie haben die neueste Version von Ozone PDF ({v}).",
+      "Hay una versión nueva: {n}. Vos tenés la {v}.": "Es gibt eine neue Version: {n}. Sie haben {v}.",
+      "Bajala acá abajo: se instala encima de la que tenés y mantiene tu configuración.": "Laden Sie sie unten herunter: Sie wird über die vorhandene installiert und behält Ihre Einstellungen.",
+      "Si lo instalaste desde Microsoft Store, se actualiza solo.": "Wenn Sie es aus dem Microsoft Store installiert haben, aktualisiert es sich selbst.",
       "¡Gracias por la sugerencia!": "Danke für den Vorschlag!",
       "Ya me llegó y la voy a leer. Si dejaste tu email, te respondo.": "Er ist angekommen und ich lese ihn. Wenn Sie Ihre E-Mail angegeben haben, antworte ich Ihnen.",
       "El servicio de envío no responde en este momento. Te abrí tu programa de mail con el mensaje ya escrito; si no se abrió, {tocá acá} o escribime a {correo}.": "Der Versanddienst antwortet gerade nicht. Ich habe Ihr E-Mail-Programm mit der fertigen Nachricht geöffnet; falls es sich nicht geöffnet hat, {klicken Sie hier} oder schreiben Sie mir an {correo}.",
@@ -39,6 +47,10 @@
       "Dejar una sugerencia": "Vorschlag hinterlassen"
     },
     "zh": {
+      "Tenés la última versión de Ozone PDF ({v}).": "你使用的是最新版 Ozone PDF（{v}）。",
+      "Hay una versión nueva: {n}. Vos tenés la {v}.": "有新版本：{n}。你目前是 {v}。",
+      "Bajala acá abajo: se instala encima de la que tenés y mantiene tu configuración.": "在下方下载：会直接覆盖安装，并保留你的设置。",
+      "Si lo instalaste desde Microsoft Store, se actualiza solo.": "如果是从 Microsoft Store 安装的，会自动更新。",
       "¡Gracias por la sugerencia!": "感谢您的建议！",
       "Ya me llegó y la voy a leer. Si dejaste tu email, te respondo.": "我已经收到，会认真阅读。如果您留了邮箱，我会回复您。",
       "El servicio de envío no responde en este momento. Te abrí tu programa de mail con el mensaje ya escrito; si no se abrió, {tocá acá} o escribime a {correo}.": "发送服务暂时没有响应。已为您打开邮件程序并写好了消息；如果没有打开，请{点击这里}，或写信到 {correo}。",
@@ -54,6 +66,10 @@
       "Dejar una sugerencia": "留下建议"
     },
     "ja": {
+      "Tenés la última versión de Ozone PDF ({v}).": "Ozone PDF は最新版です（{v}）。",
+      "Hay una versión nueva: {n}. Vos tenés la {v}.": "新しいバージョンがあります：{n}。今は {v} です。",
+      "Bajala acá abajo: se instala encima de la que tenés y mantiene tu configuración.": "下からダウンロードしてください。今のものに上書きでき、設定もそのままです。",
+      "Si lo instalaste desde Microsoft Store, se actualiza solo.": "Microsoft Store から入れた場合は自動で更新されます。",
       "¡Gracias por la sugerencia!": "ご意見ありがとうございます！",
       "Ya me llegó y la voy a leer. Si dejaste tu email, te respondo.": "無事に届きました。必ず読みます。メールアドレスを書いてくださった方には返信します。",
       "El servicio de envío no responde en este momento. Te abrí tu programa de mail con el mensaje ya escrito; si no se abrió, {tocá acá} o escribime a {correo}.": "送信サービスが現在応答していません。メッセージを入力した状態でメールソフトを開きました。開かない場合は{こちらをクリック}するか、{correo} までご連絡ください。",
@@ -69,6 +85,10 @@
       "Dejar una sugerencia": "ご意見を送る"
     },
     "ru": {
+      "Tenés la última versión de Ozone PDF ({v}).": "У вас последняя версия Ozone PDF ({v}).",
+      "Hay una versión nueva: {n}. Vos tenés la {v}.": "Вышла новая версия: {n}. У вас {v}.",
+      "Bajala acá abajo: se instala encima de la que tenés y mantiene tu configuración.": "Скачайте её ниже: она установится поверх текущей и сохранит настройки.",
+      "Si lo instalaste desde Microsoft Store, se actualiza solo.": "Если вы установили из Microsoft Store, обновление придёт само.",
       "¡Gracias por la sugerencia!": "Спасибо за предложение!",
       "Ya me llegó y la voy a leer. Si dejaste tu email, te respondo.": "Оно дошло, я его прочитаю. Если вы оставили email, я отвечу.",
       "El servicio de envío no responde en este momento. Te abrí tu programa de mail con el mensaje ya escrito; si no se abrió, {tocá acá} o escribime a {correo}.": "Сервис отправки сейчас не отвечает. Я открыл вашу почтовую программу с уже написанным сообщением; если она не открылась, {нажмите здесь} или напишите мне на {correo}.",
@@ -85,6 +105,26 @@
     }
   };
   function tx(s) { return (TEXTOS[IDIOMA] && TEXTOS[IDIOMA][s]) || s; }
+
+  // ---------- "Buscar actualizaciones" desde Ozone PDF ----------
+  // La app no se conecta a internet: el botón abre esta página con ?version=X en el navegador,
+  // y acá se compara con la última publicada (data-ultima en #actualizar).
+  (function () {
+    var caja = document.getElementById("actualizar");
+    var m = location.search.match(/[?&]version=([0-9]+(?:\.[0-9]+){0,3})/);
+    if (!caja || !m) return;
+    var tiene = m[1], ultima = caja.getAttribute("data-ultima") || "0";
+    function partes(v) { return v.split(".").map(Number).concat([0, 0, 0, 0]).slice(0, 4); }
+    function comparar(a, b) { var x = partes(a), y = partes(b); for (var i = 0; i < 4; i++) { if (x[i] !== y[i]) return x[i] - y[i]; } return 0; }
+    function f(s, o) { return s.replace(/\{(\w)\}/g, function (_, k) { return o[k]; }); }
+    var nueva = comparar(ultima, tiene) > 0;
+    caja.className = "actualizar " + (nueva ? "actualizar--nueva" : "actualizar--ok");
+    caja.innerHTML = nueva
+      ? "<strong>" + f(tx("Hay una versión nueva: {n}. Vos tenés la {v}."), { n: ultima, v: tiene }) + "</strong><span>" + tx("Bajala acá abajo: se instala encima de la que tenés y mantiene tu configuración.") + "</span>"
+      : "<strong>" + f(tx("Tenés la última versión de Ozone PDF ({v})."), { v: tiene }) + "</strong><span>" + tx("Si lo instalaste desde Microsoft Store, se actualiza solo.") + "</span>";
+    caja.hidden = false;
+    setTimeout(function () { var d = document.getElementById("descargar"); if (d) d.scrollIntoView({ block: "start" }); }, 150);
+  })();
   // 0) Formulario de sugerencias: se envía sin salir de la página con Web3Forms.
   //    Si el servicio no responde, se abre el programa de mail del usuario con el mensaje
   //    ya escrito, así la sugerencia nunca se pierde.

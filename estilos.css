@@ -667,3 +667,10 @@ a.ficha:hover { border-color: var(--rojo); color: var(--tinta); transform: trans
 }
 @media (prefers-reduced-motion: reduce) { .juego-tarjeta, .juego__tip--ver { transition: none; animation: none; } }
 .juego [data-compartir][hidden] { display: none; }
+
+/* aviso de "Buscar actualizaciones" (cuando se llega desde la app) */
+.actualizar { margin-top: 22px; padding: 14px 20px; border-radius: 16px; background: #fff; color: var(--tinta); display: grid; gap: 4px; max-width: 560px; text-align: center; box-shadow: 0 14px 30px -18px rgba(0,0,0,.45); }
+.actualizar strong { font-size: 1.1rem; }
+.actualizar span { color: var(--tinta-suave); }
+.actualizar--nueva { outline: 3px solid #FFD54A; }
+.actualizar[hidden] { display: none; }
