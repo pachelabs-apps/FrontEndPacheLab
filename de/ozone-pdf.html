@@ -12,7 +12,7 @@
 <meta content="https://pachelabs.net/de/ozone-pdf.html" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <link href="https://pachelabs.net/de/ozone-pdf.html" rel="canonical"/>
-<link href="../estilos.css?v=15" rel="stylesheet"/>
+<link href="../estilos.css?v=16" rel="stylesheet"/>
 <!--
   LINKS (buscá "COMPLETAR" para lo que falta):
   - Descargas: apuntan al último Release del repo, con nombres de archivo fijos:
@@ -57,7 +57,7 @@
 <span class="producto__nombre">Ozone PDF</span>
 </div>
 <h1>Ihre PDFs, ohne sie ins Internet hochzuladen.</h1>
-<p class="portada__bajada">Dokumente kostenlos zusammenführen, teilen, komprimieren, schützen und scannen. Alles passiert auf Ihrem Computer.</p>
+<p class="portada__bajada">Dokumente kostenlos unterschreiben, bearbeiten, schwärzen, zusammenführen, teilen, komprimieren und scannen. Alles passiert auf Ihrem Computer.</p>
 <div class="acciones"><a class="boton boton--rojo" href="#descargar">Kostenlos herunterladen</a> <a class="boton boton--linea" href="#como-funciona">So funktioniert es</a></div>
 <p class="portada__nota">Für Windows 10 und 11. Kostenlos und quelloffen.</p>
 </div>
@@ -80,6 +80,16 @@
 </div>
 <div class="recorrido">
 <div class="recorrido__pasos">
+<article class="paso aparecer" data-imagen="firmar">
+<h3>Unterschreiben und kommentieren ohne Drucken</h3>
+<p>Zeichnen Sie Ihre Unterschrift einmal und setzen Sie sie, wo sie gebraucht wird. Markieren, unterstreichen, schreiben und mit Rahmen oder freihand zeichnen. Bei einem Fehler macht Strg+Z es rückgängig.</p>
+<figure class="paso__imagen"><div class="ventana"><img alt="Vertrag in Ozone PDF mit markiertem Absatz und der Unterschrift unten." height="700" loading="lazy" src="../img/firmar.webp" width="1060"/></div></figure>
+</article>
+<article class="paso aparecer" data-imagen="censurar">
+<h3>Daten wirklich schwärzen</h3>
+<p>Markieren Sie Ausweisnummer, Kontonummer oder alles, was niemand sehen soll: Beim Speichern wird das Darunterliegende aus der Datei gelöscht, nicht nur mit einem schwarzen Kasten verdeckt.</p>
+<figure class="paso__imagen"><div class="ventana"><img alt="Bescheinigung mit Ausweis- und Kontonummer zum Schwärzen markiert." height="700" loading="lazy" src="../img/censurar.webp" width="1060"/></div></figure>
+</article>
 <article class="paso aparecer" data-imagen="unir">
 <h3>Mehrere PDFs zu einer zusammenfügen</h3>
 <p>Ziehen Sie die Dateien ins Fenster, ordnen Sie sie beliebig an – fertig: Es entsteht eine einzige PDF. Ihr Original bleibt unverändert, es wird immer eine neue Kopie gespeichert.</p>
@@ -110,7 +120,9 @@
 <div class="ventana">
 <div class="ventana__barra"><img alt="" height="16" src="../img/favicon.png" width="16"/><span>Ozone PDF</span><i></i><i></i><i></i></div>
 <div class="escenario__cuadros">
-<img alt="" class="activo" data-imagen="unir" height="700" src="../img/unir.webp?v=2" width="1060"/>
+<img alt="" class="activo" data-imagen="firmar" height="700" src="../img/firmar.webp" width="1060"/>
+<img alt="" data-imagen="censurar" height="700" loading="lazy" src="../img/censurar.webp" width="1060"/>
+<img alt="" data-imagen="unir" height="700" loading="lazy" src="../img/unir.webp?v=2" width="1060"/>
 <img alt="" data-imagen="dividir" height="700" loading="lazy" src="../img/dividir.webp?v=2" width="1060"/>
 <img alt="" data-imagen="escanear" height="700" loading="lazy" src="../img/escanear.webp?v=2" width="1060"/>
 <img alt="" data-imagen="proteger" height="700" loading="lazy" src="../img/proteger.webp?v=2" width="1060"/>
@@ -145,10 +157,11 @@
 <div class="sinred__texto">
 <h2 class="aparecer">Wirklich offline</h2>
 <ul class="hechos">
-<li class="aparecer"><strong>Es hat nichts, womit es sich verbinden könnte.</strong> Das Programm wird ohne die Teile von Python gebaut, die das Netzwerk nutzen, und jede Version wird darauf geprüft.</li>
+<li class="aparecer"><strong>Es kann sich nirgends verbinden.</strong> Eine Sicherheitsregel im Programm verhindert jede Verbindung zu einem Server, und jede Version wird darauf geprüft.</li>
 <li class="aparecer"><strong>Und sicherheitshalber die Firewall.</strong> Das Installationsprogramm fügt eine Regel in der Windows-Firewall hinzu, die jede Verbindung blockiert.</li>
 <li class="aparecer"><strong>Sie können es überprüfen.</strong> Der Code ist offen: Jeder kann sehen, was jeder Teil macht.</li>
-<li class="aparecer"><strong>Es entfernt, was man nicht sieht.</strong> Die erstellten PDFs enthalten weder Autor noch Anhänge oder versteckte Daten des Originals.</li>
+<li class="aparecer"><strong>Es warnt Sie vorher.</strong> Wenn Sie in einem Cloud-Ordner speichern (OneDrive, Google Drive, Dropbox) oder das PDF eine digitale Signatur hat, sagt es Ihnen Bescheid.</li>
+<li class="aparecer"><strong>Es entfernt Unsichtbares.</strong> Mit einem Klick löscht es Autor, Anhänge und versteckte Daten eines PDFs, bevor Sie es teilen.</li>
 </ul>
 <div class="compromiso">
 <h3>Unser Versprechen</h3>
@@ -158,19 +171,23 @@
 </section>
 <!-- ============ TODAS LAS HERRAMIENTAS ============ -->
 <section aria-labelledby="titulo-herr" class="herramientas">
-<h2 class="aparecer" id="titulo-herr">Die 15 Werkzeuge</h2>
+<h2 class="aparecer" id="titulo-herr">Mehr als 20 Werkzeuge in einer App</h2>
 <div class="herramientas__grupos">
 <div class="grupo aparecer">
+<h3>Bearbeiten</h3>
+<ul><li>Unterschreiben</li><li>Markieren, unterstreichen und durchstreichen</li><li>Text, Rahmen und Freihandzeichnen</li><li>Schwärzen (löscht wirklich)</li></ul>
+</div>
+<div class="grupo aparecer">
 <h3>Organisieren</h3>
-<ul><li>PDF zusammenführen</li><li>PDF teilen</li><li>Seiten extrahieren</li><li>Seiten löschen</li><li>Seiten sortieren</li><li>PDF drehen</li></ul>
+<ul><li>PDF zusammenführen</li><li>PDF teilen</li><li>Seiten extrahieren</li><li>Seiten löschen</li><li>Seiten sortieren</li><li>Seiten drehen</li><li>Alles auf A4 oder Letter bringen</li></ul>
 </div>
 <div class="grupo aparecer">
 <h3>Verbessern</h3>
-<ul><li>PDF komprimieren</li><li>Seiten nummerieren</li><li>Wasserzeichen</li></ul>
+<ul><li>PDF komprimieren</li><li>Seiten nummerieren</li><li>Wasserzeichen</li><li>Versteckte Daten entfernen</li></ul>
 </div>
 <div class="grupo aparecer">
 <h3>Umwandeln</h3>
-<ul><li>PDF in Bild (JPG oder PNG)</li><li>Bild in PDF</li><li>Fotos in PDF mit der Kamera</li><li>PDF in Text</li></ul>
+<ul><li>PDF in Bild (JPG oder PNG)</li><li>Bild in PDF</li><li>Mit der Kamera scannen</li><li>PDF in Text</li></ul>
 </div>
 <div class="grupo aparecer">
 <h3>Schützen</h3>
@@ -185,7 +202,7 @@
 <h2 class="aparecer">Ozone PDF herunterladen</h2>
 <p class="aparecer">Kostenlos, für Windows 10 und 11 (64 Bit).</p>
 <div class="acciones acciones--centro aparecer">
-<a class="boton boton--blanco boton--store" href="https://apps.microsoft.com/detail/9NMBRDNCZ9P8" rel="noopener"><svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22"><path d="M2 2h9.5v9.5H2z" fill="#F25022"></path><path d="M12.5 2H22v9.5h-9.5z" fill="#7FBA00"></path><path d="M2 12.5h9.5V22H2z" fill="#00A4EF"></path><path d="M12.5 12.5H22V22h-9.5z" fill="#FFB900"></path></svg>Conseguilo en Microsoft Store</a>
+<a class="boton boton--blanco boton--store" href="https://apps.microsoft.com/detail/9NMBRDNCZ9P8" rel="noopener" target="_blank"><svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22"><path d="M2 2h9.5v9.5H2z" fill="#F25022"></path><path d="M12.5 2H22v9.5h-9.5z" fill="#7FBA00"></path><path d="M2 12.5h9.5V22H2z" fill="#00A4EF"></path><path d="M12.5 12.5H22V22h-9.5z" fill="#FFB900"></path></svg>Conseguilo en Microsoft Store</a>
 <a class="boton boton--linea-blanca" href="https://github.com/pachelabs-apps/Pache_PDF/releases/latest/download/Instalar_Ozone_PDF.exe">Installationsprogramm herunterladen (.exe)</a>
 </div>
 <!-- Lo completa sitio.js cuando se llega desde el botón "Buscar actualizaciones" de la app
@@ -273,6 +290,6 @@
 <p class="pie__chico">Diese Website verwendet keine Cookies und keine Tracking-Tools.</p>
 </div>
 </footer>
-<script src="../sitio.js?v=12"></script>
+<script src="../sitio.js?v=13"></script>
 </body>
 </html>

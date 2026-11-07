@@ -9,6 +9,8 @@
   var BASE = hoja && hoja.getAttribute("href").indexOf("../") === 0 ? "../" : "";
   var TEXTOS = {
     "en": {
+      "Te abrí Microsoft Store en otra pestaña: tocá {obtener} para instalarlo. Desde la Store se actualiza solo.": "I opened Microsoft Store in another tab: tap {obtener} to install it. From the Store it updates by itself.",
+      "Obtener": "Get",
       "Tenés la última versión de Ozone PDF ({v}).": "You have the latest version of Ozone PDF ({v}).",
       "Hay una versión nueva: {n}. Vos tenés la {v}.": "There's a new version: {n}. You have {v}.",
       "Bajala acá abajo: se instala encima de la que tenés y mantiene tu configuración.": "Download it below: it installs over the one you have and keeps your settings.",
@@ -28,6 +30,8 @@
       "Dejar una sugerencia": "Leave a suggestion"
     },
     "de": {
+      "Te abrí Microsoft Store en otra pestaña: tocá {obtener} para instalarlo. Desde la Store se actualiza solo.": "Ich habe den Microsoft Store in einem neuen Tab geöffnet: Tippen Sie auf {obtener}, um es zu installieren. Aus dem Store aktualisiert es sich selbst.",
+      "Obtener": "Abrufen",
       "Tenés la última versión de Ozone PDF ({v}).": "Sie haben die neueste Version von Ozone PDF ({v}).",
       "Hay una versión nueva: {n}. Vos tenés la {v}.": "Es gibt eine neue Version: {n}. Sie haben {v}.",
       "Bajala acá abajo: se instala encima de la que tenés y mantiene tu configuración.": "Laden Sie sie unten herunter: Sie wird über die vorhandene installiert und behält Ihre Einstellungen.",
@@ -47,6 +51,8 @@
       "Dejar una sugerencia": "Vorschlag hinterlassen"
     },
     "zh": {
+      "Te abrí Microsoft Store en otra pestaña: tocá {obtener} para instalarlo. Desde la Store se actualiza solo.": "已在新标签页打开 Microsoft Store：点击 {obtener} 即可安装。从 Store 安装会自动更新。",
+      "Obtener": "获取",
       "Tenés la última versión de Ozone PDF ({v}).": "你使用的是最新版 Ozone PDF（{v}）。",
       "Hay una versión nueva: {n}. Vos tenés la {v}.": "有新版本：{n}。你目前是 {v}。",
       "Bajala acá abajo: se instala encima de la que tenés y mantiene tu configuración.": "在下方下载：会直接覆盖安装，并保留你的设置。",
@@ -66,6 +72,8 @@
       "Dejar una sugerencia": "留下建议"
     },
     "ja": {
+      "Te abrí Microsoft Store en otra pestaña: tocá {obtener} para instalarlo. Desde la Store se actualiza solo.": "Microsoft Store を別のタブで開きました。{obtener} を押すとインストールできます。Store 版は自動で更新されます。",
+      "Obtener": "入手",
       "Tenés la última versión de Ozone PDF ({v}).": "Ozone PDF は最新版です（{v}）。",
       "Hay una versión nueva: {n}. Vos tenés la {v}.": "新しいバージョンがあります：{n}。今は {v} です。",
       "Bajala acá abajo: se instala encima de la que tenés y mantiene tu configuración.": "下からダウンロードしてください。今のものに上書きでき、設定もそのままです。",
@@ -85,6 +93,8 @@
       "Dejar una sugerencia": "ご意見を送る"
     },
     "ru": {
+      "Te abrí Microsoft Store en otra pestaña: tocá {obtener} para instalarlo. Desde la Store se actualiza solo.": "Я открыл Microsoft Store в новой вкладке: нажмите {obtener}, чтобы установить. Из Store программа обновляется сама.",
+      "Obtener": "Получить",
       "Tenés la última versión de Ozone PDF ({v}).": "У вас последняя версия Ozone PDF ({v}).",
       "Hay una versión nueva: {n}. Vos tenés la {v}.": "Вышла новая версия: {n}. У вас {v}.",
       "Bajala acá abajo: se instala encima de la que tenés y mantiene tu configuración.": "Скачайте её ниже: она установится поверх текущей и сохранит настройки.",
@@ -225,10 +235,11 @@
     setTimeout(function () { t.remove(); }, 350);
   }
   document.addEventListener("click", function (e) {
-    var a = e.target.closest && e.target.closest('a[href*="/releases/"][href*="/download/"]');
+    var a = e.target.closest && e.target.closest('a[href*="/releases/"][href*="/download/"], a[href*="apps.microsoft.com"]');
     if (!a) return;
     cerrarDescarga();
     var esMsi = /\.msi(\?|$)/i.test(a.href);
+    var esTienda = a.href.indexOf("apps.microsoft.com") !== -1; // se abre en otra pestaña, así este gracias se ve
     var t = document.createElement("aside");
     t.className = "descarga-ok";
     t.setAttribute("role", "status");
@@ -238,8 +249,9 @@
       '<img class="descarga-ok__avatar" src="' + BASE + 'img/avatar.webp" alt="" width="64" height="64">' +
       '<div class="descarga-ok__texto">' +
         '<strong>' + tx("¡Gracias por descargar Ozone PDF!") + '</strong>' +
-        '<p>' + tx("La descarga ya empezó. Cuando termine, abrí {archivo} para instalarlo.")
-          .replace("{archivo}", "<b>" + (esMsi ? "Ozone_PDF.msi" : "Instalar_Ozone_PDF.exe") + "</b>") + '</p>' +
+        '<p>' + (esTienda ? tx("Te abrí Microsoft Store en otra pestaña: tocá {obtener} para instalarlo. Desde la Store se actualiza solo.").replace("{obtener}", "<b>" + tx("Obtener") + "</b>")
+          : tx("La descarga ya empezó. Cuando termine, abrí {archivo} para instalarlo.")
+          .replace("{archivo}", "<b>" + (esMsi ? "Ozone_PDF.msi" : "Instalar_Ozone_PDF.exe") + "</b>")) + '</p>' +
         '<p class="descarga-ok__suave">' + tx("Es y va a seguir siendo gratis. Si te sirve y tenés ganas, podés invitarme un cafecito o contarme qué mejorarías. Totalmente opcional.") + '</p>' +
         '<div class="descarga-ok__acciones">' +
           '<a class="boton boton--rojo" href="https://cafecito.app/pachelabs" rel="noopener" target="_blank">☕ ' + tx("Invitame un cafecito") + '</a>' +

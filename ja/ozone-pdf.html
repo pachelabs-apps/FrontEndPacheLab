@@ -12,7 +12,7 @@
 <meta content="https://pachelabs.net/ja/ozone-pdf.html" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <link href="https://pachelabs.net/ja/ozone-pdf.html" rel="canonical"/>
-<link href="../estilos.css?v=15" rel="stylesheet"/>
+<link href="../estilos.css?v=16" rel="stylesheet"/>
 <!--
   LINKS (buscá "COMPLETAR" para lo que falta):
   - Descargas: apuntan al último Release del repo, con nombres de archivo fijos:
@@ -57,7 +57,7 @@
 <span class="producto__nombre">Ozone PDF</span>
 </div>
 <h1>PDF を、インターネットにアップロードせずに。</h1>
-<p class="portada__bajada">書類の結合、分割、圧縮、保護、スキャンが無料でできます。すべてあなたのパソコンの中で行われます。</p>
+<p class="portada__bajada">文書の署名、編集、墨消し、結合、分割、圧縮、スキャンが無料。すべてあなたのパソコンの中で完結します。</p>
 <div class="acciones"><a class="boton boton--rojo" href="#descargar">無料でダウンロード</a> <a class="boton boton--linea" href="#como-funciona">使い方を見る</a></div>
 <p class="portada__nota">Windows 10・11 用。無料のオープンソース。</p>
 </div>
@@ -80,6 +80,16 @@
 </div>
 <div class="recorrido">
 <div class="recorrido__pasos">
+<article class="paso aparecer" data-imagen="firmar">
+<h3>印刷せずに署名・書き込み</h3>
+<p>署名は一度描けば、必要な場所に置けます。ハイライト、下線、文字入れ、枠や手書きでのマークも。間違えても Ctrl+Z で元に戻せます。</p>
+<figure class="paso__imagen"><div class="ventana"><img alt="Ozone PDF で開いた契約書。段落がハイライトされ、下に署名があります。" height="700" loading="lazy" src="../img/firmar.webp" width="1060"/></div></figure>
+</article>
+<article class="paso aparecer" data-imagen="censurar">
+<h3>データを本当に隠す</h3>
+<p>身分証番号や口座番号など見せたくない部分を指定すると、保存時にその下の内容がファイルから消されます。黒い四角で隠すだけではありません。</p>
+<figure class="paso__imagen"><div class="ventana"><img alt="身分証番号と口座番号が墨消し対象として指定された証明書。" height="700" loading="lazy" src="../img/censurar.webp" width="1060"/></div></figure>
+</article>
 <article class="paso aparecer" data-imagen="unir">
 <h3>複数の PDF を 1 つに</h3>
 <p>ファイルをウィンドウにドラッグし、好きな順に並べれば完了。1 つの PDF ができあがります。元のファイルはそのままで、常に新しいコピーとして保存されます。</p>
@@ -110,7 +120,9 @@
 <div class="ventana">
 <div class="ventana__barra"><img alt="" height="16" src="../img/favicon.png" width="16"/><span>Ozone PDF</span><i></i><i></i><i></i></div>
 <div class="escenario__cuadros">
-<img alt="" class="activo" data-imagen="unir" height="700" src="../img/unir.webp?v=2" width="1060"/>
+<img alt="" class="activo" data-imagen="firmar" height="700" src="../img/firmar.webp" width="1060"/>
+<img alt="" data-imagen="censurar" height="700" loading="lazy" src="../img/censurar.webp" width="1060"/>
+<img alt="" data-imagen="unir" height="700" loading="lazy" src="../img/unir.webp?v=2" width="1060"/>
 <img alt="" data-imagen="dividir" height="700" loading="lazy" src="../img/dividir.webp?v=2" width="1060"/>
 <img alt="" data-imagen="escanear" height="700" loading="lazy" src="../img/escanear.webp?v=2" width="1060"/>
 <img alt="" data-imagen="proteger" height="700" loading="lazy" src="../img/proteger.webp?v=2" width="1060"/>
@@ -145,10 +157,11 @@
 <div class="sinred__texto">
 <h2 class="aparecer">本当にオフライン</h2>
 <ul class="hechos">
-<li class="aparecer"><strong>接続する手段を持っていません。</strong>プログラムは Python のネットワーク関連部分を除いて作られており、各バージョンでそれを確認するテストを行っています。</li>
+<li class="aparecer"><strong>つながる手段がありません。</strong> プログラム内のセキュリティルールでどのサーバーとも通信できず、バージョンごとにテストしています。</li>
 <li class="aparecer"><strong>念のため、ファイアウォールも。</strong>インストーラーが Windows ファイアウォールに、あらゆる接続をブロックするルールを追加します。</li>
 <li class="aparecer"><strong>自分で確かめられます。</strong>コードは公開されています。各部分が何をしているか、誰でも確認できます。</li>
-<li class="aparecer"><strong>見えない情報も消します。</strong>作成される PDF には、元のファイルの作成者、添付ファイル、隠れたデータが含まれません。</li>
+<li class="aparecer"><strong>先に知らせます。</strong> クラウドと同期するフォルダー（OneDrive、Google Drive、Dropbox）に保存しようとしたときや、PDF にデジタル署名があるときに教えてくれます。</li>
+<li class="aparecer"><strong>見えない情報を消します。</strong> 共有する前に、PDF の作成者・添付ファイル・隠しデータをワンタッチで削除します。</li>
 </ul>
 <div class="compromiso">
 <h3>私たちの約束</h3>
@@ -158,19 +171,23 @@
 </section>
 <!-- ============ TODAS LAS HERRAMIENTAS ============ -->
 <section aria-labelledby="titulo-herr" class="herramientas">
-<h2 class="aparecer" id="titulo-herr">15 のツール</h2>
+<h2 class="aparecer" id="titulo-herr">20 以上のツールをひとつのアプリに</h2>
 <div class="herramientas__grupos">
 <div class="grupo aparecer">
+<h3>編集</h3>
+<ul><li>署名</li><li>ハイライト・下線・取り消し線</li><li>テキスト・枠・手書き</li><li>墨消し（本当に消去）</li></ul>
+</div>
+<div class="grupo aparecer">
 <h3>整理</h3>
-<ul><li>PDF を結合</li><li>PDF を分割</li><li>ページを抽出</li><li>ページを削除</li><li>ページを並べ替え</li><li>PDF を回転</li></ul>
+<ul><li>PDF を結合</li><li>PDF を分割</li><li>ページを抽出</li><li>ページを削除</li><li>ページを並べ替え</li><li>ページを回転</li><li>すべて A4 またはレターに</li></ul>
 </div>
 <div class="grupo aparecer">
 <h3>仕上げ</h3>
-<ul><li>PDF を圧縮</li><li>ページ番号を付ける</li><li>透かし</li></ul>
+<ul><li>PDF を圧縮</li><li>ページ番号を付ける</li><li>透かし</li><li>隠しデータを消去</li></ul>
 </div>
 <div class="grupo aparecer">
 <h3>変換</h3>
-<ul><li>PDF を画像に（JPG・PNG）</li><li>画像を PDF に</li><li>カメラで写真を PDF に</li><li>PDF をテキストに</li></ul>
+<ul><li>PDF を画像に（JPG・PNG）</li><li>画像を PDF に</li><li>カメラでスキャン</li><li>PDF をテキストに</li></ul>
 </div>
 <div class="grupo aparecer">
 <h3>保護</h3>
@@ -185,7 +202,7 @@
 <h2 class="aparecer">Ozone PDF をダウンロード</h2>
 <p class="aparecer">無料、64 ビット版 Windows 10・11 用。</p>
 <div class="acciones acciones--centro aparecer">
-<a class="boton boton--blanco boton--store" href="https://apps.microsoft.com/detail/9NMBRDNCZ9P8" rel="noopener"><svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22"><path d="M2 2h9.5v9.5H2z" fill="#F25022"></path><path d="M12.5 2H22v9.5h-9.5z" fill="#7FBA00"></path><path d="M2 12.5h9.5V22H2z" fill="#00A4EF"></path><path d="M12.5 12.5H22V22h-9.5z" fill="#FFB900"></path></svg>Conseguilo en Microsoft Store</a>
+<a class="boton boton--blanco boton--store" href="https://apps.microsoft.com/detail/9NMBRDNCZ9P8" rel="noopener" target="_blank"><svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22"><path d="M2 2h9.5v9.5H2z" fill="#F25022"></path><path d="M12.5 2H22v9.5h-9.5z" fill="#7FBA00"></path><path d="M2 12.5h9.5V22H2z" fill="#00A4EF"></path><path d="M12.5 12.5H22V22h-9.5z" fill="#FFB900"></path></svg>Conseguilo en Microsoft Store</a>
 <a class="boton boton--linea-blanca" href="https://github.com/pachelabs-apps/Pache_PDF/releases/latest/download/Instalar_Ozone_PDF.exe">インストーラーをダウンロード（.exe）</a>
 </div>
 <!-- Lo completa sitio.js cuando se llega desde el botón "Buscar actualizaciones" de la app
@@ -273,6 +290,6 @@
 <p class="pie__chico">このサイトは Cookie やトラッキングツールを使用していません。</p>
 </div>
 </footer>
-<script src="../sitio.js?v=12"></script>
+<script src="../sitio.js?v=13"></script>
 </body>
 </html>

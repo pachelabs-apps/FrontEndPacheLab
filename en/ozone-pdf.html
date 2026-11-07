@@ -12,7 +12,7 @@
 <meta content="https://pachelabs.net/en/ozone-pdf.html" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <link href="https://pachelabs.net/en/ozone-pdf.html" rel="canonical"/>
-<link href="../estilos.css?v=15" rel="stylesheet"/>
+<link href="../estilos.css?v=16" rel="stylesheet"/>
 <!--
   LINKS (buscá "COMPLETAR" para lo que falta):
   - Descargas: apuntan al último Release del repo, con nombres de archivo fijos:
@@ -57,7 +57,7 @@
 <span class="producto__nombre">Ozone PDF</span>
 </div>
 <h1>Your PDFs, without uploading them to the internet.</h1>
-<p class="portada__bajada">Merge, split, compress, protect and scan documents for free. Everything happens on your computer.</p>
+<p class="portada__bajada">Sign, edit, cover data, merge, split, compress and scan documents for free. Everything happens on your computer.</p>
 <div class="acciones"><a class="boton boton--rojo" href="#descargar">Download for free</a> <a class="boton boton--linea" href="#como-funciona">See how it works</a></div>
 <p class="portada__nota">For Windows 10 and 11. Free and open source.</p>
 </div>
@@ -80,6 +80,16 @@
 </div>
 <div class="recorrido">
 <div class="recorrido__pasos">
+<article class="paso aparecer" data-imagen="firmar">
+<h3>Sign and annotate without printing</h3>
+<p>Draw your signature once and place it wherever it's needed. Highlight, underline, write and mark with boxes or freehand. If you make a mistake, Ctrl+Z undoes it.</p>
+<figure class="paso__imagen"><div class="ventana"><img alt="Contract open in Ozone PDF with a highlighted paragraph and the signature at the bottom." height="700" loading="lazy" src="../img/firmar.webp" width="1060"/></div></figure>
+</article>
+<article class="paso aparecer" data-imagen="censurar">
+<h3>Cover your data for real</h3>
+<p>Mark your ID number, bank account or anything you don't want to show: when you save, what's underneath is erased from the file, not just covered with a black box.</p>
+<figure class="paso__imagen"><div class="ventana"><img alt="Certificate with the ID number and bank account marked for redaction." height="700" loading="lazy" src="../img/censurar.webp" width="1060"/></div></figure>
+</article>
 <article class="paso aparecer" data-imagen="unir">
 <h3>Combine several PDFs into one</h3>
 <p>Drag the files into the window, put them in any order and you're done: you get a single PDF. Your original stays the same; a new copy is always saved.</p>
@@ -110,7 +120,9 @@
 <div class="ventana">
 <div class="ventana__barra"><img alt="" height="16" src="../img/favicon.png" width="16"/><span>Ozone PDF</span><i></i><i></i><i></i></div>
 <div class="escenario__cuadros">
-<img alt="" class="activo" data-imagen="unir" height="700" src="../img/unir.webp?v=2" width="1060"/>
+<img alt="" class="activo" data-imagen="firmar" height="700" src="../img/firmar.webp" width="1060"/>
+<img alt="" data-imagen="censurar" height="700" loading="lazy" src="../img/censurar.webp" width="1060"/>
+<img alt="" data-imagen="unir" height="700" loading="lazy" src="../img/unir.webp?v=2" width="1060"/>
 <img alt="" data-imagen="dividir" height="700" loading="lazy" src="../img/dividir.webp?v=2" width="1060"/>
 <img alt="" data-imagen="escanear" height="700" loading="lazy" src="../img/escanear.webp?v=2" width="1060"/>
 <img alt="" data-imagen="proteger" height="700" loading="lazy" src="../img/proteger.webp?v=2" width="1060"/>
@@ -145,10 +157,11 @@
 <div class="sinred__texto">
 <h2 class="aparecer">Offline, for real</h2>
 <ul class="hechos">
-<li class="aparecer"><strong>It has nothing to connect with.</strong> The program is built without the parts of Python that use the network, and every version is tested to prove it.</li>
+<li class="aparecer"><strong>It has nothing to connect with.</strong> A security rule inside the program keeps it from talking to any server, and every version is tested to prove it.</li>
 <li class="aparecer"><strong>And just in case, the firewall.</strong> The installer adds a Windows Firewall rule that blocks any connection.</li>
 <li class="aparecer"><strong>You can check it.</strong> The code is open: anyone can see what each part does.</li>
-<li class="aparecer"><strong>It cleans what you can't see.</strong> The PDFs it creates come out without the author, attachments or hidden data of the original.</li>
+<li class="aparecer"><strong>It warns you first.</strong> If you're about to save to a folder that syncs to the cloud (OneDrive, Google Drive, Dropbox) or the PDF has a digital signature, it tells you.</li>
+<li class="aparecer"><strong>It cleans what you can't see.</strong> With one tap it removes the author, attachments and hidden data from a PDF before you share it.</li>
 </ul>
 <div class="compromiso">
 <h3>Our commitment</h3>
@@ -158,19 +171,23 @@
 </section>
 <!-- ============ TODAS LAS HERRAMIENTAS ============ -->
 <section aria-labelledby="titulo-herr" class="herramientas">
-<h2 class="aparecer" id="titulo-herr">The 15 tools</h2>
+<h2 class="aparecer" id="titulo-herr">More than 20 tools in one app</h2>
 <div class="herramientas__grupos">
 <div class="grupo aparecer">
+<h3>Edit</h3>
+<ul><li>Sign</li><li>Highlight, underline and strike out</li><li>Text, boxes and freehand drawing</li><li>Redact (really erases)</li></ul>
+</div>
+<div class="grupo aparecer">
 <h3>Organize</h3>
-<ul><li>Merge PDF</li><li>Split PDF</li><li>Extract pages</li><li>Delete pages</li><li>Reorder pages</li><li>Rotate PDF</li></ul>
+<ul><li>Merge PDF</li><li>Split PDF</li><li>Extract pages</li><li>Delete pages</li><li>Reorder pages</li><li>Rotate pages</li><li>Make everything A4 or Letter</li></ul>
 </div>
 <div class="grupo aparecer">
 <h3>Improve</h3>
-<ul><li>Compress PDF</li><li>Number pages</li><li>Watermark</li></ul>
+<ul><li>Compress PDF</li><li>Number pages</li><li>Watermark</li><li>Clean hidden data</li></ul>
 </div>
 <div class="grupo aparecer">
 <h3>Convert</h3>
-<ul><li>PDF to image (JPG or PNG)</li><li>Image to PDF</li><li>Photos to PDF with the camera</li><li>PDF to text</li></ul>
+<ul><li>PDF to image (JPG or PNG)</li><li>Image to PDF</li><li>Scan with the camera</li><li>PDF to text</li></ul>
 </div>
 <div class="grupo aparecer">
 <h3>Protect</h3>
@@ -185,7 +202,7 @@
 <h2 class="aparecer">Download Ozone PDF</h2>
 <p class="aparecer">Free, for 64-bit Windows 10 and 11.</p>
 <div class="acciones acciones--centro aparecer">
-<a class="boton boton--blanco boton--store" href="https://apps.microsoft.com/detail/9NMBRDNCZ9P8" rel="noopener"><svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22"><path d="M2 2h9.5v9.5H2z" fill="#F25022"></path><path d="M12.5 2H22v9.5h-9.5z" fill="#7FBA00"></path><path d="M2 12.5h9.5V22H2z" fill="#00A4EF"></path><path d="M12.5 12.5H22V22h-9.5z" fill="#FFB900"></path></svg>Conseguilo en Microsoft Store</a>
+<a class="boton boton--blanco boton--store" href="https://apps.microsoft.com/detail/9NMBRDNCZ9P8" rel="noopener" target="_blank"><svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22"><path d="M2 2h9.5v9.5H2z" fill="#F25022"></path><path d="M12.5 2H22v9.5h-9.5z" fill="#7FBA00"></path><path d="M2 12.5h9.5V22H2z" fill="#00A4EF"></path><path d="M12.5 12.5H22V22h-9.5z" fill="#FFB900"></path></svg>Conseguilo en Microsoft Store</a>
 <a class="boton boton--linea-blanca" href="https://github.com/pachelabs-apps/Pache_PDF/releases/latest/download/Instalar_Ozone_PDF.exe">Download installer (.exe)</a>
 </div>
 <!-- Lo completa sitio.js cuando se llega desde el botón "Buscar actualizaciones" de la app
@@ -273,6 +290,6 @@
 <p class="pie__chico">This site uses no cookies or tracking tools.</p>
 </div>
 </footer>
-<script src="../sitio.js?v=12"></script>
+<script src="../sitio.js?v=13"></script>
 </body>
 </html>

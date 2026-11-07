@@ -12,7 +12,7 @@
 <meta content="https://pachelabs.net/ozone-pdf.html" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <link href="https://pachelabs.net/ozone-pdf.html" rel="canonical"/>
-<link href="estilos.css?v=15" rel="stylesheet"/>
+<link href="estilos.css?v=16" rel="stylesheet"/>
 <!--
   LINKS (buscá "COMPLETAR" para lo que falta):
   - Descargas: apuntan al último Release del repo, con nombres de archivo fijos:
@@ -57,7 +57,7 @@
 <span class="producto__nombre">Ozone PDF</span>
 </div>
 <h1>Tus PDF, sin subirlos a internet.</h1>
-<p class="portada__bajada">Uní, dividí, comprimí, protegé y escaneá documentos gratis.
+<p class="portada__bajada">Firmá, editá, tapá datos, uní, dividí, comprimí y escaneá documentos gratis.
       Todo pasa en tu computadora.</p>
 <div class="acciones">
 <a class="boton boton--rojo" href="#descargar">Descargar gratis</a>
@@ -91,6 +91,18 @@
 </div>
 <div class="recorrido">
 <div class="recorrido__pasos">
+<article class="paso aparecer" data-imagen="firmar">
+<h3>Firmá y anotá sin imprimir</h3>
+<p>Dibujá tu firma una vez y ponela donde haga falta. Resaltá, subrayá, escribí y marcá
+          con recuadros o a mano alzada. Si te equivocás, Ctrl+Z lo deshace.</p>
+<figure class="paso__imagen"><div class="ventana"><img alt="Contrato abierto en Ozone PDF con un párrafo resaltado y la firma puesta al pie." height="700" loading="lazy" src="img/firmar.webp" width="1060"/></div></figure>
+</article>
+<article class="paso aparecer" data-imagen="censurar">
+<h3>Tapá tus datos de verdad</h3>
+<p>Marcá el DNI, el CBU o lo que no quieras mostrar: al guardar, lo que está debajo se
+          borra del archivo, no solo se tapa con un rectángulo negro.</p>
+<figure class="paso__imagen"><div class="ventana"><img alt="Constancia con el DNI y el CBU marcados para censurar." height="700" loading="lazy" src="img/censurar.webp" width="1060"/></div></figure>
+</article>
 <article class="paso aparecer" data-imagen="unir">
 <h3>Juntá varios PDF en uno</h3>
 <p>Arrastrá los archivos a la ventana, ordenalos como quieras y listo: sale un solo PDF.
@@ -126,7 +138,9 @@
 <div class="ventana">
 <div class="ventana__barra"><img alt="" height="16" src="img/favicon.png" width="16"/><span>Ozone PDF</span><i></i><i></i><i></i></div>
 <div class="escenario__cuadros">
-<img alt="" class="activo" data-imagen="unir" height="700" src="img/unir.webp?v=2" width="1060"/>
+<img alt="" class="activo" data-imagen="firmar" height="700" src="img/firmar.webp" width="1060"/>
+<img alt="" data-imagen="censurar" height="700" loading="lazy" src="img/censurar.webp" width="1060"/>
+<img alt="" data-imagen="unir" height="700" loading="lazy" src="img/unir.webp?v=2" width="1060"/>
 <img alt="" data-imagen="dividir" height="700" loading="lazy" src="img/dividir.webp?v=2" width="1060"/>
 <img alt="" data-imagen="escanear" height="700" loading="lazy" src="img/escanear.webp?v=2" width="1060"/>
 <img alt="" data-imagen="proteger" height="700" loading="lazy" src="img/proteger.webp?v=2" width="1060"/>
@@ -161,14 +175,16 @@
 <div class="sinred__texto">
 <h2 class="aparecer">Sin internet, de verdad</h2>
 <ul class="hechos">
-<li class="aparecer"><strong>No tiene con qué conectarse.</strong> El programa se arma sin
-        las partes de Python que usan la red, y cada versión se prueba para comprobarlo.</li>
+<li class="aparecer"><strong>No tiene con qué conectarse.</strong> Una regla de seguridad dentro
+        del programa le impide hablar con cualquier servidor, y cada versión se prueba para comprobarlo.</li>
 <li class="aparecer"><strong>Y por las dudas, el firewall.</strong> El instalador agrega una
         regla en el firewall de Windows que le bloquea cualquier conexión.</li>
 <li class="aparecer"><strong>Lo podés revisar.</strong> El código es abierto: cualquiera puede
         ver qué hace cada parte.</li>
-<li class="aparecer"><strong>Limpia lo que no se ve.</strong> Los PDF que genera salen sin
-        autor, adjuntos ni datos ocultos del original.</li>
+<li class="aparecer"><strong>Te avisa antes.</strong> Si vas a guardar en una carpeta que se sube
+        a la nube (OneDrive, Google Drive, Dropbox) o el PDF tiene firma digital, te lo dice.</li>
+<li class="aparecer"><strong>Limpia lo que no se ve.</strong> Con un toque borra el autor, los
+        adjuntos y los datos ocultos de un PDF antes de compartirlo.</li>
 </ul>
 <div class="compromiso">
 <h3>Nuestro compromiso</h3>
@@ -181,19 +197,23 @@
 </section>
 <!-- ============ TODAS LAS HERRAMIENTAS ============ -->
 <section aria-labelledby="titulo-herr" class="herramientas">
-<h2 class="aparecer" id="titulo-herr">Las 15 herramientas</h2>
+<h2 class="aparecer" id="titulo-herr">Más de 20 herramientas en una sola app</h2>
 <div class="herramientas__grupos">
 <div class="grupo aparecer">
+<h3>Editar</h3>
+<ul><li>Firmar</li><li>Resaltar, subrayar y tachar</li><li>Texto, recuadros y dibujo a mano</li><li>Censurar (borra de verdad)</li></ul>
+</div>
+<div class="grupo aparecer">
 <h3>Organizar</h3>
-<ul><li>Unir PDF</li><li>Dividir PDF</li><li>Extraer páginas</li><li>Eliminar páginas</li><li>Ordenar páginas</li><li>Rotar PDF</li></ul>
+<ul><li>Unir PDF</li><li>Dividir PDF</li><li>Extraer páginas</li><li>Eliminar páginas</li><li>Ordenar páginas</li><li>Rotar páginas</li><li>Pasar todo a A4 o Carta</li></ul>
 </div>
 <div class="grupo aparecer">
 <h3>Mejorar</h3>
-<ul><li>Comprimir PDF</li><li>Numerar páginas</li><li>Marca de agua</li></ul>
+<ul><li>Comprimir PDF</li><li>Numerar páginas</li><li>Marca de agua</li><li>Limpiar datos ocultos</li></ul>
 </div>
 <div class="grupo aparecer">
 <h3>Convertir</h3>
-<ul><li>PDF a imagen (JPG o PNG)</li><li>Imagen a PDF</li><li>Fotos a PDF con la cámara</li><li>PDF a texto</li></ul>
+<ul><li>PDF a imagen (JPG o PNG)</li><li>Imagen a PDF</li><li>Escanear con la cámara</li><li>PDF a texto</li></ul>
 </div>
 <div class="grupo aparecer">
 <h3>Proteger</h3>
@@ -208,7 +228,7 @@
 <h2 class="aparecer">Descargá Ozone PDF</h2>
 <p class="aparecer">Gratis, para Windows 10 y 11 de 64 bits.</p>
 <div class="acciones acciones--centro aparecer">
-<a class="boton boton--blanco boton--store" href="https://apps.microsoft.com/detail/9NMBRDNCZ9P8" rel="noopener"><svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22"><path d="M2 2h9.5v9.5H2z" fill="#F25022"></path><path d="M12.5 2H22v9.5h-9.5z" fill="#7FBA00"></path><path d="M2 12.5h9.5V22H2z" fill="#00A4EF"></path><path d="M12.5 12.5H22V22h-9.5z" fill="#FFB900"></path></svg>Conseguilo en Microsoft Store</a>
+<a class="boton boton--blanco boton--store" href="https://apps.microsoft.com/detail/9NMBRDNCZ9P8" rel="noopener" target="_blank"><svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22"><path d="M2 2h9.5v9.5H2z" fill="#F25022"></path><path d="M12.5 2H22v9.5h-9.5z" fill="#7FBA00"></path><path d="M2 12.5h9.5V22H2z" fill="#00A4EF"></path><path d="M12.5 12.5H22V22h-9.5z" fill="#FFB900"></path></svg>Conseguilo en Microsoft Store</a>
 <a class="boton boton--linea-blanca" href="https://github.com/pachelabs-apps/Pache_PDF/releases/latest/download/Instalar_Ozone_PDF.exe">Descargar instalador (.exe)</a>
 </div>
 <!-- Lo completa sitio.js cuando se llega desde el botón "Buscar actualizaciones" de la app
@@ -318,6 +338,6 @@
 <p class="pie__chico">Este sitio no usa cookies ni herramientas de seguimiento.</p>
 </div>
 </footer>
-<script src="sitio.js?v=12"></script>
+<script src="sitio.js?v=13"></script>
 </body>
 </html>

@@ -12,7 +12,7 @@
 <meta content="https://pachelabs.net/zh/ozone-pdf.html" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <link href="https://pachelabs.net/zh/ozone-pdf.html" rel="canonical"/>
-<link href="../estilos.css?v=15" rel="stylesheet"/>
+<link href="../estilos.css?v=16" rel="stylesheet"/>
 <!--
   LINKS (buscá "COMPLETAR" para lo que falta):
   - Descargas: apuntan al último Release del repo, con nombres de archivo fijos:
@@ -57,7 +57,7 @@
 <span class="producto__nombre">Ozone PDF</span>
 </div>
 <h1>处理 PDF，无需上传到互联网。</h1>
-<p class="portada__bajada">免费合并、拆分、压缩、保护和扫描文档。一切都在您的电脑上完成。</p>
+<p class="portada__bajada">免费签名、编辑、遮盖信息、合并、拆分、压缩和扫描文档。一切都在你的电脑上完成。</p>
 <div class="acciones"><a class="boton boton--rojo" href="#descargar">免费下载</a> <a class="boton boton--linea" href="#como-funciona">了解使用方法</a></div>
 <p class="portada__nota">适用于 Windows 10 和 11。免费开源。</p>
 </div>
@@ -80,6 +80,16 @@
 </div>
 <div class="recorrido">
 <div class="recorrido__pasos">
+<article class="paso aparecer" data-imagen="firmar">
+<h3>不用打印就能签名和批注</h3>
+<p>画一次签名，需要的地方都能放。可以高亮、下划线、写字，用方框或手绘做标记。弄错了按 Ctrl+Z 就能撤销。</p>
+<figure class="paso__imagen"><div class="ventana"><img alt="在 Ozone PDF 中打开的合同，一段已高亮，底部已签名。" height="700" loading="lazy" src="../img/firmar.webp" width="1060"/></div></figure>
+</article>
+<article class="paso aparecer" data-imagen="censurar">
+<h3>真正遮盖你的信息</h3>
+<p>标出身份证号、银行账号或任何不想公开的内容：保存时，下面的内容会从文件中删除，而不只是盖上黑框。</p>
+<figure class="paso__imagen"><div class="ventana"><img alt="证明文件中的身份证号和银行账号已标记为涂黑。" height="700" loading="lazy" src="../img/censurar.webp" width="1060"/></div></figure>
+</article>
 <article class="paso aparecer" data-imagen="unir">
 <h3>把多个 PDF 合并成一个</h3>
 <p>把文件拖进窗口，按您想要的顺序排列，就完成了：得到一个 PDF。原文件保持不变，总是另存一份新副本。</p>
@@ -110,7 +120,9 @@
 <div class="ventana">
 <div class="ventana__barra"><img alt="" height="16" src="../img/favicon.png" width="16"/><span>Ozone PDF</span><i></i><i></i><i></i></div>
 <div class="escenario__cuadros">
-<img alt="" class="activo" data-imagen="unir" height="700" src="../img/unir.webp?v=2" width="1060"/>
+<img alt="" class="activo" data-imagen="firmar" height="700" src="../img/firmar.webp" width="1060"/>
+<img alt="" data-imagen="censurar" height="700" loading="lazy" src="../img/censurar.webp" width="1060"/>
+<img alt="" data-imagen="unir" height="700" loading="lazy" src="../img/unir.webp?v=2" width="1060"/>
 <img alt="" data-imagen="dividir" height="700" loading="lazy" src="../img/dividir.webp?v=2" width="1060"/>
 <img alt="" data-imagen="escanear" height="700" loading="lazy" src="../img/escanear.webp?v=2" width="1060"/>
 <img alt="" data-imagen="proteger" height="700" loading="lazy" src="../img/proteger.webp?v=2" width="1060"/>
@@ -145,10 +157,11 @@
 <div class="sinred__texto">
 <h2 class="aparecer">真正的离线</h2>
 <ul class="hechos">
-<li class="aparecer"><strong>它根本没有联网的部件。</strong>程序在构建时去掉了 Python 中所有联网的部分，每个版本都会经过测试来验证。</li>
+<li class="aparecer"><strong>它根本无法联网。</strong> 程序内部的安全规则禁止它连接任何服务器，每个版本都会测试确认。</li>
 <li class="aparecer"><strong>以防万一，还有防火墙。</strong>安装程序会在 Windows 防火墙中添加一条规则，阻止它的任何连接。</li>
 <li class="aparecer"><strong>您可以亲自检查。</strong>代码是开源的：任何人都能看到每个部分做了什么。</li>
-<li class="aparecer"><strong>清除看不见的信息。</strong>生成的 PDF 不包含原文件的作者、附件或隐藏数据。</li>
+<li class="aparecer"><strong>它会先提醒你。</strong> 如果要保存到会同步到云端的文件夹（OneDrive、Google Drive、Dropbox），或 PDF 带有数字签名，它会告诉你。</li>
+<li class="aparecer"><strong>清除看不见的信息。</strong> 一键删除 PDF 的作者、附件和隐藏数据，再分享出去。</li>
 </ul>
 <div class="compromiso">
 <h3>我们的承诺</h3>
@@ -158,19 +171,23 @@
 </section>
 <!-- ============ TODAS LAS HERRAMIENTAS ============ -->
 <section aria-labelledby="titulo-herr" class="herramientas">
-<h2 class="aparecer" id="titulo-herr">15 个工具</h2>
+<h2 class="aparecer" id="titulo-herr">一个应用，20 多种工具</h2>
 <div class="herramientas__grupos">
 <div class="grupo aparecer">
+<h3>编辑</h3>
+<ul><li>签名</li><li>高亮、下划线和删除线</li><li>文字、方框和手绘</li><li>涂黑（真正删除）</li></ul>
+</div>
+<div class="grupo aparecer">
 <h3>整理</h3>
-<ul><li>合并 PDF</li><li>拆分 PDF</li><li>提取页面</li><li>删除页面</li><li>排序页面</li><li>旋转 PDF</li></ul>
+<ul><li>合并 PDF</li><li>拆分 PDF</li><li>提取页面</li><li>删除页面</li><li>排序页面</li><li>旋转页面</li><li>全部改成 A4 或 Letter</li></ul>
 </div>
 <div class="grupo aparecer">
 <h3>优化</h3>
-<ul><li>压缩 PDF</li><li>添加页码</li><li>水印</li></ul>
+<ul><li>压缩 PDF</li><li>添加页码</li><li>水印</li><li>清除隐藏数据</li></ul>
 </div>
 <div class="grupo aparecer">
 <h3>转换</h3>
-<ul><li>PDF 转图片（JPG 或 PNG）</li><li>图片转 PDF</li><li>用相机拍照转 PDF</li><li>PDF 转文本</li></ul>
+<ul><li>PDF 转图片（JPG 或 PNG）</li><li>图片转 PDF</li><li>用相机扫描</li><li>PDF 转文本</li></ul>
 </div>
 <div class="grupo aparecer">
 <h3>保护</h3>
@@ -185,7 +202,7 @@
 <h2 class="aparecer">下载 Ozone PDF</h2>
 <p class="aparecer">免费，适用于 64 位 Windows 10 和 11。</p>
 <div class="acciones acciones--centro aparecer">
-<a class="boton boton--blanco boton--store" href="https://apps.microsoft.com/detail/9NMBRDNCZ9P8" rel="noopener"><svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22"><path d="M2 2h9.5v9.5H2z" fill="#F25022"></path><path d="M12.5 2H22v9.5h-9.5z" fill="#7FBA00"></path><path d="M2 12.5h9.5V22H2z" fill="#00A4EF"></path><path d="M12.5 12.5H22V22h-9.5z" fill="#FFB900"></path></svg>Conseguilo en Microsoft Store</a>
+<a class="boton boton--blanco boton--store" href="https://apps.microsoft.com/detail/9NMBRDNCZ9P8" rel="noopener" target="_blank"><svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22"><path d="M2 2h9.5v9.5H2z" fill="#F25022"></path><path d="M12.5 2H22v9.5h-9.5z" fill="#7FBA00"></path><path d="M2 12.5h9.5V22H2z" fill="#00A4EF"></path><path d="M12.5 12.5H22V22h-9.5z" fill="#FFB900"></path></svg>Conseguilo en Microsoft Store</a>
 <a class="boton boton--linea-blanca" href="https://github.com/pachelabs-apps/Pache_PDF/releases/latest/download/Instalar_Ozone_PDF.exe">下载安装程序（.exe）</a>
 </div>
 <!-- Lo completa sitio.js cuando se llega desde el botón "Buscar actualizaciones" de la app
@@ -273,6 +290,6 @@
 <p class="pie__chico">本网站不使用 Cookie 或跟踪工具。</p>
 </div>
 </footer>
-<script src="../sitio.js?v=12"></script>
+<script src="../sitio.js?v=13"></script>
 </body>
 </html>

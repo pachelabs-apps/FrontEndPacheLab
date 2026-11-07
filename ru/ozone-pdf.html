@@ -12,7 +12,7 @@
 <meta content="https://pachelabs.net/ru/ozone-pdf.html" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <link href="https://pachelabs.net/ru/ozone-pdf.html" rel="canonical"/>
-<link href="../estilos.css?v=15" rel="stylesheet"/>
+<link href="../estilos.css?v=16" rel="stylesheet"/>
 <!--
   LINKS (buscá "COMPLETAR" para lo que falta):
   - Descargas: apuntan al último Release del repo, con nombres de archivo fijos:
@@ -57,7 +57,7 @@
 <span class="producto__nombre">Ozone PDF</span>
 </div>
 <h1>Ваши PDF — без загрузки в интернет.</h1>
-<p class="portada__bajada">Бесплатно объединяйте, разделяйте, сжимайте, защищайте и сканируйте документы. Всё происходит на вашем компьютере.</p>
+<p class="portada__bajada">Подписывайте, редактируйте, скрывайте данные, объединяйте, разделяйте, сжимайте и сканируйте документы бесплатно. Всё происходит на вашем компьютере.</p>
 <div class="acciones"><a class="boton boton--rojo" href="#descargar">Скачать бесплатно</a> <a class="boton boton--linea" href="#como-funciona">Как это работает</a></div>
 <p class="portada__nota">Для Windows 10 и 11. Бесплатно и с открытым кодом.</p>
 </div>
@@ -80,6 +80,16 @@
 </div>
 <div class="recorrido">
 <div class="recorrido__pasos">
+<article class="paso aparecer" data-imagen="firmar">
+<h3>Подпись и пометки без печати</h3>
+<p>Нарисуйте подпись один раз и ставьте её где нужно. Выделяйте, подчёркивайте, пишите, отмечайте рамками или от руки. Ошиблись — Ctrl+Z отменит.</p>
+<figure class="paso__imagen"><div class="ventana"><img alt="Договор в Ozone PDF с выделенным абзацем и подписью внизу." height="700" loading="lazy" src="../img/firmar.webp" width="1060"/></div></figure>
+</article>
+<article class="paso aparecer" data-imagen="censurar">
+<h3>Скрывайте данные по-настоящему</h3>
+<p>Отметьте номер паспорта, счёт или всё, что не хотите показывать: при сохранении то, что под пометкой, удаляется из файла, а не просто закрывается чёрным прямоугольником.</p>
+<figure class="paso__imagen"><div class="ventana"><img alt="Справка с отмеченными для скрытия номером паспорта и счётом." height="700" loading="lazy" src="../img/censurar.webp" width="1060"/></div></figure>
+</article>
 <article class="paso aparecer" data-imagen="unir">
 <h3>Объедините несколько PDF в один</h3>
 <p>Перетащите файлы в окно, расставьте в нужном порядке — и готово: получится один PDF. Исходный файл не меняется, всегда сохраняется новая копия.</p>
@@ -110,7 +120,9 @@
 <div class="ventana">
 <div class="ventana__barra"><img alt="" height="16" src="../img/favicon.png" width="16"/><span>Ozone PDF</span><i></i><i></i><i></i></div>
 <div class="escenario__cuadros">
-<img alt="" class="activo" data-imagen="unir" height="700" src="../img/unir.webp?v=2" width="1060"/>
+<img alt="" class="activo" data-imagen="firmar" height="700" src="../img/firmar.webp" width="1060"/>
+<img alt="" data-imagen="censurar" height="700" loading="lazy" src="../img/censurar.webp" width="1060"/>
+<img alt="" data-imagen="unir" height="700" loading="lazy" src="../img/unir.webp?v=2" width="1060"/>
 <img alt="" data-imagen="dividir" height="700" loading="lazy" src="../img/dividir.webp?v=2" width="1060"/>
 <img alt="" data-imagen="escanear" height="700" loading="lazy" src="../img/escanear.webp?v=2" width="1060"/>
 <img alt="" data-imagen="proteger" height="700" loading="lazy" src="../img/proteger.webp?v=2" width="1060"/>
@@ -145,10 +157,11 @@
 <div class="sinred__texto">
 <h2 class="aparecer">Действительно без интернета</h2>
 <ul class="hechos">
-<li class="aparecer"><strong>Ему просто нечем подключаться.</strong> Программа собирается без частей Python, которые работают с сетью, и каждая версия проверяется на это.</li>
+<li class="aparecer"><strong>Ему не с чем соединяться.</strong> Правило безопасности внутри программы не даёт ей связаться ни с одним сервером, и каждая версия это проверяется.</li>
 <li class="aparecer"><strong>И на всякий случай — брандмауэр.</strong> Установщик добавляет в брандмауэр Windows правило, которое блокирует любые подключения.</li>
 <li class="aparecer"><strong>Это можно проверить.</strong> Код открыт: любой может посмотреть, что делает каждая часть.</li>
-<li class="aparecer"><strong>Убирает то, чего не видно.</strong> Созданные PDF не содержат автора, вложений и скрытых данных исходного файла.</li>
+<li class="aparecer"><strong>Предупреждает заранее.</strong> Если вы сохраняете в папку, которая синхронизируется с облаком (OneDrive, Google Drive, Dropbox), или у PDF есть цифровая подпись, программа скажет об этом.</li>
+<li class="aparecer"><strong>Чистит невидимое.</strong> Одним нажатием удаляет автора, вложения и скрытые данные PDF перед отправкой.</li>
 </ul>
 <div class="compromiso">
 <h3>Наше обязательство</h3>
@@ -158,19 +171,23 @@
 </section>
 <!-- ============ TODAS LAS HERRAMIENTAS ============ -->
 <section aria-labelledby="titulo-herr" class="herramientas">
-<h2 class="aparecer" id="titulo-herr">15 инструментов</h2>
+<h2 class="aparecer" id="titulo-herr">Больше 20 инструментов в одной программе</h2>
 <div class="herramientas__grupos">
 <div class="grupo aparecer">
+<h3>Редактировать</h3>
+<ul><li>Подписать</li><li>Выделение, подчёркивание и зачёркивание</li><li>Текст, рамки и рисование от руки</li><li>Скрытие (удаляет по-настоящему)</li></ul>
+</div>
+<div class="grupo aparecer">
 <h3>Упорядочить</h3>
-<ul><li>Объединить PDF</li><li>Разделить PDF</li><li>Извлечь страницы</li><li>Удалить страницы</li><li>Упорядочить страницы</li><li>Повернуть PDF</li></ul>
+<ul><li>Объединить PDF</li><li>Разделить PDF</li><li>Извлечь страницы</li><li>Удалить страницы</li><li>Упорядочить страницы</li><li>Повернуть страницы</li><li>Всё в A4 или Letter</li></ul>
 </div>
 <div class="grupo aparecer">
 <h3>Улучшить</h3>
-<ul><li>Сжать PDF</li><li>Нумерация страниц</li><li>Водяной знак</li></ul>
+<ul><li>Сжать PDF</li><li>Нумерация страниц</li><li>Водяной знак</li><li>Очистить скрытые данные</li></ul>
 </div>
 <div class="grupo aparecer">
 <h3>Преобразовать</h3>
-<ul><li>PDF в изображение (JPG или PNG)</li><li>Изображение в PDF</li><li>Фото в PDF с помощью камеры</li><li>PDF в текст</li></ul>
+<ul><li>PDF в изображение (JPG или PNG)</li><li>Изображение в PDF</li><li>Сканировать камерой</li><li>PDF в текст</li></ul>
 </div>
 <div class="grupo aparecer">
 <h3>Защитить</h3>
@@ -185,7 +202,7 @@
 <h2 class="aparecer">Скачать Ozone PDF</h2>
 <p class="aparecer">Бесплатно, для 64-разрядных Windows 10 и 11.</p>
 <div class="acciones acciones--centro aparecer">
-<a class="boton boton--blanco boton--store" href="https://apps.microsoft.com/detail/9NMBRDNCZ9P8" rel="noopener"><svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22"><path d="M2 2h9.5v9.5H2z" fill="#F25022"></path><path d="M12.5 2H22v9.5h-9.5z" fill="#7FBA00"></path><path d="M2 12.5h9.5V22H2z" fill="#00A4EF"></path><path d="M12.5 12.5H22V22h-9.5z" fill="#FFB900"></path></svg>Conseguilo en Microsoft Store</a>
+<a class="boton boton--blanco boton--store" href="https://apps.microsoft.com/detail/9NMBRDNCZ9P8" rel="noopener" target="_blank"><svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22"><path d="M2 2h9.5v9.5H2z" fill="#F25022"></path><path d="M12.5 2H22v9.5h-9.5z" fill="#7FBA00"></path><path d="M2 12.5h9.5V22H2z" fill="#00A4EF"></path><path d="M12.5 12.5H22V22h-9.5z" fill="#FFB900"></path></svg>Conseguilo en Microsoft Store</a>
 <a class="boton boton--linea-blanca" href="https://github.com/pachelabs-apps/Pache_PDF/releases/latest/download/Instalar_Ozone_PDF.exe">Скачать установщик (.exe)</a>
 </div>
 <!-- Lo completa sitio.js cuando se llega desde el botón "Buscar actualizaciones" de la app
@@ -273,6 +290,6 @@
 <p class="pie__chico">Этот сайт не использует cookie и инструменты отслеживания.</p>
 </div>
 </footer>
-<script src="../sitio.js?v=12"></script>
+<script src="../sitio.js?v=13"></script>
 </body>
 </html>
