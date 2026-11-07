@@ -189,4 +189,8 @@ D = {
  187: "In real life, the best way to protect your data is not to upload it just anywhere. That's why <a href=\"ozone-pdf.html\">Ozone PDF</a> works without internet.",
  188: "Lives",
  189: "Catch your data game. Move Labcin with the mouse, your finger or the arrow keys.",
+ 190: "Take a photo of the page with the camera or pick it from your photos: the program detects it, crops it, straightens it and makes it look scanned. One photo per page and it builds the PDF.",
+ 191: "Type what you need in the search box (\"merge\", \"password\", \"photo\") and the tool appears. It has light and dark mode, whichever you prefer.",
+ 192: "Split PDF set to parts of 10 MB at most.",
+ 193: "Scanner screen with a detected page and its four corners marked.",
 }

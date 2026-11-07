@@ -189,4 +189,8 @@ D = {
  187: "Im echten Leben schützt du deine Daten am besten, indem du sie nicht überall hochlädst. Deshalb funktioniert <a href=\"ozone-pdf.html\">Ozone PDF</a> ohne Internet.",
  188: "Leben",
  189: "Spiel Fang deine Daten. Beweg Labcin mit der Maus, dem Finger oder den Pfeiltasten.",
+ 190: "Fotografiere das Blatt mit der Kamera oder wähle es aus deinen Fotos: Das Programm erkennt es, schneidet es zu, richtet es gerade und lässt es wie gescannt aussehen. Ein Foto pro Seite, und das PDF ist fertig.",
+ 191: "Gib ins Suchfeld ein, was du brauchst („zusammenfügen“, „Passwort“, „Foto“), und das Werkzeug erscheint. Es gibt einen hellen und einen dunklen Modus, ganz wie du magst.",
+ 192: "PDF teilen, eingestellt auf Teile von höchstens 10 MB.",
+ 193: "Scanner-Ansicht mit erkanntem Blatt und seinen vier markierten Ecken.",
 }
