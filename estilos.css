@@ -638,6 +638,7 @@ a.ficha:hover { border-color: var(--rojo); color: var(--tinta); transform: trans
 .juego-tarjeta:hover { transform: translateY(-3px); color: #fff; background: #000; }
 .juego-tarjeta--claro:hover { color: var(--tinta); background: var(--rojo-claro); }
 .juego-tarjeta__emoji { grid-row: 1 / span 3; font-size: 3.2rem; line-height: 1; width: 84px; height: 84px; display: grid; place-items: center; border-radius: 20px; background: var(--rojo); }
+.juego-tarjeta__emoji[data-mini] { width: 108px; height: 108px; overflow: hidden; background: linear-gradient(180deg, #FFF4F2 0%, #FFDCD8 100%); box-shadow: inset 0 0 0 3px var(--rojo); }
 .juego-tarjeta h3 { font-size: 1.7rem; font-weight: 800; letter-spacing: -0.02em; }
 .juego-tarjeta p { opacity: .85; }
 .juego-tarjeta__ir { font-weight: 700; color: #FFB3AC; }
@@ -668,6 +669,7 @@ a.ficha:hover { border-color: var(--rojo); color: var(--tinta); transform: trans
   .juego { padding: 24px 16px 70px; }
   .juego-tarjeta { padding: 20px; }
   .juego-tarjeta__emoji { width: 64px; height: 64px; font-size: 2.4rem; }
+  .juego-tarjeta__emoji[data-mini] { width: 84px; height: 84px; }
 }
 @media (prefers-reduced-motion: reduce) { .juego-tarjeta, .juego__tip--ver { transition: none; animation: none; } }
 .juego [data-compartir][hidden] { display: none; }

@@ -631,6 +631,73 @@
     medir(); reiniciar(); requestAnimationFrame(bucle);
   }
 
+  // ---------- mini animaciones para las tarjetas de los juegos ----------
+  function miniJuego(caja) {
+    var tipo = caja.dataset.mini;
+    var c = document.createElement("canvas");
+    c.style.width = "100%"; c.style.height = "100%"; c.style.display = "block";
+    caja.textContent = ""; caja.appendChild(c);
+    var ctx, W, H, t = 0, ultimo = 0, visible = false, corriendo = false;
+    var iconos = ["🪪", "🔑", "📷", "💳", "✉️"], cae = null, chispas = [];
+    function medir() {
+      var lz = prepararLienzo(c, caja.clientHeight || 84);
+      ctx = lz.ctx; W = lz.w; H = lz.h;
+    }
+    function dibujarSalta() {
+      var s = H / 172, suelo = H - 9 * (H / 84);
+      ctx.fillStyle = "#D3261D"; ctx.fillRect(0, suelo + 5 * s, W, 3);
+      var P = 1.7, f = (t % P) / P;
+      var bx = W + 20 - f * (W + 40);
+      var lx = W * 0.36;
+      // salta cuando el bug llega a sus pies
+      var ini = 0.33, dur = 0.36, alto = H * 0.21, y = 0, aire = false;
+      if (f > ini && f < ini + dur) { var k = (f - ini) / dur; y = Math.sin(Math.PI * k) * alto; aire = true; }
+      bug(ctx, bx, suelo - 6 * s, s * 1.5, t, false);
+      ctx.fillStyle = "rgba(0,0,0,.25)"; ctx.beginPath(); ctx.ellipse(lx, suelo + 6 * s, 22 * s * (1 - y / alto * 0.4), 4 * s, 0, 0, Math.PI * 2); ctx.fill();
+      dibujarLabcin(ctx, lx, suelo - 12 * s - y, s, { t: t, paso: t * 14, aire: aire, brazos: aire ? "arriba" : null });
+    }
+    function dibujarDatos(dt) {
+      var s = H / 150, suelo = H - 8 * (H / 84);
+      var lx = W / 2 + Math.sin(t * 1.6) * W * 0.16;
+      var boca = suelo - 12 * s - 96 * s;
+      if (!cae) cae = { y: -12, i: Math.floor(Math.random() * iconos.length), dx: 0 };
+      cae.y += dt * H * 0.9;
+      if (cae.y >= boca) {
+        for (var n = 0; n < 5; n++) chispas.push({ x: lx, y: boca, vx: (Math.random() - 0.5) * 60, vy: -30 - Math.random() * 40, v: 0.5 });
+        cae = null;
+      }
+      chispas = chispas.filter(function (p) { p.x += p.vx * dt; p.y += p.vy * dt; p.vy += 120 * dt; p.v -= dt; return p.v > 0; });
+      chispas.forEach(function (p) { ctx.globalAlpha = Math.max(0, p.v * 2); burbuja(ctx, p.x, p.y, 2.2, false); ctx.globalAlpha = 1; });
+      ctx.fillStyle = "rgba(0,0,0,.25)"; ctx.beginPath(); ctx.ellipse(lx, suelo + 6 * s, 22 * s, 4 * s, 0, 0, Math.PI * 2); ctx.fill();
+      dibujarLabcin(ctx, lx, suelo - 12 * s, s, { t: t, paso: t * 6, brazos: "escudo" });
+      if (cae) {
+        ctx.textAlign = "center"; ctx.textBaseline = "middle";
+        ctx.font = Math.round(H * 0.24) + "px 'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif";
+        ctx.fillText(iconos[cae.i], lx, cae.y);
+      }
+    }
+    function cuadro(dt) {
+      ctx.clearRect(0, 0, W, H);
+      if (tipo === "salta") dibujarSalta(); else dibujarDatos(dt);
+    }
+    function bucle(ahora) {
+      if (!visible) { corriendo = false; ultimo = 0; return; }
+      var dt = Math.min(0.033, (ahora - (ultimo || ahora)) / 1000);
+      ultimo = ahora; t += dt; cuadro(dt); requestAnimationFrame(bucle);
+    }
+    medir();
+    if (quieto) { t = tipo === "salta" ? 0.75 : 1; cuadro(0); return; }
+    cuadro(0);
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (es) {
+        visible = es[0].isIntersecting;
+        if (visible && !corriendo) { corriendo = true; requestAnimationFrame(bucle); }
+      }).observe(caja);
+    } else { visible = true; corriendo = true; requestAnimationFrame(bucle); }
+    window.addEventListener("resize", function () { medir(); cuadro(0); });
+  }
+  document.querySelectorAll("[data-mini]").forEach(miniJuego);
+
   // ---------- arranque ----------
   document.querySelectorAll("[data-juego]").forEach(function (cont) {
     if (cont.dataset.juego === "salta") labcinSalta(cont);
