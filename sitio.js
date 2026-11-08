@@ -238,7 +238,6 @@
     var a = e.target.closest && e.target.closest('a[href*="/releases/"][href*="/download/"], a[href*="apps.microsoft.com"]');
     if (!a) return;
     cerrarDescarga();
-    var esMsi = /\.msi(\?|$)/i.test(a.href);
     var esTienda = a.href.indexOf("apps.microsoft.com") !== -1; // se abre en otra pestaña, así este gracias se ve
     var t = document.createElement("aside");
     t.className = "descarga-ok";
@@ -251,7 +250,7 @@
         '<strong>' + tx("¡Gracias por descargar Ozone PDF!") + '</strong>' +
         '<p>' + (esTienda ? tx("Te abrí Microsoft Store en otra pestaña: tocá {obtener} para instalarlo. Desde la Store se actualiza solo.").replace("{obtener}", "<b>" + tx("Obtener") + "</b>")
           : tx("La descarga ya empezó. Cuando termine, abrí {archivo} para instalarlo.")
-          .replace("{archivo}", "<b>" + (esMsi ? "Ozone_PDF.msi" : "Instalar_Ozone_PDF.exe") + "</b>")) + '</p>' +
+          .replace("{archivo}", "<b>" + decodeURIComponent(a.href.split("/").pop().split("?")[0]) + "</b>")) + '</p>' +
         '<p class="descarga-ok__suave">' + tx("Es y va a seguir siendo gratis. Si te sirve y tenés ganas, podés invitarme un cafecito o contarme qué mejorarías. Totalmente opcional.") + '</p>' +
         '<div class="descarga-ok__acciones">' +
           '<a class="boton boton--rojo" href="https://cafecito.app/pachelabs" rel="noopener" target="_blank">☕ ' + tx("Invitame un cafecito") + '</a>' +

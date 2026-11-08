@@ -103,6 +103,9 @@ a.programas__item:hover { background: var(--rojo-claro); color: var(--tinta); }
 /* ---------- botones ---------- */
 .acciones { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 .acciones--centro { justify-content: center; }
+.otras-plataformas { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 14px; }
+.boton--chico { min-height: 44px; padding: 0 16px; font-size: .95rem; gap: 8px; }
+.boton--chico svg { flex: none; }
 .boton {
   display: inline-flex; align-items: center; justify-content: center; min-height: 52px;
   padding: 0 24px; border-radius: 12px; font: 700 1.05rem/1.2 var(--texto);

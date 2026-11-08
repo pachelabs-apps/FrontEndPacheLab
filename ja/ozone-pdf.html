@@ -12,13 +12,13 @@
 <meta content="https://pachelabs.net/ja/ozone-pdf.html" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <link href="https://pachelabs.net/ja/ozone-pdf.html" rel="canonical"/>
-<link href="../estilos.css?v=16" rel="stylesheet"/>
+<link href="../estilos.css?v=17" rel="stylesheet"/>
 <!--
   LINKS (buscá "COMPLETAR" para lo que falta):
-  - Descargas: apuntan al último Release del repo, con nombres de archivo fijos:
-    Instalar_Ozone_PDF.exe y Ozone_PDF.msi (subilos con esos nombres en cada versión).
+  - Descargas: apuntan a los archivos del Release de la versión (los arma GitHub Actions al subir
+    la etiqueta). En cada versión nueva, cambiar v2.0.0 y 2.0.0 en todos los links y en data-ultima.
   - Microsoft Store: https://apps.microsoft.com/detail/9NMBRDNCZ9P8 (Id. de Store 9NMBRDNCZ9P8).
-  - Repositorio del código: github.com/pachelabs-apps/Pache_PDF.
+  - Repositorio del código: github.com/pachelabs-apps/Ozone_PDF_2.
   - Cafecito y GitHub Sponsors: tus links de donación.
 -->
 <link href="https://pachelabs.net/ozone-pdf.html" hreflang="es" rel="alternate"/><link href="https://pachelabs.net/en/ozone-pdf.html" hreflang="en" rel="alternate"/><link href="https://pachelabs.net/de/ozone-pdf.html" hreflang="de" rel="alternate"/><link href="https://pachelabs.net/zh/ozone-pdf.html" hreflang="zh" rel="alternate"/><link href="https://pachelabs.net/ja/ozone-pdf.html" hreflang="ja" rel="alternate"/><link href="https://pachelabs.net/ru/ozone-pdf.html" hreflang="ru" rel="alternate"/><link href="https://pachelabs.net/ozone-pdf.html" hreflang="x-default" rel="alternate"/></head>
@@ -59,7 +59,7 @@
 <h1>PDF を、インターネットにアップロードせずに。</h1>
 <p class="portada__bajada">文書の署名、編集、墨消し、結合、分割、圧縮、スキャンが無料。すべてあなたのパソコンの中で完結します。</p>
 <div class="acciones"><a class="boton boton--rojo" href="#descargar">無料でダウンロード</a> <a class="boton boton--linea" href="#como-funciona">使い方を見る</a></div>
-<p class="portada__nota">Windows 10・11 用。無料のオープンソース。</p>
+<p class="portada__nota">Windows・Mac・Linux 対応。無料でオープンソース。</p>
 </div>
 <figure class="portada__imagen">
 <div class="ventana">
@@ -158,7 +158,7 @@
 <h2 class="aparecer">本当にオフライン</h2>
 <ul class="hechos">
 <li class="aparecer"><strong>つながる手段がありません。</strong> プログラム内のセキュリティルールでどのサーバーとも通信できず、バージョンごとにテストしています。</li>
-<li class="aparecer"><strong>念のため、ファイアウォールも。</strong>インストーラーが Windows ファイアウォールに、あらゆる接続をブロックするルールを追加します。</li>
+<li class="aparecer"><strong>念のため、ファイアウォールも。</strong>Windows では、インストーラーがあらゆる接続をブロックするファイアウォールのルールを追加します。</li>
 <li class="aparecer"><strong>自分で確かめられます。</strong>コードは公開されています。各部分が何をしているか、誰でも確認できます。</li>
 <li class="aparecer"><strong>先に知らせます。</strong> クラウドと同期するフォルダー（OneDrive、Google Drive、Dropbox）に保存しようとしたときや、PDF にデジタル署名があるときに教えてくれます。</li>
 <li class="aparecer"><strong>見えない情報を消します。</strong> 共有する前に、PDF の作成者・添付ファイル・隠しデータをワンタッチで削除します。</li>
@@ -200,23 +200,32 @@
 <div class="descargar__interior">
 <img alt="" class="aparecer" height="96" src="../img/ozone-pdf.png" width="96"/>
 <h2 class="aparecer">Ozone PDF をダウンロード</h2>
-<p class="aparecer">無料、64 ビット版 Windows 10・11 用。</p>
+<p class="aparecer">無料。Windows 10・11、macOS 10.15 以降、Linux に対応。</p>
 <div class="acciones acciones--centro aparecer">
-<a class="boton boton--blanco boton--store" href="https://apps.microsoft.com/detail/9NMBRDNCZ9P8" rel="noopener" target="_blank"><svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22"><path d="M2 2h9.5v9.5H2z" fill="#F25022"></path><path d="M12.5 2H22v9.5h-9.5z" fill="#7FBA00"></path><path d="M2 12.5h9.5V22H2z" fill="#00A4EF"></path><path d="M12.5 12.5H22V22h-9.5z" fill="#FFB900"></path></svg>Conseguilo en Microsoft Store</a>
-<a class="boton boton--linea-blanca" href="https://github.com/pachelabs-apps/Pache_PDF/releases/latest/download/Instalar_Ozone_PDF.exe">インストーラーをダウンロード（.exe）</a>
+<a class="boton boton--blanco boton--store" href="https://apps.microsoft.com/detail/9NMBRDNCZ9P8" rel="noopener" target="_blank"><svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22"><path d="M2 2h9.5v9.5H2z" fill="#F25022"></path><path d="M12.5 2H22v9.5h-9.5z" fill="#7FBA00"></path><path d="M2 12.5h9.5V22H2z" fill="#00A4EF"></path><path d="M12.5 12.5H22V22h-9.5z" fill="#FFB900"></path></svg><span>Microsoft Store から入手</span></a>
+<a class="boton boton--linea-blanca" href="https://github.com/pachelabs-apps/Ozone_PDF_2/releases/download/v2.0.0/Ozone.PDF_2.0.0_x64-setup.exe">Windows 版をダウンロード（.exe）</a>
+</div>
+<div class="otras-plataformas aparecer">
+<a class="boton boton--linea-blanca boton--chico" href="https://github.com/pachelabs-apps/Ozone_PDF_2/releases/download/v2.0.0/Ozone.PDF_2.0.0_universal.dmg"><svg aria-hidden="true" height="18" viewbox="0 0 24 24" width="18"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2.1-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4.1zM13.9 4.9c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z" fill="currentColor"></path></svg><span>Mac 版をダウンロード（.dmg）</span></a>
+<a class="boton boton--linea-blanca boton--chico" href="https://github.com/pachelabs-apps/Ozone_PDF_2/releases/download/v2.0.0/Ozone.PDF_2.0.0_amd64.AppImage">Linux (.AppImage)</a>
+<a class="boton boton--linea-blanca boton--chico" href="https://github.com/pachelabs-apps/Ozone_PDF_2/releases/download/v2.0.0/Ozone.PDF_2.0.0_amd64.deb">Linux (.deb)</a>
 </div>
 <!-- Lo completa sitio.js cuando se llega desde el botón "Buscar actualizaciones" de la app
      (?version=X). Al publicar una versión nueva, actualizar data-ultima. -->
-<div aria-live="polite" class="actualizar" data-ultima="1.2.0" hidden="" id="actualizar"></div>
+<div aria-live="polite" class="actualizar" data-ultima="2.0.0" hidden="" id="actualizar"></div>
 <p class="descargar__recomendado aparecer">おすすめ：Microsoft Store からなら、Windows の警告なしでインストールでき、自動で更新されます。</p>
 <div class="para-org aparecer">
 <div class="para-org__texto"><strong>組織でお使いですか？</strong> <span><b>.msi</b> インストーラーを使えば、GPO、Intune、SCCM ですべての PC にインストールできます。</span></div>
-<div class="para-org__botones"><a class="boton boton--blanco" href="https://github.com/pachelabs-apps/Pache_PDF/releases/latest/download/Ozone_PDF.msi">.msi インストーラーをダウンロード</a> <a class="para-org__ver" href="#organizaciones">インストール方法を見る</a></div>
+<div class="para-org__botones"><a class="boton boton--blanco" href="https://github.com/pachelabs-apps/Ozone_PDF_2/releases/download/v2.0.0/Ozone.PDF_2.0.0_x64_en-US.msi">.msi インストーラーをダウンロード</a> <a class="para-org__ver" href="#organizaciones">インストール方法を見る</a></div>
 </div>
-<p class="descargar__extra aparecer"><a href="https://github.com/pachelabs-apps/Pache_PDF/tree/v1.2.0">バージョン 1.2.0 のソースコード</a></p>
+<p class="descargar__extra aparecer"><a href="https://github.com/pachelabs-apps/Ozone_PDF_2/tree/v2.0.0">バージョン 2.0.0 のソースコード</a></p>
 <details class="aviso-windows aparecer">
 <summary>インストール時に Windows が警告を表示しますか？</summary>
 <p>.exe インストーラーでは、プログラムが新しく、まだダウンロードした人が少ないため、「Windows によって PC が保護されました」と表示されることがあります。<em>詳細情報</em>をクリックし、<em>実行</em>をクリックしてください。Microsoft Store からインストールすれば、この警告は表示されません。</p>
+</details>
+<details class="aviso-windows aparecer">
+<summary>Mac で開けない場合は？</summary>
+<p>.dmg を開いて、Ozone PDF を「アプリケーション」にドラッグします。初回は、まだ Apple の署名がないため、Mac がプログラムを検証できないと表示することがあります。<em>システム設定</em> &gt; <em>プライバシーとセキュリティ</em> で <em>このまま開く</em> をクリックしてください。必要なのは一度だけです。</p>
 </details>
 </div>
 </section>
@@ -227,19 +236,19 @@
 <p>IT 担当の方ですべての PC にインストールしたい場合は、そのための <strong>.msi</strong> インストーラーがあります。グループ ポリシー（GPO）、Intune、SCCM に対応しています。</p>
 <ul class="hechos hechos--chicos">
 <li>コンピューターのすべてのユーザー向けに <code>C:\Program Files\Ozone PDF</code> にインストールされます。</li>
-<li>プログラムのインターネットへの接続をブロックするのと同じファイアウォール ルールを作成し、アンインストール時に削除します。</li>
+<li>プログラム自体にインターネットを遮断する仕組みがあります。.exe インストーラーが作るファイアウォールのルールも使いたい場合は、横のコマンドで追加してください。</li>
 <li>新しいバージョンは、前のバージョンを自動で置き換えます。</li>
 <li>テレメトリー、端末ごとのライセンス、保守が必要なサーバーはありません。</li>
 </ul>
-<a class="boton boton--rojo" href="https://github.com/pachelabs-apps/Pache_PDF/releases/latest/download/Ozone_PDF.msi">.msi をダウンロード</a>
+<a class="boton boton--rojo" href="https://github.com/pachelabs-apps/Ozone_PDF_2/releases/download/v2.0.0/Ozone.PDF_2.0.0_x64_en-US.msi">.msi をダウンロード</a>
 </div>
 <div class="consola aparecer">
 <p class="consola__titulo">サイレント インストール</p>
-<pre><code>msiexec /i Ozone_PDF.msi /qn</code></pre>
+<pre><code>msiexec /i Ozone.PDF_2.0.0_x64_en-US.msi /qn</code></pre>
 <p class="consola__titulo">アンインストール</p>
-<pre><code>msiexec /x Ozone_PDF.msi /qn</code></pre>
-<p class="consola__nota">ファイアウォール ルールの確認：</p>
-<pre><code>Get-NetFirewallRule -DisplayName "Ozone PDF - sin red"</code></pre>
+<pre><code>msiexec /x Ozone.PDF_2.0.0_x64_en-US.msi /qn</code></pre>
+<p class="consola__nota">ファイアウォールのルール（任意）：</p>
+<pre><code>New-NetFirewallRule -DisplayName "Ozone PDF 2 - sin red" -Direction Outbound -Action Block -Program "C:\Program Files\Ozone PDF\ozone-pdf.exe"</code></pre>
 </div>
 </section>
 <!-- ============ SUGERENCIAS ============ -->
@@ -286,10 +295,10 @@
 <div class="pie__interior">
 <img alt="Pache.Labs" class="pie__logo" height="79" src="../img/logo-pie.png" width="280"/>
 <p><strong>Pache Labs</strong>、Nicolás Pacheco 作。アルゼンチン製。<a href="mailto:pache.labs@gmail.com">pache.labs@gmail.com</a></p>
-<nav aria-label="法的情報"><a href="privacidad.html">プライバシー</a> <a href="https://cafecito.app/pachelabs" rel="noopener">コーヒーをおごる</a> <a href="https://github.com/pachelabs-apps/Pache_PDF/blob/main/LICENSE.txt">ライセンス（AGPL-3.0）</a> <a href="https://github.com/pachelabs-apps/Pache_PDF">ソースコード</a></nav>
+<nav aria-label="法的情報"><a href="privacidad.html">プライバシー</a> <a href="https://cafecito.app/pachelabs" rel="noopener">コーヒーをおごる</a> <a href="https://github.com/pachelabs-apps/Ozone_PDF_2/blob/main/LICENSE">ライセンス（AGPL-3.0）</a> <a href="https://github.com/pachelabs-apps/Ozone_PDF_2">ソースコード</a></nav>
 <p class="pie__chico">このサイトは Cookie やトラッキングツールを使用していません。</p>
 </div>
 </footer>
-<script src="../sitio.js?v=13"></script>
+<script src="../sitio.js?v=14"></script>
 </body>
 </html>

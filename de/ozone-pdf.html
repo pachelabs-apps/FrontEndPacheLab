@@ -12,13 +12,13 @@
 <meta content="https://pachelabs.net/de/ozone-pdf.html" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <link href="https://pachelabs.net/de/ozone-pdf.html" rel="canonical"/>
-<link href="../estilos.css?v=16" rel="stylesheet"/>
+<link href="../estilos.css?v=17" rel="stylesheet"/>
 <!--
   LINKS (buscá "COMPLETAR" para lo que falta):
-  - Descargas: apuntan al último Release del repo, con nombres de archivo fijos:
-    Instalar_Ozone_PDF.exe y Ozone_PDF.msi (subilos con esos nombres en cada versión).
+  - Descargas: apuntan a los archivos del Release de la versión (los arma GitHub Actions al subir
+    la etiqueta). En cada versión nueva, cambiar v2.0.0 y 2.0.0 en todos los links y en data-ultima.
   - Microsoft Store: https://apps.microsoft.com/detail/9NMBRDNCZ9P8 (Id. de Store 9NMBRDNCZ9P8).
-  - Repositorio del código: github.com/pachelabs-apps/Pache_PDF.
+  - Repositorio del código: github.com/pachelabs-apps/Ozone_PDF_2.
   - Cafecito y GitHub Sponsors: tus links de donación.
 -->
 <link href="https://pachelabs.net/ozone-pdf.html" hreflang="es" rel="alternate"/><link href="https://pachelabs.net/en/ozone-pdf.html" hreflang="en" rel="alternate"/><link href="https://pachelabs.net/de/ozone-pdf.html" hreflang="de" rel="alternate"/><link href="https://pachelabs.net/zh/ozone-pdf.html" hreflang="zh" rel="alternate"/><link href="https://pachelabs.net/ja/ozone-pdf.html" hreflang="ja" rel="alternate"/><link href="https://pachelabs.net/ru/ozone-pdf.html" hreflang="ru" rel="alternate"/><link href="https://pachelabs.net/ozone-pdf.html" hreflang="x-default" rel="alternate"/></head>
@@ -59,7 +59,7 @@
 <h1>Ihre PDFs, ohne sie ins Internet hochzuladen.</h1>
 <p class="portada__bajada">Dokumente kostenlos unterschreiben, bearbeiten, schwärzen, zusammenführen, teilen, komprimieren und scannen. Alles passiert auf Ihrem Computer.</p>
 <div class="acciones"><a class="boton boton--rojo" href="#descargar">Kostenlos herunterladen</a> <a class="boton boton--linea" href="#como-funciona">So funktioniert es</a></div>
-<p class="portada__nota">Für Windows 10 und 11. Kostenlos und quelloffen.</p>
+<p class="portada__nota">Für Windows, Mac und Linux. Kostenlos und Open Source.</p>
 </div>
 <figure class="portada__imagen">
 <div class="ventana">
@@ -158,7 +158,7 @@
 <h2 class="aparecer">Wirklich offline</h2>
 <ul class="hechos">
 <li class="aparecer"><strong>Es kann sich nirgends verbinden.</strong> Eine Sicherheitsregel im Programm verhindert jede Verbindung zu einem Server, und jede Version wird darauf geprüft.</li>
-<li class="aparecer"><strong>Und sicherheitshalber die Firewall.</strong> Das Installationsprogramm fügt eine Regel in der Windows-Firewall hinzu, die jede Verbindung blockiert.</li>
+<li class="aparecer"><strong>Und zur Sicherheit: die Firewall.</strong> Unter Windows fügt das Installationsprogramm eine Firewall-Regel hinzu, die jede Verbindung blockiert.</li>
 <li class="aparecer"><strong>Sie können es überprüfen.</strong> Der Code ist offen: Jeder kann sehen, was jeder Teil macht.</li>
 <li class="aparecer"><strong>Es warnt Sie vorher.</strong> Wenn Sie in einem Cloud-Ordner speichern (OneDrive, Google Drive, Dropbox) oder das PDF eine digitale Signatur hat, sagt es Ihnen Bescheid.</li>
 <li class="aparecer"><strong>Es entfernt Unsichtbares.</strong> Mit einem Klick löscht es Autor, Anhänge und versteckte Daten eines PDFs, bevor Sie es teilen.</li>
@@ -200,23 +200,32 @@
 <div class="descargar__interior">
 <img alt="" class="aparecer" height="96" src="../img/ozone-pdf.png" width="96"/>
 <h2 class="aparecer">Ozone PDF herunterladen</h2>
-<p class="aparecer">Kostenlos, für Windows 10 und 11 (64 Bit).</p>
+<p class="aparecer">Kostenlos, für Windows 10 und 11, macOS 10.15 oder neuer und Linux.</p>
 <div class="acciones acciones--centro aparecer">
-<a class="boton boton--blanco boton--store" href="https://apps.microsoft.com/detail/9NMBRDNCZ9P8" rel="noopener" target="_blank"><svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22"><path d="M2 2h9.5v9.5H2z" fill="#F25022"></path><path d="M12.5 2H22v9.5h-9.5z" fill="#7FBA00"></path><path d="M2 12.5h9.5V22H2z" fill="#00A4EF"></path><path d="M12.5 12.5H22V22h-9.5z" fill="#FFB900"></path></svg>Conseguilo en Microsoft Store</a>
-<a class="boton boton--linea-blanca" href="https://github.com/pachelabs-apps/Pache_PDF/releases/latest/download/Instalar_Ozone_PDF.exe">Installationsprogramm herunterladen (.exe)</a>
+<a class="boton boton--blanco boton--store" href="https://apps.microsoft.com/detail/9NMBRDNCZ9P8" rel="noopener" target="_blank"><svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22"><path d="M2 2h9.5v9.5H2z" fill="#F25022"></path><path d="M12.5 2H22v9.5h-9.5z" fill="#7FBA00"></path><path d="M2 12.5h9.5V22H2z" fill="#00A4EF"></path><path d="M12.5 12.5H22V22h-9.5z" fill="#FFB900"></path></svg><span>Im Microsoft Store herunterladen</span></a>
+<a class="boton boton--linea-blanca" href="https://github.com/pachelabs-apps/Ozone_PDF_2/releases/download/v2.0.0/Ozone.PDF_2.0.0_x64-setup.exe">Für Windows herunterladen (.exe)</a>
+</div>
+<div class="otras-plataformas aparecer">
+<a class="boton boton--linea-blanca boton--chico" href="https://github.com/pachelabs-apps/Ozone_PDF_2/releases/download/v2.0.0/Ozone.PDF_2.0.0_universal.dmg"><svg aria-hidden="true" height="18" viewbox="0 0 24 24" width="18"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2.1-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9 0 0-2.7-1-2.7-4.1zM13.9 4.9c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z" fill="currentColor"></path></svg><span>Für Mac herunterladen (.dmg)</span></a>
+<a class="boton boton--linea-blanca boton--chico" href="https://github.com/pachelabs-apps/Ozone_PDF_2/releases/download/v2.0.0/Ozone.PDF_2.0.0_amd64.AppImage">Linux (.AppImage)</a>
+<a class="boton boton--linea-blanca boton--chico" href="https://github.com/pachelabs-apps/Ozone_PDF_2/releases/download/v2.0.0/Ozone.PDF_2.0.0_amd64.deb">Linux (.deb)</a>
 </div>
 <!-- Lo completa sitio.js cuando se llega desde el botón "Buscar actualizaciones" de la app
      (?version=X). Al publicar una versión nueva, actualizar data-ultima. -->
-<div aria-live="polite" class="actualizar" data-ultima="1.2.0" hidden="" id="actualizar"></div>
+<div aria-live="polite" class="actualizar" data-ultima="2.0.0" hidden="" id="actualizar"></div>
 <p class="descargar__recomendado aparecer">Empfohlen: Aus dem Microsoft Store wird es ohne Windows-Warnungen installiert und aktualisiert sich selbst.</p>
 <div class="para-org aparecer">
 <div class="para-org__texto"><strong>Sind Sie eine Organisation?</strong> <span>Verwenden Sie das <b>.msi</b>-Installationsprogramm, um es mit GPO, Intune oder SCCM auf allen PCs zu installieren.</span></div>
-<div class="para-org__botones"><a class="boton boton--blanco" href="https://github.com/pachelabs-apps/Pache_PDF/releases/latest/download/Ozone_PDF.msi">.msi-Installationsprogramm herunterladen</a> <a class="para-org__ver" href="#organizaciones">So wird es installiert</a></div>
+<div class="para-org__botones"><a class="boton boton--blanco" href="https://github.com/pachelabs-apps/Ozone_PDF_2/releases/download/v2.0.0/Ozone.PDF_2.0.0_x64_en-US.msi">.msi-Installer herunterladen</a> <a class="para-org__ver" href="#organizaciones">So wird es installiert</a></div>
 </div>
-<p class="descargar__extra aparecer"><a href="https://github.com/pachelabs-apps/Pache_PDF/tree/v1.2.0">Quellcode der Version 1.2.0</a></p>
+<p class="descargar__extra aparecer"><a href="https://github.com/pachelabs-apps/Ozone_PDF_2/tree/v2.0.0">Quellcode der Version 2.0.0</a></p>
 <details class="aviso-windows aparecer">
 <summary>Zeigt Windows beim Installieren eine Warnung?</summary>
 <p>Beim .exe-Installationsprogramm kann Windows „Der Computer wurde durch Windows geschützt“ anzeigen, weil das Programm neu ist und noch nicht viele Leute es heruntergeladen haben. Klicken Sie auf <em>Weitere Informationen</em> und dann auf <em>Trotzdem ausführen</em>. Wenn Sie es aus dem Microsoft Store installieren, erscheint diese Warnung nicht.</p>
+</details>
+<details class="aviso-windows aparecer">
+<summary>Dein Mac lässt es sich nicht öffnen?</summary>
+<p>Öffne die .dmg-Datei und ziehe Ozone PDF in „Programme“. Beim ersten Mal meldet der Mac vielleicht, dass er das Programm nicht überprüfen kann, weil es noch nicht von Apple signiert ist. Gehe zu <em>Systemeinstellungen</em> &gt; <em>Datenschutz &amp; Sicherheit</em> und klicke auf <em>Dennoch öffnen</em>. Das ist nur einmal nötig.</p>
 </details>
 </div>
 </section>
@@ -227,19 +236,19 @@
 <p>Wenn Sie in der IT arbeiten und es auf allen PCs installieren möchten, gibt es dafür ein <strong>.msi</strong>-Installationsprogramm. Es funktioniert mit Gruppenrichtlinien (GPO), Intune oder SCCM.</p>
 <ul class="hechos hechos--chicos">
 <li>Es wird für alle Benutzer des Computers installiert, in <code>C:\Program Files\Ozone PDF</code>.</li>
-<li>Es erstellt dieselbe Firewall-Regel, die dem Programm den Internetzugang sperrt, und entfernt sie bei der Deinstallation.</li>
+<li>Das Programm blockiert das Internet bereits selbst. Wenn du zusätzlich die Firewall-Regel möchtest, die der .exe-Installer anlegt, füge sie mit dem Befehl daneben hinzu.</li>
 <li>Jede neue Version ersetzt die vorherige automatisch.</li>
 <li>Keine Telemetrie, keine Lizenzen pro Gerät und keine Server zu warten.</li>
 </ul>
-<a class="boton boton--rojo" href="https://github.com/pachelabs-apps/Pache_PDF/releases/latest/download/Ozone_PDF.msi">Die .msi herunterladen</a>
+<a class="boton boton--rojo" href="https://github.com/pachelabs-apps/Ozone_PDF_2/releases/download/v2.0.0/Ozone.PDF_2.0.0_x64_en-US.msi">Die .msi herunterladen</a>
 </div>
 <div class="consola aparecer">
 <p class="consola__titulo">Installation ohne Fenster</p>
-<pre><code>msiexec /i Ozone_PDF.msi /qn</code></pre>
+<pre><code>msiexec /i Ozone.PDF_2.0.0_x64_en-US.msi /qn</code></pre>
 <p class="consola__titulo">Deinstallation</p>
-<pre><code>msiexec /x Ozone_PDF.msi /qn</code></pre>
-<p class="consola__nota">Firewall-Regel prüfen:</p>
-<pre><code>Get-NetFirewallRule -DisplayName "Ozone PDF - sin red"</code></pre>
+<pre><code>msiexec /x Ozone.PDF_2.0.0_x64_en-US.msi /qn</code></pre>
+<p class="consola__nota">Firewall-Regel (optional):</p>
+<pre><code>New-NetFirewallRule -DisplayName "Ozone PDF 2 - sin red" -Direction Outbound -Action Block -Program "C:\Program Files\Ozone PDF\ozone-pdf.exe"</code></pre>
 </div>
 </section>
 <!-- ============ SUGERENCIAS ============ -->
@@ -286,10 +295,10 @@
 <div class="pie__interior">
 <img alt="Pache.Labs" class="pie__logo" height="79" src="../img/logo-pie.png" width="280"/>
 <p><strong>Pache Labs</strong>, von Nicolás Pacheco. Hergestellt in Argentinien. <a href="mailto:pache.labs@gmail.com">pache.labs@gmail.com</a></p>
-<nav aria-label="Rechtliches"><a href="privacidad.html">Datenschutz</a> <a href="https://cafecito.app/pachelabs" rel="noopener">Spendier mir einen Kaffee</a> <a href="https://github.com/pachelabs-apps/Pache_PDF/blob/main/LICENSE.txt">Lizenz (AGPL-3.0)</a> <a href="https://github.com/pachelabs-apps/Pache_PDF">Quellcode</a></nav>
+<nav aria-label="Rechtliches"><a href="privacidad.html">Datenschutz</a> <a href="https://cafecito.app/pachelabs" rel="noopener">Spendier mir einen Kaffee</a> <a href="https://github.com/pachelabs-apps/Ozone_PDF_2/blob/main/LICENSE">Lizenz (AGPL-3.0)</a> <a href="https://github.com/pachelabs-apps/Ozone_PDF_2">Quellcode</a></nav>
 <p class="pie__chico">Diese Website verwendet keine Cookies und keine Tracking-Tools.</p>
 </div>
 </footer>
-<script src="../sitio.js?v=13"></script>
+<script src="../sitio.js?v=14"></script>
 </body>
 </html>
