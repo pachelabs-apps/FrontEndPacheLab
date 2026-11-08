@@ -394,7 +394,7 @@ a.ficha:hover { border-color: var(--rojo); color: var(--tinta); transform: trans
   border-radius: 10px; box-shadow: 0 24px 50px -20px rgba(0,0,0,.5);
   transform: rotate(2deg) translateX(8%); transition: transform .35s cubic-bezier(.2,.7,.2,1);
 }
-.app:hover .app__vista { transform: rotate(1deg) translateX(4%); }
+.app:hover .app__vista, .app:focus-visible .app__vista { transform: rotate(0deg) translateX(0); }
 
 /* por qué sin internet */
 .motivo {
