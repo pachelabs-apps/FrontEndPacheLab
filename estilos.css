@@ -219,6 +219,47 @@ a.ficha:hover { border-color: var(--rojo); color: var(--tinta); transform: trans
 
 .recorrido__escenario { position: relative; }
 .recorrido__escenario .ventana { position: sticky; top: calc(50vh - 220px); }
+
+/* ---------- recorrido en pantallas grandes: pasos numerados con una línea de avance ---------- */
+@media (min-width: 901px) {
+  .recorrido { grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr); gap: 72px; }
+  .recorrido__pasos { position: relative; counter-reset: paso; padding-left: 64px; }
+  .recorrido__pasos::before {
+    content: ""; position: absolute; left: 21px; top: 30vh; bottom: 30vh; width: 2px;
+    background: linear-gradient(var(--linea), var(--linea)) no-repeat; border-radius: 2px;
+  }
+  .paso { min-height: 62vh; position: relative; counter-increment: paso; }
+  .paso::before { display: none; }
+  .paso h3 { position: relative; }
+  .paso h3::before {
+    content: counter(paso, decimal-leading-zero); position: absolute; left: -64px; top: .52em; transform: translateY(-50%);
+    width: 44px; height: 44px; margin: 0; border-radius: 50%; display: grid; place-items: center;
+    background: #fff; border: 2px solid var(--linea); color: var(--tinta-suave);
+    font: 800 .95rem/1 var(--titulos, system-ui, sans-serif); letter-spacing: -.02em;
+    transition: background-color .3s, border-color .3s, color .3s, transform .3s;
+  }
+  .paso.es-actual h3::before {
+    width: 44px; background: var(--rojo); border-color: var(--rojo); color: #fff;
+    transform: translateY(-50%) scale(1.12); box-shadow: 0 10px 24px -8px rgba(211, 38, 29, .6);
+  }
+  .paso h3, .paso p { transition: color .3s, opacity .3s; }
+  .paso:not(.es-actual) h3 { color: var(--tinta-suave); }
+  .paso:not(.es-actual) p { opacity: .55; }
+  .paso.es-actual h3 { color: var(--tinta); }
+  .paso.es-actual p { font-size: 1.12rem; }
+  /* la ventana: más grande, con un halo de color atrás y una leve perspectiva */
+  .recorrido__escenario .ventana {
+    top: calc(50vh - 260px); transform: perspective(1800px) rotateY(-5deg) rotateX(1deg); transform-origin: 30% 50%;
+    border-radius: 14px;
+    box-shadow: 0 50px 100px -40px rgba(23, 24, 28, .55), 0 0 0 1px rgba(23, 24, 28, .06),
+                0 0 120px -10px rgba(211, 38, 29, .28);
+    transition: transform .6s cubic-bezier(.2, .8, .2, 1);
+  }
+  .recorrido__escenario:hover .ventana { transform: perspective(1800px) rotateY(-1deg); }
+}
+@media (min-width: 901px) and (prefers-reduced-motion: reduce) {
+  .recorrido__escenario .ventana, .recorrido__escenario:hover .ventana { transform: none; }
+}
 .escenario__cuadros { position: relative; aspect-ratio: 1060 / 700; background: #fff; }
 .escenario__cuadros img {
   position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain;
