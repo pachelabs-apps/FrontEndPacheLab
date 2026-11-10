@@ -242,4 +242,9 @@ D = {
 240: "<strong>Camera photos:</strong> if you use \"Photos to PDF\", the photos stay in the program's memory while you work and are discarded when you finish or close it.",
 241: "Ozone PDF uses the camera only when you open \"Photos to PDF\" and only while that window is open. The images never leave your computer. You can allow or block access in Windows Settings > Privacy &amp; security > Camera (on Mac, in System Settings > Privacy &amp; Security > Camera).",
 242: "<a href=\"index.html\">Programs</a><a href=\"https://github.com/pachelabs-apps/Ozone_PDF_2\">Source code</a>",
+243: "Last updated: November 10, 2026",
+244: "<strong>On Android it doesn't even have internet permission.</strong> Your phone's system prevents it from connecting: you can check it in Settings > Apps > Ozone PDF > Permissions.",
+245: "<strong>Everything is processed on your computer or phone.</strong> Text recognition (OCR) and scanning too. The files you create are saved wherever you choose. If that folder syncs with a cloud service (like OneDrive or Google Drive), that service does upload them, under its own policy.",
+246: "What it stores on your device",
+247: "Ozone PDF uses the camera only when you open \"Photos to PDF\" and only while that window is open. The images never leave your computer. You can allow or block access in Windows Settings > Privacy & security > Camera (on Mac, in System Settings > Privacy & Security > Camera). On your phone, Android asks for permission the first time and you can change it in Settings > Apps > Ozone PDF > Permissions.",
 }

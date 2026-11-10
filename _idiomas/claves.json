@@ -241,5 +241,10 @@
  "<strong>Tu firma:</strong> solo si elegís guardarla para usarla de nuevo, queda en esa misma carpeta. La podés borrar desde la ventana de firmar.",
  "<strong>Fotos de la cámara:</strong> si usás \"Fotos a PDF\", las fotos quedan en la memoria del programa mientras trabajás y se descartan al terminar o al cerrarlo.",
  "Ozone PDF usa la cámara solo cuando abrís \"Fotos a PDF\" y solo mientras esa ventana está abierta. Las imágenes no salen de tu computadora. Podés permitir o bloquear el acceso desde Configuración de Windows > Privacidad y seguridad > Cámara (en Mac, desde Configuración del Sistema > Privacidad y seguridad > Cámara).",
- "<a href=\"index.html\">Programas</a><a href=\"https://github.com/pachelabs-apps/Ozone_PDF_2\">Código fuente</a>"
+ "<a href=\"index.html\">Programas</a><a href=\"https://github.com/pachelabs-apps/Ozone_PDF_2\">Código fuente</a>",
+ "Última actualización: 10 de noviembre de 2026",
+ "<strong>En Android ni siquiera tiene permiso de internet.</strong> El sistema del celular le impide conectarse: lo podés comprobar en Ajustes > Aplicaciones > Ozone PDF > Permisos.",
+ "<strong>Todo se procesa en tu computadora o en tu celular.</strong> También el reconocimiento de texto (OCR) y el escaneo. Los archivos que generás se guardan donde vos elegís. Si esa carpeta se sincroniza con un servicio en la nube (como OneDrive o Google Drive), ese servicio sí los sube, según su propia política.",
+ "Lo que guarda en tu equipo",
+ "Ozone PDF usa la cámara solo cuando abrís \"Fotos a PDF\" y solo mientras esa ventana está abierta. Las imágenes no salen de tu computadora. Podés permitir o bloquear el acceso desde Configuración de Windows > Privacidad y seguridad > Cámara (en Mac, desde Configuración del Sistema > Privacidad y seguridad > Cámara). En el celular, Android te pide permiso la primera vez y lo podés cambiar en Ajustes > Aplicaciones > Ozone PDF > Permisos."
 ]
