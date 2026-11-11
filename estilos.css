@@ -820,3 +820,8 @@ a.ficha:hover { border-color: var(--rojo); color: var(--tinta); transform: trans
 .org-ej__firma span { font-size: .88rem; color: var(--tinta-suave); }
 .org-ej__nota { margin: auto 0 0; font-size: .95rem; color: var(--tinta-suave); }
 @media (max-width: 900px) { .org-ejemplos__lista { grid-template-columns: minmax(0, 1fr); max-width: 460px; } }
+
+/* licencia junto a las descargas: discreta, pero visible (lo pide la AGPL) */
+.descargar__licencia { margin-top: 20px; font-size: .85rem; }
+.descargar__licencia a { color: inherit; opacity: .85; text-decoration: none; }
+.descargar__licencia a:hover, .descargar__licencia a:focus-visible { opacity: 1; text-decoration: underline; }

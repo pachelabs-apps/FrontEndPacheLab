@@ -300,4 +300,6 @@ D = {
 298: "Laura Gómez 医師",
 299: "内科・医籍番号 1234",
 300: "軽くて検索できる、スキャンした検査結果。",
+301: "<a href=\"https://github.com/pachelabs-apps/Ozone_PDF_2/tree/v2.1.12\" title=\"ソースコード\">フリーソフトウェア · AGPL-3.0</a>",
+302: "ソースコード",
 }

@@ -300,4 +300,6 @@ D = {
 298: "Dr. Laura Gómez",
 299: "Internal medicine · Lic. 1234",
 300: "Scanned test results, light and searchable.",
+301: "<a href=\"https://github.com/pachelabs-apps/Ozone_PDF_2/tree/v2.1.12\" title=\"Source code\">Free software · AGPL-3.0</a>",
+302: "Source code",
 }
