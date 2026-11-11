@@ -825,3 +825,5 @@ a.ficha:hover { border-color: var(--rojo); color: var(--tinta); transform: trans
 .descargar__licencia { margin-top: 20px; font-size: .85rem; }
 .descargar__licencia a { color: inherit; opacity: .85; text-decoration: none; }
 .descargar__licencia a:hover, .descargar__licencia a:focus-visible { opacity: 1; text-decoration: underline; }
+.organizaciones__botones { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
+.organizaciones__texto .organizaciones__botones .boton { margin-top: 0; }

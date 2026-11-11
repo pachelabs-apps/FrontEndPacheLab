@@ -302,4 +302,5 @@ D = {
 300: "Gescannte Befunde, leicht und durchsuchbar.",
 301: "<a href=\"https://github.com/pachelabs-apps/Ozone_PDF_2/tree/v2.1.12\" title=\"Quellcode\">Freie Software · AGPL-3.0</a>",
 302: "Quellcode",
+303: "<a class=\"boton boton--rojo\" href=\"mailto:pache.labs@gmail.com?subject=Ozone%20PDF%20para%20organizaciones\">Angebot anfragen</a> <a class=\"boton boton--linea\" download=\"\" href=\"img/ozone-pdf-organizaciones.pdf\">Datenblatt herunterladen (PDF, auf Spanisch)</a>",
 }
