@@ -722,3 +722,63 @@ a.ficha:hover { border-color: var(--rojo); color: var(--tinta); transform: trans
 .actualizar span { color: var(--tinta-suave); }
 .actualizar--nueva { outline: 3px solid #FFD54A; }
 .actualizar[hidden] { display: none; }
+
+/* ---------- mini animaciones de cada paso del recorrido ----------
+   El estado normal es el dibujo terminado; cuando el paso queda en el centro de la pantalla
+   (.es-actual) la animación arranca desde cero y se repite. */
+.mini { display: block; height: 84px; width: auto; max-width: 100%; margin-bottom: 18px; overflow: visible; transition: opacity .3s; }
+.mini * { transform-box: fill-box; transform-origin: center; }
+.m-hoja { fill: #fff; stroke: var(--tinta); stroke-width: 4; stroke-linejoin: round; }
+.m-hoja--roja { fill: var(--rojo); stroke: none; }
+.m-hoja--azul { fill: var(--azul); stroke: none; }
+.m-pliegue { fill: var(--mesa); stroke: var(--tinta); stroke-width: 4; stroke-linejoin: round; }
+.m-pliegue--color { fill: rgba(255, 255, 255, .55); stroke: none; }
+.m-renglon { fill: none; stroke: #C9CBD2; stroke-width: 5; stroke-linecap: round; }
+.m-resalte { fill: #FFE27A; }
+.m-firma { fill: none; stroke: var(--azul); stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 1; }
+.m-barra { fill: var(--tinta); transform-origin: left center; }
+.m-borrado { opacity: 0; }
+.m-etiqueta { fill: #fff; font: 800 17px var(--titulos); text-anchor: middle; letter-spacing: -.01em; }
+.m-etiqueta--chica { font-size: 13px; }
+.m-flecha path { fill: none; stroke: var(--tinta); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+.m-ok circle { fill: var(--verde); stroke: #fff; stroke-width: 4; }
+.m-ok path { fill: none; stroke: #fff; stroke-width: 4.5; stroke-linecap: round; stroke-linejoin: round; }
+.m-celu { fill: none; stroke: var(--tinta); stroke-width: 5; stroke-linecap: round; }
+.m-esquinas circle { fill: var(--azul); }
+.m-esquinas { opacity: 0; }
+@media (min-width: 901px) { .paso:not(.es-actual) .mini { opacity: .45; } }
+
+.paso.es-actual .m-ok { animation: m-ok 4.6s cubic-bezier(.2, 1.5, .4, 1) infinite; }
+/* firmar: se resalta un renglón y después se dibuja la firma */
+.paso.es-actual .m-resalte { animation: m-resalte 4.6s ease-out infinite; transform-origin: left center; }
+.paso.es-actual .m-firma { animation: m-firma 4.6s ease-in-out infinite; }
+/* censurar: la barra tapa el dato y el texto de abajo desaparece */
+.paso.es-actual .m-barra { animation: m-barra 4.6s cubic-bezier(.5, 0, .2, 1) infinite; }
+.paso.es-actual .m-borrado { animation: m-borrado 4.6s linear infinite; }
+/* word: la flecha empuja y aparece el PDF */
+.paso.es-actual .m-flecha { animation: m-flecha 4.6s ease-in-out infinite; }
+.paso.es-actual .m-destino { animation: m-destino 4.6s cubic-bezier(.2, 1.3, .4, 1) infinite; }
+/* unir: las tres hojas se juntan en una sola y el PDF se achica */
+.paso.es-actual .m-u1 { animation: m-u1 4.6s cubic-bezier(.5, 0, .2, 1) infinite; }
+.paso.es-actual .m-u3 { animation: m-u3 4.6s cubic-bezier(.5, 0, .2, 1) infinite; }
+.paso.es-actual .m-u2 { animation: m-u2 4.6s cubic-bezier(.5, 0, .2, 1) infinite; }
+/* escanear: la hoja torcida se detecta, se endereza y queda como PDF */
+.paso.es-actual .m-papel { animation: m-papel 4.6s ease-in-out infinite; }
+.paso.es-actual .m-papel rect { animation: m-papel-color 4.6s linear infinite; }
+.paso.es-actual .m-pdf { animation: m-pdf 4.6s linear infinite; }
+.paso.es-actual .m-esquinas { animation: m-esquinas 4.6s ease-in-out infinite; }
+
+@keyframes m-ok { 0%, 62% { transform: scale(0); } 72%, 100% { transform: scale(1); } }
+@keyframes m-resalte { 0%, 6% { transform: scaleX(0); } 24%, 100% { transform: scaleX(1); } }
+@keyframes m-firma { 0%, 26% { stroke-dashoffset: 1; } 70%, 100% { stroke-dashoffset: 0; } }
+@keyframes m-barra { 0%, 10% { transform: scaleX(0); } 32%, 100% { transform: scaleX(1); } }
+@keyframes m-borrado { 0%, 32% { opacity: 1; } 33%, 100% { opacity: 0; } }
+@keyframes m-flecha { 0%, 8% { transform: translateX(-14px); opacity: 0; } 22% { opacity: 1; } 38%, 100% { transform: none; opacity: 1; } }
+@keyframes m-destino { 0%, 34% { transform: scale(.4); opacity: 0; } 50%, 100% { transform: none; opacity: 1; } }
+@keyframes m-u1 { 0%, 8% { transform: translateX(-52px) rotate(-8deg); } 40% { transform: none; } 52% { transform: none; } 60%, 100% { transform: scale(.88); } }
+@keyframes m-u2 { 0%, 8% { transform: translateY(-4px); } 40% { transform: none; } 52% { transform: none; } 60%, 100% { transform: scale(.88); } }
+@keyframes m-u3 { 0%, 8% { transform: translateX(52px) rotate(8deg); } 40% { transform: none; } 52% { transform: none; } 60%, 100% { transform: scale(.88); } }
+@keyframes m-papel { 0%, 34% { transform: rotate(-13deg) scale(.92); } 52%, 100% { transform: none; } }
+@keyframes m-papel-color { 0%, 46% { fill: #fff; stroke: var(--tinta); stroke-width: 3.5px; } 56%, 100% { fill: var(--rojo); stroke: transparent; } }
+@keyframes m-pdf { 0%, 52% { opacity: 0; } 60%, 100% { opacity: 1; } }
+@keyframes m-esquinas { 0%, 12% { opacity: 0; transform: rotate(-13deg) scale(.92); } 22%, 34% { opacity: 1; transform: rotate(-13deg) scale(.92); } 50% { opacity: 1; transform: none; } 58%, 100% { opacity: 0; transform: none; } }
