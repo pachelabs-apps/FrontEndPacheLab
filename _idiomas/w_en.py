@@ -260,4 +260,6 @@ D = {
 258: "Image to text",
 259: "Free, for Windows 10 and 11, macOS 10.15 or later and Linux. Coming soon to Android.",
 260: "Word to PDF screen with two Word documents ready to convert.",
+261: "Merge, split and shrink",
+262: "Combine several PDFs into one, split it by size or by pages so it fits in an email, or compress it so it weighs less. Your original stays the same: a new copy is always saved.",
 }

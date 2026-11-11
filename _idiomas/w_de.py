@@ -260,4 +260,6 @@ D = {
 258: "Bild zu Text",
 259: "Kostenlos, für Windows 10 und 11, macOS 10.15 oder neuer und Linux. Bald auch für Android.",
 260: "Bildschirm „Word in PDF“ mit zwei Word-Dokumenten, bereit zur Umwandlung.",
+261: "Zusammenführen, teilen und verkleinern",
+262: "Füge mehrere PDFs zu einem zusammen, teile es nach Größe oder Seiten, damit es in eine E-Mail passt, oder komprimiere es, damit es kleiner wird. Dein Original bleibt unverändert: Es wird immer eine neue Kopie gespeichert.",
 }
