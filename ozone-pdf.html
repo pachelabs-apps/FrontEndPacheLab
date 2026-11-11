@@ -12,7 +12,7 @@
 <meta content="https://pachelabs.net/ozone-pdf.html" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <link href="https://pachelabs.net/ozone-pdf.html" rel="canonical"/>
-<link href="estilos.css?v=20" rel="stylesheet"/>
+<link href="estilos.css?v=21" rel="stylesheet"/>
 <!--
   LINKS (buscá "COMPLETAR" para lo que falta):
   - Descargas: apuntan a los archivos del Release de la versión (los arma GitHub Actions al subir
@@ -93,8 +93,9 @@
 <div class="recorrido__pasos">
 <article class="paso aparecer" data-imagen="firmar">
 <h3>Firmá y anotá sin imprimir</h3>
-<p>Dibujá tu firma una vez y ponela donde haga falta. Resaltá, subrayá, escribí y marcá
-          con recuadros o a mano alzada. Si te equivocás, Ctrl+Z lo deshace.</p>
+<p>Dibujá tu firma una vez (si querés, con tu aclaración, cargo o matrícula debajo) y ponela
+          donde haga falta. Resaltá, subrayá, escribí y marcá con recuadros o a mano alzada: todo se puede
+          mover y corregir. Si te equivocás, Ctrl+Z lo deshace.</p>
 <figure class="paso__imagen"><div class="ventana"><img alt="Contrato abierto en Ozone PDF con un párrafo resaltado y la firma puesta al pie." height="700" loading="lazy" src="img/firmar.webp" width="1060"/></div></figure>
 </article>
 <article class="paso aparecer" data-imagen="censurar">
@@ -108,6 +109,12 @@
 <p>Arrastrá los archivos a la ventana, ordenalos como quieras y listo: sale un solo PDF.
           Tu original queda igual, siempre se guarda una copia nueva.</p>
 <figure class="paso__imagen"><div class="ventana"><img alt="Lista de tres PDF para unir, con flechas para cambiar el orden." height="700" loading="lazy" src="img/unir.webp?v=2" width="1060"/></div></figure>
+</article>
+<article class="paso aparecer" data-imagen="word">
+<h3>De Word a PDF y de PDF a Word</h3>
+<p>Pasá un documento de Word a PDF para mandarlo, o un PDF a Word para editarlo. Se mantienen
+          los títulos, las negritas, las listas, las tablas y las imágenes, sin subir el archivo a ninguna página.</p>
+<figure class="paso__imagen"><div class="ventana"><img alt="Pantalla de Word a PDF con dos documentos de Word listos para convertir." height="700" loading="lazy" src="img/word.webp" width="1060"/></div></figure>
 </article>
 <article class="paso aparecer" data-imagen="dividir">
 <h3>Partilo para que entre en el mail</h3>
@@ -141,6 +148,7 @@
 <img alt="" class="activo" data-imagen="firmar" height="700" src="img/firmar.webp" width="1060"/>
 <img alt="" data-imagen="censurar" height="700" loading="lazy" src="img/censurar.webp" width="1060"/>
 <img alt="" data-imagen="unir" height="700" loading="lazy" src="img/unir.webp?v=2" width="1060"/>
+<img alt="" data-imagen="word" height="700" loading="lazy" src="img/word.webp" width="1060"/>
 <img alt="" data-imagen="dividir" height="700" loading="lazy" src="img/dividir.webp?v=2" width="1060"/>
 <img alt="" data-imagen="escanear" height="700" loading="lazy" src="img/escanear.webp?v=2" width="1060"/>
 <img alt="" data-imagen="proteger" height="700" loading="lazy" src="img/proteger.webp?v=2" width="1060"/>
@@ -197,11 +205,11 @@
 </section>
 <!-- ============ TODAS LAS HERRAMIENTAS ============ -->
 <section aria-labelledby="titulo-herr" class="herramientas">
-<h2 class="aparecer" id="titulo-herr">Más de 20 herramientas en una sola app</h2>
+<h2 class="aparecer" id="titulo-herr">Más de 25 herramientas en una sola app</h2>
 <div class="herramientas__grupos">
 <div class="grupo aparecer">
 <h3>Editar</h3>
-<ul><li>Firmar</li><li>Resaltar, subrayar y tachar</li><li>Texto, recuadros y dibujo a mano</li><li>Censurar (borra de verdad)</li></ul>
+<ul><li>Firmar (con aclaración, cargo o matrícula)</li><li>Resaltar, subrayar y tachar</li><li>Texto, recuadros y dibujo a mano</li><li>Censurar (borra de verdad)</li></ul>
 </div>
 <div class="grupo aparecer">
 <h3>Organizar</h3>
@@ -213,7 +221,11 @@
 </div>
 <div class="grupo aparecer">
 <h3>Convertir</h3>
-<ul><li>PDF a imagen (JPG o PNG)</li><li>Imagen a PDF</li><li>Escanear con la cámara</li><li>PDF a texto</li></ul>
+<ul><li>Word a PDF</li><li>PDF a Word</li><li>PDF a imagen (JPG o PNG)</li><li>Imagen a PDF</li><li>Escanear con la cámara</li><li>PDF a texto</li></ul>
+</div>
+<div class="grupo aparecer">
+<h3>Reconocer texto</h3>
+<ul><li>Hacer buscable un PDF escaneado</li><li>Imagen a texto</li></ul>
 </div>
 <div class="grupo aparecer">
 <h3>Proteger</h3>
@@ -226,7 +238,7 @@
 <div class="descargar__interior">
 <img alt="" class="aparecer" height="96" src="img/ozone-pdf.png" width="96"/>
 <h2 class="aparecer">Descargá Ozone PDF</h2>
-<p class="aparecer">Gratis, para Windows 10 y 11, macOS 10.15 o posterior y Linux.</p>
+<p class="aparecer">Gratis, para Windows 10 y 11, macOS 10.15 o posterior y Linux. Muy pronto también para Android.</p>
 <div class="acciones acciones--centro aparecer">
 <a class="boton boton--blanco boton--store" href="https://apps.microsoft.com/detail/9NMBRDNCZ9P8" rel="noopener" target="_blank"><svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22"><path d="M2 2h9.5v9.5H2z" fill="#F25022"></path><path d="M12.5 2H22v9.5h-9.5z" fill="#7FBA00"></path><path d="M2 12.5h9.5V22H2z" fill="#00A4EF"></path><path d="M12.5 12.5H22V22h-9.5z" fill="#FFB900"></path></svg><span>Conseguilo en Microsoft Store</span></a>
 <a class="boton boton--linea-blanca" href="https://github.com/pachelabs-apps/Ozone_PDF_2/releases/download/v2.1.11/Ozone.PDF_2.1.11_x64-setup.exe">Descargar para Windows (.exe)</a>

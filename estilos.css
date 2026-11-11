@@ -303,7 +303,7 @@ a.ficha:hover { border-color: var(--rojo); color: var(--tinta); transform: trans
 /* ---------- herramientas ---------- */
 .herramientas { background: var(--mesa); padding: 96px 24px; }
 .herramientas > h2, .herramientas__grupos { max-width: var(--ancho); margin-left: auto; margin-right: auto; }
-.herramientas__grupos { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 28px; margin-top: 40px; }
+.herramientas__grupos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px 40px; margin-top: 40px; }
 .grupo h3 { font-size: 1.25rem; padding-bottom: 12px; border-bottom: 3px solid var(--rojo); }
 .grupo ul { list-style: none; padding: 0; margin: 14px 0 0; display: grid; gap: 8px; }
 
@@ -357,6 +357,7 @@ a.ficha:hover { border-color: var(--rojo); color: var(--tinta); transform: trans
 .js .hechos .aparecer:nth-child(3), .js .herramientas__grupos .aparecer:nth-child(3) { transition-delay: .16s; }
 .js .hechos .aparecer:nth-child(4), .js .herramientas__grupos .aparecer:nth-child(4) { transition-delay: .24s; }
 .js .hechos .aparecer:nth-child(5), .js .herramientas__grupos .aparecer:nth-child(5) { transition-delay: .32s; }
+.js .herramientas__grupos .aparecer:nth-child(6) { transition-delay: .4s; }
 
 /* ---------- celular y tablet ---------- */
 @media (max-width: 900px) {

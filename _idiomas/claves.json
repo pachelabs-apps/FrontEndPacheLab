@@ -246,5 +246,18 @@
  "<strong>En Android ni siquiera tiene permiso de internet.</strong> El sistema del celular le impide conectarse: lo podés comprobar en Ajustes > Aplicaciones > Ozone PDF > Permisos.",
  "<strong>Todo se procesa en tu computadora o en tu celular.</strong> También el reconocimiento de texto (OCR) y el escaneo. Los archivos que generás se guardan donde vos elegís. Si esa carpeta se sincroniza con un servicio en la nube (como OneDrive o Google Drive), ese servicio sí los sube, según su propia política.",
  "Lo que guarda en tu equipo",
- "Ozone PDF usa la cámara solo cuando abrís \"Fotos a PDF\" y solo mientras esa ventana está abierta. Las imágenes no salen de tu computadora. Podés permitir o bloquear el acceso desde Configuración de Windows > Privacidad y seguridad > Cámara (en Mac, desde Configuración del Sistema > Privacidad y seguridad > Cámara). En el celular, Android te pide permiso la primera vez y lo podés cambiar en Ajustes > Aplicaciones > Ozone PDF > Permisos."
+ "Ozone PDF usa la cámara solo cuando abrís \"Fotos a PDF\" y solo mientras esa ventana está abierta. Las imágenes no salen de tu computadora. Podés permitir o bloquear el acceso desde Configuración de Windows > Privacidad y seguridad > Cámara (en Mac, desde Configuración del Sistema > Privacidad y seguridad > Cámara). En el celular, Android te pide permiso la primera vez y lo podés cambiar en Ajustes > Aplicaciones > Ozone PDF > Permisos.",
+ "Firmá, anotá, editá y tapá datos; uní, dividí, comprimí, protegé, pasá de Word a PDF y escaneá documentos con la cámara. Más de 25 herramientas, como las páginas de PDF de internet, pero sin subir nada.",
+ "Dibujá tu firma una vez (si querés, con tu aclaración, cargo o matrícula debajo) y ponela donde haga falta. Resaltá, subrayá, escribí y marcá con recuadros o a mano alzada: todo se puede mover y corregir. Si te equivocás, Ctrl+Z lo deshace.",
+ "De Word a PDF y de PDF a Word",
+ "Pasá un documento de Word a PDF para mandarlo, o un PDF a Word para editarlo. Se mantienen los títulos, las negritas, las listas, las tablas y las imágenes, sin subir el archivo a ninguna página.",
+ "Más de 25 herramientas en una sola app",
+ "Firmar (con aclaración, cargo o matrícula)",
+ "Word a PDF",
+ "PDF a Word",
+ "Reconocer texto",
+ "Hacer buscable un PDF escaneado",
+ "Imagen a texto",
+ "Gratis, para Windows 10 y 11, macOS 10.15 o posterior y Linux. Muy pronto también para Android.",
+ "Pantalla de Word a PDF con dos documentos de Word listos para convertir."
 ]

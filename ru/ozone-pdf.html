@@ -12,7 +12,7 @@
 <meta content="https://pachelabs.net/ru/ozone-pdf.html" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <link href="https://pachelabs.net/ru/ozone-pdf.html" rel="canonical"/>
-<link href="../estilos.css?v=20" rel="stylesheet"/>
+<link href="../estilos.css?v=21" rel="stylesheet"/>
 <!--
   LINKS (buscá "COMPLETAR" para lo que falta):
   - Descargas: apuntan a los archivos del Release de la versión (los arma GitHub Actions al subir
@@ -82,7 +82,7 @@
 <div class="recorrido__pasos">
 <article class="paso aparecer" data-imagen="firmar">
 <h3>Подпись и пометки без печати</h3>
-<p>Нарисуйте подпись один раз и ставьте её где нужно. Выделяйте, подчёркивайте, пишите, отмечайте рамками или от руки. Ошиблись — Ctrl+Z отменит.</p>
+<p>Нарисуйте подпись один раз (при желании — с расшифровкой, должностью или номером под ней) и ставьте её где нужно. Выделяйте, подчёркивайте, пишите, рисуйте рамки или от руки: всё можно перемещать и исправлять. Ошиблись — Ctrl+Z отменит.</p>
 <figure class="paso__imagen"><div class="ventana"><img alt="Договор в Ozone PDF с выделенным абзацем и подписью внизу." height="700" loading="lazy" src="../img/firmar.webp" width="1060"/></div></figure>
 </article>
 <article class="paso aparecer" data-imagen="censurar">
@@ -94,6 +94,11 @@
 <h3>Объедините несколько PDF в один</h3>
 <p>Перетащите файлы в окно, расставьте в нужном порядке — и готово: получится один PDF. Исходный файл не меняется, всегда сохраняется новая копия.</p>
 <figure class="paso__imagen"><div class="ventana"><img alt="Список из трёх PDF для объединения со стрелками для изменения порядка." height="700" loading="lazy" src="../img/unir.webp?v=2" width="1060"/></div></figure>
+</article>
+<article class="paso aparecer" data-imagen="word">
+<h3>Из Word в PDF и из PDF в Word</h3>
+<p>Превратите документ Word в PDF, чтобы отправить, или PDF в Word, чтобы отредактировать. Заголовки, полужирный текст, списки, таблицы и изображения сохраняются — без загрузки файла на какой-либо сайт.</p>
+<figure class="paso__imagen"><div class="ventana"><img alt="Экран «Word в PDF» с двумя документами Word, готовыми к преобразованию." height="700" loading="lazy" src="../img/word.webp" width="1060"/></div></figure>
 </article>
 <article class="paso aparecer" data-imagen="dividir">
 <h3>Разделите, чтобы влезло в письмо</h3>
@@ -123,6 +128,7 @@
 <img alt="" class="activo" data-imagen="firmar" height="700" src="../img/firmar.webp" width="1060"/>
 <img alt="" data-imagen="censurar" height="700" loading="lazy" src="../img/censurar.webp" width="1060"/>
 <img alt="" data-imagen="unir" height="700" loading="lazy" src="../img/unir.webp?v=2" width="1060"/>
+<img alt="" data-imagen="word" height="700" loading="lazy" src="../img/word.webp" width="1060"/>
 <img alt="" data-imagen="dividir" height="700" loading="lazy" src="../img/dividir.webp?v=2" width="1060"/>
 <img alt="" data-imagen="escanear" height="700" loading="lazy" src="../img/escanear.webp?v=2" width="1060"/>
 <img alt="" data-imagen="proteger" height="700" loading="lazy" src="../img/proteger.webp?v=2" width="1060"/>
@@ -171,11 +177,11 @@
 </section>
 <!-- ============ TODAS LAS HERRAMIENTAS ============ -->
 <section aria-labelledby="titulo-herr" class="herramientas">
-<h2 class="aparecer" id="titulo-herr">Больше 20 инструментов в одной программе</h2>
+<h2 class="aparecer" id="titulo-herr">Больше 25 инструментов в одном приложении</h2>
 <div class="herramientas__grupos">
 <div class="grupo aparecer">
 <h3>Редактировать</h3>
-<ul><li>Подписать</li><li>Выделение, подчёркивание и зачёркивание</li><li>Текст, рамки и рисование от руки</li><li>Скрытие (удаляет по-настоящему)</li></ul>
+<ul><li>Подпись (с расшифровкой, должностью или номером)</li><li>Выделение, подчёркивание и зачёркивание</li><li>Текст, рамки и рисование от руки</li><li>Скрытие (удаляет по-настоящему)</li></ul>
 </div>
 <div class="grupo aparecer">
 <h3>Упорядочить</h3>
@@ -187,7 +193,11 @@
 </div>
 <div class="grupo aparecer">
 <h3>Преобразовать</h3>
-<ul><li>PDF в изображение (JPG или PNG)</li><li>Изображение в PDF</li><li>Сканировать камерой</li><li>PDF в текст</li></ul>
+<ul><li>Word в PDF</li><li>PDF в Word</li><li>PDF в изображение (JPG или PNG)</li><li>Изображение в PDF</li><li>Сканировать камерой</li><li>PDF в текст</li></ul>
+</div>
+<div class="grupo aparecer">
+<h3>Распознать текст</h3>
+<ul><li>Сделать отсканированный PDF доступным для поиска</li><li>Изображение в текст</li></ul>
 </div>
 <div class="grupo aparecer">
 <h3>Защитить</h3>
@@ -200,7 +210,7 @@
 <div class="descargar__interior">
 <img alt="" class="aparecer" height="96" src="../img/ozone-pdf.png" width="96"/>
 <h2 class="aparecer">Скачать Ozone PDF</h2>
-<p class="aparecer">Бесплатно, для Windows 10 и 11, macOS 10.15 и новее и Linux.</p>
+<p class="aparecer">Бесплатно, для Windows 10 и 11, macOS 10.15 и новее и Linux. Скоро и для Android.</p>
 <div class="acciones acciones--centro aparecer">
 <a class="boton boton--blanco boton--store" href="https://apps.microsoft.com/detail/9NMBRDNCZ9P8" rel="noopener" target="_blank"><svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22"><path d="M2 2h9.5v9.5H2z" fill="#F25022"></path><path d="M12.5 2H22v9.5h-9.5z" fill="#7FBA00"></path><path d="M2 12.5h9.5V22H2z" fill="#00A4EF"></path><path d="M12.5 12.5H22V22h-9.5z" fill="#FFB900"></path></svg><span>Получить в Microsoft Store</span></a>
 <a class="boton boton--linea-blanca" href="https://github.com/pachelabs-apps/Ozone_PDF_2/releases/download/v2.1.11/Ozone.PDF_2.1.11_x64-setup.exe">Скачать для Windows (.exe)</a>

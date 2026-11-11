@@ -12,7 +12,7 @@
 <meta content="https://pachelabs.net/ja/ozone-pdf.html" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <link href="https://pachelabs.net/ja/ozone-pdf.html" rel="canonical"/>
-<link href="../estilos.css?v=20" rel="stylesheet"/>
+<link href="../estilos.css?v=21" rel="stylesheet"/>
 <!--
   LINKS (buscá "COMPLETAR" para lo que falta):
   - Descargas: apuntan a los archivos del Release de la versión (los arma GitHub Actions al subir
@@ -82,7 +82,7 @@
 <div class="recorrido__pasos">
 <article class="paso aparecer" data-imagen="firmar">
 <h3>印刷せずに署名・書き込み</h3>
-<p>署名は一度描けば、必要な場所に置けます。ハイライト、下線、文字入れ、枠や手書きでのマークも。間違えても Ctrl+Z で元に戻せます。</p>
+<p>署名は一度描くだけ（必要なら下に氏名・役職・登録番号も）。あとは好きな場所に置けます。ハイライト・下線・書き込み・四角・手書きも、動かしたり直したりできます。まちがえたら Ctrl+Z で元に戻せます。</p>
 <figure class="paso__imagen"><div class="ventana"><img alt="Ozone PDF で開いた契約書。段落がハイライトされ、下に署名があります。" height="700" loading="lazy" src="../img/firmar.webp" width="1060"/></div></figure>
 </article>
 <article class="paso aparecer" data-imagen="censurar">
@@ -94,6 +94,11 @@
 <h3>複数の PDF を 1 つに</h3>
 <p>ファイルをウィンドウにドラッグし、好きな順に並べれば完了。1 つの PDF ができあがります。元のファイルはそのままで、常に新しいコピーとして保存されます。</p>
 <figure class="paso__imagen"><div class="ventana"><img alt="結合する 3 つの PDF のリスト。順序を変える矢印付き。" height="700" loading="lazy" src="../img/unir.webp?v=2" width="1060"/></div></figure>
+</article>
+<article class="paso aparecer" data-imagen="word">
+<h3>Word を PDF に、PDF を Word に</h3>
+<p>Word 文書を PDF にして送ったり、PDF を Word にして編集したり。見出し・太字・箇条書き・表・画像はそのまま。ファイルをどこにもアップロードしません。</p>
+<figure class="paso__imagen"><div class="ventana"><img alt="2 つの Word 文書を変換する準備ができた「Word を PDF に」の画面。" height="700" loading="lazy" src="../img/word.webp" width="1060"/></div></figure>
 </article>
 <article class="paso aparecer" data-imagen="dividir">
 <h3>メールで送れるサイズに分割</h3>
@@ -123,6 +128,7 @@
 <img alt="" class="activo" data-imagen="firmar" height="700" src="../img/firmar.webp" width="1060"/>
 <img alt="" data-imagen="censurar" height="700" loading="lazy" src="../img/censurar.webp" width="1060"/>
 <img alt="" data-imagen="unir" height="700" loading="lazy" src="../img/unir.webp?v=2" width="1060"/>
+<img alt="" data-imagen="word" height="700" loading="lazy" src="../img/word.webp" width="1060"/>
 <img alt="" data-imagen="dividir" height="700" loading="lazy" src="../img/dividir.webp?v=2" width="1060"/>
 <img alt="" data-imagen="escanear" height="700" loading="lazy" src="../img/escanear.webp?v=2" width="1060"/>
 <img alt="" data-imagen="proteger" height="700" loading="lazy" src="../img/proteger.webp?v=2" width="1060"/>
@@ -171,11 +177,11 @@
 </section>
 <!-- ============ TODAS LAS HERRAMIENTAS ============ -->
 <section aria-labelledby="titulo-herr" class="herramientas">
-<h2 class="aparecer" id="titulo-herr">20 以上のツールをひとつのアプリに</h2>
+<h2 class="aparecer" id="titulo-herr">25 以上のツールをひとつのアプリに</h2>
 <div class="herramientas__grupos">
 <div class="grupo aparecer">
 <h3>編集</h3>
-<ul><li>署名</li><li>ハイライト・下線・取り消し線</li><li>テキスト・枠・手書き</li><li>墨消し（本当に消去）</li></ul>
+<ul><li>署名（氏名・役職・登録番号つき）</li><li>ハイライト・下線・取り消し線</li><li>テキスト・枠・手書き</li><li>墨消し（本当に消去）</li></ul>
 </div>
 <div class="grupo aparecer">
 <h3>整理</h3>
@@ -187,7 +193,11 @@
 </div>
 <div class="grupo aparecer">
 <h3>変換</h3>
-<ul><li>PDF を画像に（JPG・PNG）</li><li>画像を PDF に</li><li>カメラでスキャン</li><li>PDF をテキストに</li></ul>
+<ul><li>Word を PDF に</li><li>PDF を Word に</li><li>PDF を画像に（JPG・PNG）</li><li>画像を PDF に</li><li>カメラでスキャン</li><li>PDF をテキストに</li></ul>
+</div>
+<div class="grupo aparecer">
+<h3>文字認識</h3>
+<ul><li>スキャンした PDF を検索可能に</li><li>画像からテキスト</li></ul>
 </div>
 <div class="grupo aparecer">
 <h3>保護</h3>
@@ -200,7 +210,7 @@
 <div class="descargar__interior">
 <img alt="" class="aparecer" height="96" src="../img/ozone-pdf.png" width="96"/>
 <h2 class="aparecer">Ozone PDF をダウンロード</h2>
-<p class="aparecer">無料。Windows 10・11、macOS 10.15 以降、Linux に対応。</p>
+<p class="aparecer">無料。Windows 10・11、macOS 10.15 以降、Linux に対応。Android 版もまもなく登場。</p>
 <div class="acciones acciones--centro aparecer">
 <a class="boton boton--blanco boton--store" href="https://apps.microsoft.com/detail/9NMBRDNCZ9P8" rel="noopener" target="_blank"><svg aria-hidden="true" height="22" viewbox="0 0 24 24" width="22"><path d="M2 2h9.5v9.5H2z" fill="#F25022"></path><path d="M12.5 2H22v9.5h-9.5z" fill="#7FBA00"></path><path d="M2 12.5h9.5V22H2z" fill="#00A4EF"></path><path d="M12.5 12.5H22V22h-9.5z" fill="#FFB900"></path></svg><span>Microsoft Store から入手</span></a>
 <a class="boton boton--linea-blanca" href="https://github.com/pachelabs-apps/Ozone_PDF_2/releases/download/v2.1.11/Ozone.PDF_2.1.11_x64-setup.exe">Windows 版をダウンロード（.exe）</a>
