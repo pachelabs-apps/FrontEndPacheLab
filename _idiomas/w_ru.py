@@ -262,4 +262,7 @@ D = {
 260: "Экран «Word в PDF» с двумя документами Word, готовыми к преобразованию.",
 261: "Объединяйте, разделяйте и сжимайте",
 262: "Объединяйте несколько PDF в один, делите по размеру или страницам, чтобы влезло в письмо, или сжимайте, чтобы весил меньше. Оригинал не меняется: всегда сохраняется новая копия.",
+263: "<a href=\"privacidad.html\">Конфиденциальность</a> <a href=\"https://cafecito.app/pachelabs\" rel=\"noopener\">Угостить меня кофе</a>",
+264: "<a href=\"privacidad.html\">Конфиденциальность</a> <a href=\"https://cafecito.app/pachelabs\" rel=\"noopener\">Угостить кофе</a> <a href=\"https://github.com/pachelabs-apps/Ozone_PDF_2/blob/main/LICENSE\">Лицензия (AGPL-3.0)</a>",
+265: "<a href=\"index.html\">Программы</a>",
 }

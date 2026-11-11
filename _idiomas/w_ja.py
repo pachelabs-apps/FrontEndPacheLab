@@ -262,4 +262,7 @@ D = {
 260: "2 つの Word 文書を変換する準備ができた「Word を PDF に」の画面。",
 261: "結合・分割・圧縮",
 262: "複数の PDF をひとつにまとめたり、メールに添付できるようサイズやページで分割したり、圧縮して軽くしたり。元のファイルはそのまま。いつも新しいコピーとして保存されます。",
+263: "<a href=\"privacidad.html\">プライバシー</a> <a href=\"https://cafecito.app/pachelabs\" rel=\"noopener\">コーヒーをおごる</a>",
+264: "<a href=\"privacidad.html\">プライバシー</a> <a href=\"https://cafecito.app/pachelabs\" rel=\"noopener\">コーヒーをおごる</a> <a href=\"https://github.com/pachelabs-apps/Ozone_PDF_2/blob/main/LICENSE\">ライセンス（AGPL-3.0）</a>",
+265: "<a href=\"index.html\">プログラム</a>",
 }

@@ -262,4 +262,7 @@ D = {
 260: "Bildschirm „Word in PDF“ mit zwei Word-Dokumenten, bereit zur Umwandlung.",
 261: "Zusammenführen, teilen und verkleinern",
 262: "Füge mehrere PDFs zu einem zusammen, teile es nach Größe oder Seiten, damit es in eine E-Mail passt, oder komprimiere es, damit es kleiner wird. Dein Original bleibt unverändert: Es wird immer eine neue Kopie gespeichert.",
+263: "<a href=\"privacidad.html\">Datenschutz</a> <a href=\"https://cafecito.app/pachelabs\" rel=\"noopener\">Spendier mir einen Kaffee</a>",
+264: "<a href=\"privacidad.html\">Datenschutz</a> <a href=\"https://cafecito.app/pachelabs\" rel=\"noopener\">Spendier mir einen Kaffee</a> <a href=\"https://github.com/pachelabs-apps/Ozone_PDF_2/blob/main/LICENSE\">Lizenz (AGPL-3.0)</a>",
+265: "<a href=\"index.html\">Programme</a>",
 }

@@ -262,4 +262,7 @@ D = {
 260: "“Word 转 PDF”界面，有两个待转换的 Word 文档。",
 261: "合并、拆分和压缩",
 262: "把多个 PDF 合并成一个，按大小或页码拆分以便放进邮件，或者压缩让它更小。原文件保持不变：总是另存一份新副本。",
+263: "<a href=\"privacidad.html\">隐私</a> <a href=\"https://cafecito.app/pachelabs\" rel=\"noopener\">请我喝杯咖啡</a>",
+264: "<a href=\"privacidad.html\">隐私</a> <a href=\"https://cafecito.app/pachelabs\" rel=\"noopener\">请我喝杯咖啡</a> <a href=\"https://github.com/pachelabs-apps/Ozone_PDF_2/blob/main/LICENSE\">许可证（AGPL-3.0）</a>",
+265: "<a href=\"index.html\">程序</a>",
 }

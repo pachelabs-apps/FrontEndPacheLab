@@ -262,4 +262,7 @@ D = {
 260: "Word to PDF screen with two Word documents ready to convert.",
 261: "Merge, split and shrink",
 262: "Combine several PDFs into one, split it by size or by pages so it fits in an email, or compress it so it weighs less. Your original stays the same: a new copy is always saved.",
+263: "<a href=\"privacidad.html\">Privacy</a> <a href=\"https://cafecito.app/pachelabs\" rel=\"noopener\">Buy me a coffee</a>",
+264: "<a href=\"privacidad.html\">Privacy</a> <a href=\"https://cafecito.app/pachelabs\" rel=\"noopener\">Buy me a coffee</a> <a href=\"https://github.com/pachelabs-apps/Ozone_PDF_2/blob/main/LICENSE\">License (AGPL-3.0)</a>",
+265: "<a href=\"index.html\">Programs</a>",
 }
