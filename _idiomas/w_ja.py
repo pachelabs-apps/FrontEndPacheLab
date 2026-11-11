@@ -303,4 +303,7 @@ D = {
 301: "<a href=\"https://github.com/pachelabs-apps/Ozone_PDF_2/tree/v2.1.12\" title=\"ソースコード\">フリーソフトウェア · AGPL-3.0</a>",
 302: "ソースコード",
 303: "<a class=\"boton boton--rojo\" href=\"mailto:pache.labs@gmail.com?subject=Ozone%20PDF%20para%20organizaciones\">見積もりを依頼する</a> <a class=\"boton boton--linea\" download=\"\" href=\"img/ozone-pdf-organizaciones.pdf\">資料をダウンロード（PDF・スペイン語）</a>",
+304: "<strong>利用ガイド、サポート、アップデート</strong>。相談できる担当者がいます。",
+305: "<strong>導入後もサポート</strong>：利用ガイド、サポート、アップデート。",
+306: "官公庁、企業、事務所向けに個別に作る版です。すべてのPCに一度にインストールでき、チームの業務に合わせて準備されます。",
 }
