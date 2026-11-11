@@ -12,7 +12,7 @@
 <meta content="https://pachelabs.net/en/ozone-pdf.html" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <link href="https://pachelabs.net/en/ozone-pdf.html" rel="canonical"/>
-<link href="../estilos.css?v=22" rel="stylesheet"/>
+<link href="../estilos.css?v=23" rel="stylesheet"/>
 <!--
   LINKS (buscá "COMPLETAR" para lo que falta):
   - Descargas: apuntan a los archivos del Release de la versión (los arma GitHub Actions al subir
@@ -212,8 +212,8 @@
 <div aria-live="polite" class="actualizar" data-ultima="2.1.12" hidden="" id="actualizar"></div>
 <p class="descargar__recomendado aparecer">Recommended: from the Microsoft Store it installs without Windows warnings and updates itself.</p>
 <div class="para-org aparecer">
-<div class="para-org__texto"><strong>Are you an organization?</strong> <span>Use the <b>.msi</b> installer to install it on all PCs with GPO, Intune or SCCM.</span></div>
-<div class="para-org__botones"><a class="boton boton--blanco" href="https://github.com/pachelabs-apps/Ozone_PDF_2/releases/download/v2.1.12/Ozone.PDF_2.1.12_x64_en-US.msi">Download the .msi installer</a> <a class="para-org__ver" href="#organizaciones">See how to install it</a></div>
+<div class="para-org__texto"><strong>Are you an organization?</strong> <span>There is an institutional version with your organization’s settings, ready to install on every PC.</span></div>
+<div class="para-org__botones"><a class="boton boton--blanco" href="#organizaciones">See the institutional version</a></div>
 </div>
 <p class="descargar__extra aparecer"><a href="https://github.com/pachelabs-apps/Ozone_PDF_2/tree/v2.1.12">Source code for version 2.1.12</a></p>
 <details class="aviso-windows aparecer">
@@ -229,23 +229,57 @@
 <!-- ============ ORGANIZACIONES ============ -->
 <section aria-labelledby="titulo-org" class="organizaciones" id="organizaciones">
 <div class="organizaciones__texto aparecer">
-<h2 id="titulo-org">Installing it in an organization</h2>
-<p>If you work in IT and want to install it on every PC, there is an <strong>.msi</strong> installer made for that. It works with Group Policy (GPO), Intune or SCCM.</p>
+<h2 id="titulo-org">Ozone PDF for organizations</h2>
+<p>A version designed for public agencies, companies and firms: it installs on every PC at once and comes set up for your team’s work.</p>
 <ul class="hechos hechos--chicos">
-<li>It installs for all users of the computer, in <code>C:\Program Files\Ozone PDF</code>.</li>
-<li>The program already has its own internet block built in. If you also want the firewall rule that the .exe installer creates, add it with the command next to this.</li>
-<li>Each new version replaces the previous one automatically.</li>
-<li>No telemetry, no per-device licenses and no servers to maintain.</li>
+<li><strong>Installation on every PC</strong> with GPO, Intune or SCCM, with the internet block and the firewall rule included.</li>
+<li><strong>With your name and logo</strong>, and only the tools your team uses.</li>
+<li><strong>Signatures ready:</strong> templates with department, position and license number already filled in.</li>
+<li><strong>Training, support and updates</strong>, with a real person to ask.</li>
+<li><strong>Custom development</strong> for your organization’s processes.</li>
+<li><strong>Your version, in your hands:</strong> the source code is handed to the organization so it can audit and keep it.</li>
 </ul>
-<a class="boton boton--rojo" href="https://github.com/pachelabs-apps/Ozone_PDF_2/releases/download/v2.1.12/Ozone.PDF_2.1.12_x64_en-US.msi">Download the .msi</a>
+<a class="boton boton--rojo" href="mailto:pache.labs@gmail.com?subject=Ozone%20PDF%20para%20organizaciones">Request a quote</a>
+<p class="organizaciones__nota">Each case is quoted separately. Tell me how many PCs there are and what tasks you do with PDFs.</p>
 </div>
 <div class="consola aparecer">
-<p class="consola__titulo">Silent installation</p>
-<pre><code>msiexec /i Ozone.PDF_2.1.12_x64_en-US.msi /qn</code></pre>
-<p class="consola__titulo">Uninstallation</p>
-<pre><code>msiexec /x Ozone.PDF_2.1.12_x64_en-US.msi /qn</code></pre>
-<p class="consola__nota">Firewall rule (optional):</p>
-<pre><code>New-NetFirewallRule -DisplayName "Ozone PDF 2 - sin red" -Direction Outbound -Action Block -Program "C:\Program Files\Ozone PDF\ozone-pdf.exe"</code></pre>
+<p class="consola__titulo">How it works</p>
+<ol class="org-pasos">
+<li><strong>Tell me what you need:</strong> how many PCs and what you do with PDFs.</li>
+<li><strong>I build your version</strong> with your brand, your tools and your templates.</li>
+<li><strong>IT installs it</strong> on every PC with a ready-made installer.</li>
+<li><strong>I stay with you</strong> with training, support and updates.</li>
+</ol>
+</div>
+<div class="org-ejemplos">
+<h3 class="aparecer">How it can look in your organization</h3>
+<p class="org-ejemplos__aclaracion aparecer">Illustrative examples, with made-up organizations.</p>
+<div class="org-ejemplos__lista aparecer">
+<article class="org-ej" style="--c:#1F7A4D">
+<div class="org-ej__barra"><span aria-hidden="true" class="org-ej__logo">VC</span><span class="org-ej__nombre">Valle Claro Municipality</span></div>
+<div class="org-ej__cuerpo">
+<ul class="org-ej__chips"><li>Sign</li><li>Redact</li><li>Merge</li><li>Number pages</li><li>Scan</li></ul>
+<div class="org-ej__firma"><svg aria-hidden="true" class="org-ej__garabato" viewbox="0 0 160 40"><path d="M4 30 c10 -24 20 -24 18 -4 c-2 14 14 -20 22 -12 c6 6 -4 18 6 16 c10 -2 14 -20 24 -14 c6 4 4 12 14 9 c10 -3 18 -6 36 -10"></path></svg><strong>Ana Pérez</strong><span>Revenue Department</span></div>
+<p class="org-ej__nota">Front desk: case files, signatures and scanned papers.</p>
+</div>
+</article>
+<article class="org-ej" style="--c:#23366F">
+<div class="org-ej__barra"><span aria-hidden="true" class="org-ej__logo">RA</span><span class="org-ej__nombre">Rivas &amp; Associates Law Firm</span></div>
+<div class="org-ej__cuerpo">
+<ul class="org-ej__chips"><li>Redact</li><li>Merge</li><li>Word to PDF</li><li>PDF to Word</li><li>Add password</li></ul>
+<div class="org-ej__firma"><svg aria-hidden="true" class="org-ej__garabato" viewbox="0 0 160 40"><path d="M4 30 c10 -24 20 -24 18 -4 c-2 14 14 -20 22 -12 c6 6 -4 18 6 16 c10 -2 14 -20 24 -14 c6 4 4 12 14 9 c10 -3 18 -6 36 -10"></path></svg><strong>Martín Rivas, Esq.</strong><span>Attorney · Bar No. 4521</span></div>
+<p class="org-ej__nota">Filings ready to submit, with no extra data.</p>
+</div>
+</article>
+<article class="org-ej" style="--c:#0E7C86">
+<div class="org-ej__barra"><span aria-hidden="true" class="org-ej__logo">CR</span><span class="org-ej__nombre">Ribera Health Center</span></div>
+<div class="org-ej__cuerpo">
+<ul class="org-ej__chips"><li>Scan</li><li>Recognize text</li><li>Compress</li><li>Redact</li><li>Sign</li></ul>
+<div class="org-ej__firma"><svg aria-hidden="true" class="org-ej__garabato" viewbox="0 0 160 40"><path d="M4 30 c10 -24 20 -24 18 -4 c-2 14 14 -20 22 -12 c6 6 -4 18 6 16 c10 -2 14 -20 24 -14 c6 4 4 12 14 9 c10 -3 18 -6 36 -10"></path></svg><strong>Dr. Laura Gómez</strong><span>Internal medicine · Lic. 1234</span></div>
+<p class="org-ej__nota">Scanned test results, light and searchable.</p>
+</div>
+</article>
+</div>
 </div>
 </section>
 <!-- ============ SUGERENCIAS ============ -->

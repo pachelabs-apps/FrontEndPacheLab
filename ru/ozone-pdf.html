@@ -12,7 +12,7 @@
 <meta content="https://pachelabs.net/ru/ozone-pdf.html" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <link href="https://pachelabs.net/ru/ozone-pdf.html" rel="canonical"/>
-<link href="../estilos.css?v=22" rel="stylesheet"/>
+<link href="../estilos.css?v=23" rel="stylesheet"/>
 <!--
   LINKS (buscá "COMPLETAR" para lo que falta):
   - Descargas: apuntan a los archivos del Release de la versión (los arma GitHub Actions al subir
@@ -212,8 +212,8 @@
 <div aria-live="polite" class="actualizar" data-ultima="2.1.12" hidden="" id="actualizar"></div>
 <p class="descargar__recomendado aparecer">Рекомендуем: из Microsoft Store программа устанавливается без предупреждений Windows и обновляется сама.</p>
 <div class="para-org aparecer">
-<div class="para-org__texto"><strong>Вы организация?</strong> <span>Используйте установщик <b>.msi</b>, чтобы установить программу на все ПК через GPO, Intune или SCCM.</span></div>
-<div class="para-org__botones"><a class="boton boton--blanco" href="https://github.com/pachelabs-apps/Ozone_PDF_2/releases/download/v2.1.12/Ozone.PDF_2.1.12_x64_en-US.msi">Скачать установщик .msi</a> <a class="para-org__ver" href="#organizaciones">Как установить</a></div>
+<div class="para-org__texto"><strong>Вы организация?</strong> <span>Есть корпоративная версия с настройками вашей организации, готовая к установке на все ПК.</span></div>
+<div class="para-org__botones"><a class="boton boton--blanco" href="#organizaciones">Посмотреть корпоративную версию</a></div>
 </div>
 <p class="descargar__extra aparecer"><a href="https://github.com/pachelabs-apps/Ozone_PDF_2/tree/v2.1.12">Исходный код версии 2.1.12</a></p>
 <details class="aviso-windows aparecer">
@@ -229,23 +229,57 @@
 <!-- ============ ORGANIZACIONES ============ -->
 <section aria-labelledby="titulo-org" class="organizaciones" id="organizaciones">
 <div class="organizaciones__texto aparecer">
-<h2 id="titulo-org">Установка в организации</h2>
-<p>Если вы занимаетесь ИТ и хотите установить программу на все компьютеры, для этого есть установщик <strong>.msi</strong>. Он работает с групповыми политиками (GPO), Intune или SCCM.</p>
+<h2 id="titulo-org">Ozone PDF для организаций</h2>
+<p>Версия для госучреждений, компаний и юридических фирм: устанавливается сразу на все ПК и настроена под работу вашей команды.</p>
 <ul class="hechos hechos--chicos">
-<li>Устанавливается для всех пользователей компьютера в <code>C:\Program Files\Ozone PDF</code>.</li>
-<li>В программе уже есть собственная блокировка интернета. Если вам также нужно правило брандмауэра, которое создаёт установщик .exe, добавьте его командой рядом.</li>
-<li>Каждая новая версия автоматически заменяет предыдущую.</li>
-<li>Никакой телеметрии, лицензий на устройство и серверов, которые нужно обслуживать.</li>
+<li><strong>Установка на все ПК</strong> через GPO, Intune или SCCM, с блокировкой интернета и правилом брандмауэра.</li>
+<li><strong>С вашим названием и логотипом</strong> и только с теми инструментами, которыми пользуется команда.</li>
+<li><strong>Готовые подписи:</strong> шаблоны с отделом, должностью и номером лицензии.</li>
+<li><strong>Обучение, поддержка и обновления</strong>, и есть кому задать вопрос.</li>
+<li><strong>Доработки под заказ</strong> для процессов вашей организации.</li>
+<li><strong>Ваша версия — в ваших руках:</strong> исходный код передаётся организации, чтобы она могла проверить и хранить его.</li>
 </ul>
-<a class="boton boton--rojo" href="https://github.com/pachelabs-apps/Ozone_PDF_2/releases/download/v2.1.12/Ozone.PDF_2.1.12_x64_en-US.msi">Скачать .msi</a>
+<a class="boton boton--rojo" href="mailto:pache.labs@gmail.com?subject=Ozone%20PDF%20para%20organizaciones">Запросить стоимость</a>
+<p class="organizaciones__nota">Стоимость рассчитывается для каждого случая. Напишите, сколько у вас ПК и какие задачи вы решаете с PDF.</p>
 </div>
 <div class="consola aparecer">
-<p class="consola__titulo">Тихая установка</p>
-<pre><code>msiexec /i Ozone.PDF_2.1.12_x64_en-US.msi /qn</code></pre>
-<p class="consola__titulo">Удаление</p>
-<pre><code>msiexec /x Ozone.PDF_2.1.12_x64_en-US.msi /qn</code></pre>
-<p class="consola__nota">Правило брандмауэра (необязательно):</p>
-<pre><code>New-NetFirewallRule -DisplayName "Ozone PDF 2 - sin red" -Direction Outbound -Action Block -Program "C:\Program Files\Ozone PDF\ozone-pdf.exe"</code></pre>
+<p class="consola__titulo">Как это работает</p>
+<ol class="org-pasos">
+<li><strong>Расскажите, что нужно:</strong> сколько ПК и что вы делаете с PDF.</li>
+<li><strong>Я собираю вашу версию</strong> с вашим брендом, инструментами и шаблонами.</li>
+<li><strong>ИТ-отдел устанавливает её</strong> на все ПК готовым установщиком.</li>
+<li><strong>Я остаюсь на связи:</strong> обучение, поддержка и обновления.</li>
+</ol>
+</div>
+<div class="org-ejemplos">
+<h3 class="aparecer">Как это может выглядеть у вас</h3>
+<p class="org-ejemplos__aclaracion aparecer">Примеры для иллюстрации, организации вымышлены.</p>
+<div class="org-ejemplos__lista aparecer">
+<article class="org-ej" style="--c:#1F7A4D">
+<div class="org-ej__barra"><span aria-hidden="true" class="org-ej__logo">VC</span><span class="org-ej__nombre">Муниципалитет Валье-Кларо</span></div>
+<div class="org-ej__cuerpo">
+<ul class="org-ej__chips"><li>Подписать</li><li>Скрыть данные</li><li>Объединить</li><li>Нумерация страниц</li><li>Сканировать</li></ul>
+<div class="org-ej__firma"><svg aria-hidden="true" class="org-ej__garabato" viewbox="0 0 160 40"><path d="M4 30 c10 -24 20 -24 18 -4 c-2 14 14 -20 22 -12 c6 6 -4 18 6 16 c10 -2 14 -20 24 -14 c6 4 4 12 14 9 c10 -3 18 -6 36 -10"></path></svg><strong>Ана Перес</strong><span>Налоговый отдел</span></div>
+<p class="org-ej__nota">Приёмная: дела, подписи и отсканированные бумаги.</p>
+</div>
+</article>
+<article class="org-ej" style="--c:#23366F">
+<div class="org-ej__barra"><span aria-hidden="true" class="org-ej__logo">RA</span><span class="org-ej__nombre">Юридическая фирма «Ривас и партнёры»</span></div>
+<div class="org-ej__cuerpo">
+<ul class="org-ej__chips"><li>Скрыть данные</li><li>Объединить</li><li>Word в PDF</li><li>PDF в Word</li><li>Поставить пароль</li></ul>
+<div class="org-ej__firma"><svg aria-hidden="true" class="org-ej__garabato" viewbox="0 0 160 40"><path d="M4 30 c10 -24 20 -24 18 -4 c-2 14 14 -20 22 -12 c6 6 -4 18 6 16 c10 -2 14 -20 24 -14 c6 4 4 12 14 9 c10 -3 18 -6 36 -10"></path></svg><strong>Мартин Ривас</strong><span>Адвокат · Рег. № 4521</span></div>
+<p class="org-ej__nota">Документы готовы к подаче, без лишних данных.</p>
+</div>
+</article>
+<article class="org-ej" style="--c:#0E7C86">
+<div class="org-ej__barra"><span aria-hidden="true" class="org-ej__logo">CR</span><span class="org-ej__nombre">Центр здоровья «Рибера»</span></div>
+<div class="org-ej__cuerpo">
+<ul class="org-ej__chips"><li>Сканировать</li><li>Распознать текст</li><li>Сжать</li><li>Скрыть данные</li><li>Подписать</li></ul>
+<div class="org-ej__firma"><svg aria-hidden="true" class="org-ej__garabato" viewbox="0 0 160 40"><path d="M4 30 c10 -24 20 -24 18 -4 c-2 14 14 -20 22 -12 c6 6 -4 18 6 16 c10 -2 14 -20 24 -14 c6 4 4 12 14 9 c10 -3 18 -6 36 -10"></path></svg><strong>Лаура Гомес</strong><span>Терапевт · Лиц. № 1234</span></div>
+<p class="org-ej__nota">Отсканированные исследования — лёгкие и с поиском.</p>
+</div>
+</article>
+</div>
 </div>
 </section>
 <!-- ============ SUGERENCIAS ============ -->

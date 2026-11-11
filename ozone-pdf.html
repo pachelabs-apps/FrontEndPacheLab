@@ -12,7 +12,7 @@
 <meta content="https://pachelabs.net/ozone-pdf.html" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <link href="https://pachelabs.net/ozone-pdf.html" rel="canonical"/>
-<link href="estilos.css?v=22" rel="stylesheet"/>
+<link href="estilos.css?v=23" rel="stylesheet"/>
 <!--
   LINKS (buscá "COMPLETAR" para lo que falta):
   - Descargas: apuntan a los archivos del Release de la versión (los arma GitHub Actions al subir
@@ -239,11 +239,10 @@
 <div class="para-org aparecer">
 <div class="para-org__texto">
 <strong>¿Sos una organización?</strong>
-<span>Usá el instalador <b>.msi</b> para instalarlo en todas las PCs con GPO, Intune o SCCM.</span>
+<span>Hay una versión institucional con la configuración de tu organización, lista para instalar en todas las PCs.</span>
 </div>
 <div class="para-org__botones">
-<a class="boton boton--blanco" href="https://github.com/pachelabs-apps/Ozone_PDF_2/releases/download/v2.1.12/Ozone.PDF_2.1.12_x64_en-US.msi">Descargar instalador .msi</a>
-<a class="para-org__ver" href="#organizaciones">Ver cómo instalarlo</a>
+<a class="boton boton--blanco" href="#organizaciones">Ver la versión institucional</a>
 </div>
 </div>
 <p class="descargar__extra aparecer">
@@ -267,24 +266,57 @@
 <!-- ============ ORGANIZACIONES ============ -->
 <section aria-labelledby="titulo-org" class="organizaciones" id="organizaciones">
 <div class="organizaciones__texto aparecer">
-<h2 id="titulo-org">Para instalarlo en una organización</h2>
-<p>Si sos del área de sistemas y querés instalarlo en todas las PCs, hay un instalador
-      <strong>.msi</strong> pensado para eso. Funciona con directivas de grupo (GPO), Intune o SCCM.</p>
+<h2 id="titulo-org">Ozone PDF para organizaciones</h2>
+<p>Una versión pensada para organismos, empresas y estudios: se instala en todas las PCs de una vez y viene armada para el trabajo de tu equipo.</p>
 <ul class="hechos hechos--chicos">
-<li>Se instala para todos los usuarios del equipo, en <code>C:\Program Files\Ozone PDF</code>.</li>
-<li>El programa ya trae su propio bloqueo de internet. Si además querés la regla de firewall que crea el instalador .exe, agregala con el comando de al lado.</li>
-<li>Cada versión nueva reemplaza a la anterior sola.</li>
-<li>No tiene telemetría, licencias por equipo ni servidores que mantener.</li>
+<li><strong>Instalación en todas las PCs</strong> con GPO, Intune o SCCM, con el bloqueo de internet y la regla de firewall incluidos.</li>
+<li><strong>Con tu nombre y tu logo</strong>, y solo las herramientas que usa tu equipo.</li>
+<li><strong>Firmas listas:</strong> plantillas con área, cargo y matrícula ya cargadas.</li>
+<li><strong>Capacitación, soporte y actualizaciones</strong>, con una persona a quien consultar.</li>
+<li><strong>Desarrollos a medida</strong> para los procesos de tu organización.</li>
+<li><strong>Tu versión, en tus manos:</strong> el código fuente se entrega a la organización para que lo audite y lo guarde.</li>
 </ul>
-<a class="boton boton--rojo" href="https://github.com/pachelabs-apps/Ozone_PDF_2/releases/download/v2.1.12/Ozone.PDF_2.1.12_x64_en-US.msi">Descargar el .msi</a>
+<a class="boton boton--rojo" href="mailto:pache.labs@gmail.com?subject=Ozone%20PDF%20para%20organizaciones">Pedir una cotización</a>
+<p class="organizaciones__nota">Se cotiza según cada caso. Contame cuántas PCs son y qué tareas hacen con PDF.</p>
 </div>
 <div class="consola aparecer">
-<p class="consola__titulo">Instalación sin ventanas</p>
-<pre><code>msiexec /i Ozone.PDF_2.1.12_x64_en-US.msi /qn</code></pre>
-<p class="consola__titulo">Desinstalación</p>
-<pre><code>msiexec /x Ozone.PDF_2.1.12_x64_en-US.msi /qn</code></pre>
-<p class="consola__nota">Regla de firewall (opcional):</p>
-<pre><code>New-NetFirewallRule -DisplayName "Ozone PDF 2 - sin red" -Direction Outbound -Action Block -Program "C:\Program Files\Ozone PDF\ozone-pdf.exe"</code></pre>
+<p class="consola__titulo">Cómo funciona</p>
+<ol class="org-pasos">
+<li><strong>Contame qué necesitan:</strong> cuántas PCs y qué hacen con los PDF.</li>
+<li><strong>Armo tu versión</strong> con tu marca, tus herramientas y tus plantillas.</li>
+<li><strong>Sistemas la instala</strong> en todas las PCs con un instalador listo.</li>
+<li><strong>Te acompaño</strong> con capacitación, soporte y actualizaciones.</li>
+</ol>
+</div>
+<div class="org-ejemplos">
+<h3 class="aparecer">Así puede verse en tu organización</h3>
+<p class="org-ejemplos__aclaracion aparecer">Ejemplos ilustrativos, con organizaciones inventadas.</p>
+<div class="org-ejemplos__lista aparecer">
+<article class="org-ej" style="--c:#1F7A4D">
+<div class="org-ej__barra"><span aria-hidden="true" class="org-ej__logo">VC</span><span class="org-ej__nombre">Municipalidad de Valle Claro</span></div>
+<div class="org-ej__cuerpo">
+<ul class="org-ej__chips"><li>Firmar</li><li>Censurar</li><li>Unir</li><li>Numerar páginas</li><li>Escanear</li></ul>
+<div class="org-ej__firma"><svg aria-hidden="true" class="org-ej__garabato" viewbox="0 0 160 40"><path d="M4 30 c10 -24 20 -24 18 -4 c-2 14 14 -20 22 -12 c6 6 -4 18 6 16 c10 -2 14 -20 24 -14 c6 4 4 12 14 9 c10 -3 18 -6 36 -10"></path></svg><strong>Lic. Ana Pérez</strong><span>Dirección de Rentas</span></div>
+<p class="org-ej__nota">Mesa de entradas: expedientes, firmas y papeles escaneados.</p>
+</div>
+</article>
+<article class="org-ej" style="--c:#23366F">
+<div class="org-ej__barra"><span aria-hidden="true" class="org-ej__logo">RA</span><span class="org-ej__nombre">Estudio Rivas y Asociados</span></div>
+<div class="org-ej__cuerpo">
+<ul class="org-ej__chips"><li>Censurar</li><li>Unir</li><li>Word a PDF</li><li>PDF a Word</li><li>Poner contraseña</li></ul>
+<div class="org-ej__firma"><svg aria-hidden="true" class="org-ej__garabato" viewbox="0 0 160 40"><path d="M4 30 c10 -24 20 -24 18 -4 c-2 14 14 -20 22 -12 c6 6 -4 18 6 16 c10 -2 14 -20 24 -14 c6 4 4 12 14 9 c10 -3 18 -6 36 -10"></path></svg><strong>Dr. Martín Rivas</strong><span>Abogado · Matrícula 4521</span></div>
+<p class="org-ej__nota">Escritos listos para presentar, sin datos de más.</p>
+</div>
+</article>
+<article class="org-ej" style="--c:#0E7C86">
+<div class="org-ej__barra"><span aria-hidden="true" class="org-ej__logo">CR</span><span class="org-ej__nombre">Centro de Salud Ribera</span></div>
+<div class="org-ej__cuerpo">
+<ul class="org-ej__chips"><li>Escanear</li><li>Reconocer texto</li><li>Comprimir</li><li>Censurar</li><li>Firmar</li></ul>
+<div class="org-ej__firma"><svg aria-hidden="true" class="org-ej__garabato" viewbox="0 0 160 40"><path d="M4 30 c10 -24 20 -24 18 -4 c-2 14 14 -20 22 -12 c6 6 -4 18 6 16 c10 -2 14 -20 24 -14 c6 4 4 12 14 9 c10 -3 18 -6 36 -10"></path></svg><strong>Dra. Laura Gómez</strong><span>Clínica médica · M.P. 1234</span></div>
+<p class="org-ej__nota">Estudios escaneados, livianos y buscables.</p>
+</div>
+</article>
+</div>
 </div>
 </section>
 <!-- ============ SUGERENCIAS ============ -->

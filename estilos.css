@@ -782,3 +782,41 @@ a.ficha:hover { border-color: var(--rojo); color: var(--tinta); transform: trans
 @keyframes m-papel-color { 0%, 46% { fill: #fff; stroke: var(--tinta); stroke-width: 3.5px; } 56%, 100% { fill: var(--rojo); stroke: transparent; } }
 @keyframes m-pdf { 0%, 52% { opacity: 0; } 60%, 100% { opacity: 1; } }
 @keyframes m-esquinas { 0%, 12% { opacity: 0; transform: rotate(-13deg) scale(.92); } 22%, 34% { opacity: 1; transform: rotate(-13deg) scale(.92); } 50% { opacity: 1; transform: none; } 58%, 100% { opacity: 0; transform: none; } }
+
+/* ---------- organizaciones: versión institucional y ejemplos ---------- */
+.organizaciones__texto .boton { margin-top: 4px; }
+.organizaciones__nota { font-size: .98rem; }
+.organizaciones .consola { align-self: center; padding: 28px 30px; }
+.org-pasos { margin: 14px 0 0; padding: 0; list-style: none; counter-reset: org; display: grid; gap: 16px; }
+.org-pasos li { counter-increment: org; position: relative; padding-left: 46px; color: #D9DAE0; line-height: 1.45; }
+.org-pasos li::before {
+  content: counter(org); position: absolute; left: 0; top: -2px; width: 32px; height: 32px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--rojo); color: #fff; font: 800 .95rem/1 var(--titulos);
+}
+.org-pasos strong { color: #fff; }
+.org-ejemplos { grid-column: 1 / -1; margin-top: 16px; }
+.org-ejemplos h3 { font-size: clamp(1.5rem, 2.4vw, 2rem); }
+.org-ejemplos__aclaracion { margin-top: 6px; color: var(--tinta-suave); font-size: .98rem; }
+.org-ejemplos__lista { margin-top: 24px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.org-ej {
+  border-radius: 16px; overflow: hidden; background: #fff; border: 1px solid var(--linea);
+  box-shadow: 0 24px 48px -32px rgba(23, 24, 28, .45); display: flex; flex-direction: column;
+}
+.org-ej__barra { background: var(--c); color: #fff; display: flex; align-items: center; gap: 10px; padding: 12px 16px; }
+.org-ej__logo {
+  width: 32px; height: 32px; flex: none; border-radius: 9px; display: grid; place-items: center;
+  background: rgba(255, 255, 255, .22); font: 800 .85rem/1 var(--titulos); letter-spacing: .02em;
+}
+.org-ej__nombre { font: 700 1rem/1.25 var(--titulos); }
+.org-ej__cuerpo { padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 16px; flex: 1; }
+.org-ej__chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.org-ej__chips li {
+  font-size: .85rem; line-height: 1.2; padding: 5px 10px; border-radius: 999px; color: var(--c);
+  border: 1.5px solid var(--c); background: #fff;
+}
+.org-ej__firma { display: flex; flex-direction: column; padding: 12px 14px; border-radius: 12px; background: var(--mesa); }
+.org-ej__garabato { width: 120px; height: 30px; fill: none; stroke: var(--c); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.org-ej__firma strong { margin-top: 4px; padding-top: 6px; border-top: 1.5px solid #B9BBC4; font-size: .98rem; }
+.org-ej__firma span { font-size: .88rem; color: var(--tinta-suave); }
+.org-ej__nota { margin: auto 0 0; font-size: .95rem; color: var(--tinta-suave); }
+@media (max-width: 900px) { .org-ejemplos__lista { grid-template-columns: minmax(0, 1fr); max-width: 460px; } }

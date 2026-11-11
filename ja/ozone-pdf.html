@@ -12,7 +12,7 @@
 <meta content="https://pachelabs.net/ja/ozone-pdf.html" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <link href="https://pachelabs.net/ja/ozone-pdf.html" rel="canonical"/>
-<link href="../estilos.css?v=22" rel="stylesheet"/>
+<link href="../estilos.css?v=23" rel="stylesheet"/>
 <!--
   LINKS (buscá "COMPLETAR" para lo que falta):
   - Descargas: apuntan a los archivos del Release de la versión (los arma GitHub Actions al subir
@@ -212,8 +212,8 @@
 <div aria-live="polite" class="actualizar" data-ultima="2.1.12" hidden="" id="actualizar"></div>
 <p class="descargar__recomendado aparecer">おすすめ：Microsoft Store からなら、Windows の警告なしでインストールでき、自動で更新されます。</p>
 <div class="para-org aparecer">
-<div class="para-org__texto"><strong>組織でお使いですか？</strong> <span><b>.msi</b> インストーラーを使えば、GPO、Intune、SCCM ですべての PC にインストールできます。</span></div>
-<div class="para-org__botones"><a class="boton boton--blanco" href="https://github.com/pachelabs-apps/Ozone_PDF_2/releases/download/v2.1.12/Ozone.PDF_2.1.12_x64_en-US.msi">.msi インストーラーをダウンロード</a> <a class="para-org__ver" href="#organizaciones">インストール方法を見る</a></div>
+<div class="para-org__texto"><strong>組織の方へ</strong> <span>組織向けの設定を入れた法人版があり、すべてのPCにまとめてインストールできます。</span></div>
+<div class="para-org__botones"><a class="boton boton--blanco" href="#organizaciones">法人版を見る</a></div>
 </div>
 <p class="descargar__extra aparecer"><a href="https://github.com/pachelabs-apps/Ozone_PDF_2/tree/v2.1.12">バージョン 2.1.12 のソースコード</a></p>
 <details class="aviso-windows aparecer">
@@ -229,23 +229,57 @@
 <!-- ============ ORGANIZACIONES ============ -->
 <section aria-labelledby="titulo-org" class="organizaciones" id="organizaciones">
 <div class="organizaciones__texto aparecer">
-<h2 id="titulo-org">組織へのインストール</h2>
-<p>IT 担当の方ですべての PC にインストールしたい場合は、そのための <strong>.msi</strong> インストーラーがあります。グループ ポリシー（GPO）、Intune、SCCM に対応しています。</p>
+<h2 id="titulo-org">組織向け Ozone PDF</h2>
+<p>官公庁、企業、事務所のための版です。すべてのPCに一度にインストールでき、チームの業務に合わせて設定済みで届きます。</p>
 <ul class="hechos hechos--chicos">
-<li>コンピューターのすべてのユーザー向けに <code>C:\Program Files\Ozone PDF</code> にインストールされます。</li>
-<li>プログラム自体にインターネットを遮断する仕組みがあります。.exe インストーラーが作るファイアウォールのルールも使いたい場合は、横のコマンドで追加してください。</li>
-<li>新しいバージョンは、前のバージョンを自動で置き換えます。</li>
-<li>テレメトリー、端末ごとのライセンス、保守が必要なサーバーはありません。</li>
+<li><strong>すべてのPCにインストール</strong>：GPO、Intune、SCCMに対応。インターネット遮断とファイアウォールのルールも含まれます。</li>
+<li><strong>組織の名前とロゴ入り</strong>で、チームが使うツールだけを表示します。</li>
+<li><strong>署名をすぐ使える：</strong>部署、役職、登録番号を入力済みのテンプレート。</li>
+<li><strong>研修、サポート、アップデート</strong>。相談できる担当者がいます。</li>
+<li><strong>カスタム開発</strong>で組織の業務に対応します。</li>
+<li><strong>あなたの版は、あなたの手に：</strong>ソースコードを組織にお渡しするので、監査も保管もできます。</li>
 </ul>
-<a class="boton boton--rojo" href="https://github.com/pachelabs-apps/Ozone_PDF_2/releases/download/v2.1.12/Ozone.PDF_2.1.12_x64_en-US.msi">.msi をダウンロード</a>
+<a class="boton boton--rojo" href="mailto:pache.labs@gmail.com?subject=Ozone%20PDF%20para%20organizaciones">見積もりを依頼する</a>
+<p class="organizaciones__nota">内容に応じてお見積もりします。PCの台数と、PDFでどんな作業をしているかを教えてください。</p>
 </div>
 <div class="consola aparecer">
-<p class="consola__titulo">サイレント インストール</p>
-<pre><code>msiexec /i Ozone.PDF_2.1.12_x64_en-US.msi /qn</code></pre>
-<p class="consola__titulo">アンインストール</p>
-<pre><code>msiexec /x Ozone.PDF_2.1.12_x64_en-US.msi /qn</code></pre>
-<p class="consola__nota">ファイアウォールのルール（任意）：</p>
-<pre><code>New-NetFirewallRule -DisplayName "Ozone PDF 2 - sin red" -Direction Outbound -Action Block -Program "C:\Program Files\Ozone PDF\ozone-pdf.exe"</code></pre>
+<p class="consola__titulo">導入の流れ</p>
+<ol class="org-pasos">
+<li><strong>必要なことを教えてください：</strong>PCの台数と、PDFで何をしているか。</li>
+<li><strong>あなたの版を作ります</strong>：ブランド、ツール、テンプレートを入れて。</li>
+<li><strong>情報システム部門がインストール</strong>：用意したインストーラーで全PCへ。</li>
+<li><strong>導入後もサポート</strong>：研修、サポート、アップデート。</li>
+</ol>
+</div>
+<div class="org-ejemplos">
+<h3 class="aparecer">あなたの組織ではこんなふうに</h3>
+<p class="org-ejemplos__aclaracion aparecer">説明用の例です。組織名は架空のものです。</p>
+<div class="org-ejemplos__lista aparecer">
+<article class="org-ej" style="--c:#1F7A4D">
+<div class="org-ej__barra"><span aria-hidden="true" class="org-ej__logo">VC</span><span class="org-ej__nombre">バジェ・クラロ市役所</span></div>
+<div class="org-ej__cuerpo">
+<ul class="org-ej__chips"><li>署名</li><li>墨消し</li><li>結合</li><li>ページ番号を付ける</li><li>スキャン</li></ul>
+<div class="org-ej__firma"><svg aria-hidden="true" class="org-ej__garabato" viewbox="0 0 160 40"><path d="M4 30 c10 -24 20 -24 18 -4 c-2 14 14 -20 22 -12 c6 6 -4 18 6 16 c10 -2 14 -20 24 -14 c6 4 4 12 14 9 c10 -3 18 -6 36 -10"></path></svg><strong>Ana Pérez</strong><span>税務課</span></div>
+<p class="org-ej__nota">受付窓口：書類、署名、スキャンした紙。</p>
+</div>
+</article>
+<article class="org-ej" style="--c:#23366F">
+<div class="org-ej__barra"><span aria-hidden="true" class="org-ej__logo">RA</span><span class="org-ej__nombre">リバス法律事務所</span></div>
+<div class="org-ej__cuerpo">
+<ul class="org-ej__chips"><li>墨消し</li><li>結合</li><li>Word を PDF に</li><li>PDF を Word に</li><li>パスワードを設定</li></ul>
+<div class="org-ej__firma"><svg aria-hidden="true" class="org-ej__garabato" viewbox="0 0 160 40"><path d="M4 30 c10 -24 20 -24 18 -4 c-2 14 14 -20 22 -12 c6 6 -4 18 6 16 c10 -2 14 -20 24 -14 c6 4 4 12 14 9 c10 -3 18 -6 36 -10"></path></svg><strong>Martín Rivas 弁護士</strong><span>弁護士・登録番号 4521</span></div>
+<p class="org-ej__nota">余計なデータのない、提出できる書面。</p>
+</div>
+</article>
+<article class="org-ej" style="--c:#0E7C86">
+<div class="org-ej__barra"><span aria-hidden="true" class="org-ej__logo">CR</span><span class="org-ej__nombre">リベラ健康センター</span></div>
+<div class="org-ej__cuerpo">
+<ul class="org-ej__chips"><li>スキャン</li><li>文字認識</li><li>圧縮</li><li>墨消し</li><li>署名</li></ul>
+<div class="org-ej__firma"><svg aria-hidden="true" class="org-ej__garabato" viewbox="0 0 160 40"><path d="M4 30 c10 -24 20 -24 18 -4 c-2 14 14 -20 22 -12 c6 6 -4 18 6 16 c10 -2 14 -20 24 -14 c6 4 4 12 14 9 c10 -3 18 -6 36 -10"></path></svg><strong>Laura Gómez 医師</strong><span>内科・医籍番号 1234</span></div>
+<p class="org-ej__nota">軽くて検索できる、スキャンした検査結果。</p>
+</div>
+</article>
+</div>
 </div>
 </section>
 <!-- ============ SUGERENCIAS ============ -->

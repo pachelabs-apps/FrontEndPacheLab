@@ -12,7 +12,7 @@
 <meta content="https://pachelabs.net/zh/ozone-pdf.html" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <link href="https://pachelabs.net/zh/ozone-pdf.html" rel="canonical"/>
-<link href="../estilos.css?v=22" rel="stylesheet"/>
+<link href="../estilos.css?v=23" rel="stylesheet"/>
 <!--
   LINKS (buscá "COMPLETAR" para lo que falta):
   - Descargas: apuntan a los archivos del Release de la versión (los arma GitHub Actions al subir
@@ -212,8 +212,8 @@
 <div aria-live="polite" class="actualizar" data-ultima="2.1.12" hidden="" id="actualizar"></div>
 <p class="descargar__recomendado aparecer">推荐：从 Microsoft Store 安装不会出现 Windows 警告，并且会自动更新。</p>
 <div class="para-org aparecer">
-<div class="para-org__texto"><strong>您是机构用户吗？</strong> <span>使用 <b>.msi</b> 安装程序，可通过 GPO、Intune 或 SCCM 安装到所有电脑。</span></div>
-<div class="para-org__botones"><a class="boton boton--blanco" href="https://github.com/pachelabs-apps/Ozone_PDF_2/releases/download/v2.1.12/Ozone.PDF_2.1.12_x64_en-US.msi">下载 .msi 安装程序</a> <a class="para-org__ver" href="#organizaciones">查看安装方法</a></div>
+<div class="para-org__texto"><strong>你是机构吗？</strong> <span>我们提供机构版，按照你的机构进行配置，可一次安装到所有电脑。</span></div>
+<div class="para-org__botones"><a class="boton boton--blanco" href="#organizaciones">查看机构版</a></div>
 </div>
 <p class="descargar__extra aparecer"><a href="https://github.com/pachelabs-apps/Ozone_PDF_2/tree/v2.1.12">2.1.12 版源代码</a></p>
 <details class="aviso-windows aparecer">
@@ -229,23 +229,57 @@
 <!-- ============ ORGANIZACIONES ============ -->
 <section aria-labelledby="titulo-org" class="organizaciones" id="organizaciones">
 <div class="organizaciones__texto aparecer">
-<h2 id="titulo-org">在机构中安装</h2>
-<p>如果您是 IT 人员，想把它安装到所有电脑上，可以使用专门的 <strong>.msi</strong> 安装程序。它支持组策略（GPO）、Intune 或 SCCM。</p>
+<h2 id="titulo-org">Ozone PDF 机构版</h2>
+<p>专为政府部门、企业和事务所打造的版本：一次安装到所有电脑，并针对你的团队工作预先配置。</p>
 <ul class="hechos hechos--chicos">
-<li>为电脑上的所有用户安装，位置为 <code>C:\Program Files\Ozone PDF</code>。</li>
-<li>程序本身已内置联网阻止。如果你还想要 .exe 安装程序创建的那条防火墙规则，可以用旁边的命令添加。</li>
-<li>每个新版本都会自动替换旧版本。</li>
-<li>没有遥测，没有按设备授权，也没有需要维护的服务器。</li>
+<li><strong>安装到所有电脑</strong>：支持 GPO、Intune 或 SCCM，并内置断网保护和防火墙规则。</li>
+<li><strong>使用你的名称和标志</strong>，只显示团队需要的工具。</li>
+<li><strong>签名随时可用：</strong>预先填好部门、职务和执业编号的模板。</li>
+<li><strong>培训、支持和更新</strong>，有专人可以咨询。</li>
+<li><strong>定制开发</strong>，适配你的机构流程。</li>
+<li><strong>你的版本，由你掌握：</strong>源代码交给机构，便于审查和保存。</li>
 </ul>
-<a class="boton boton--rojo" href="https://github.com/pachelabs-apps/Ozone_PDF_2/releases/download/v2.1.12/Ozone.PDF_2.1.12_x64_en-US.msi">下载 .msi</a>
+<a class="boton boton--rojo" href="mailto:pache.labs@gmail.com?subject=Ozone%20PDF%20para%20organizaciones">申请报价</a>
+<p class="organizaciones__nota">根据具体情况报价。告诉我有多少台电脑，以及你们用 PDF 做哪些工作。</p>
 </div>
 <div class="consola aparecer">
-<p class="consola__titulo">静默安装</p>
-<pre><code>msiexec /i Ozone.PDF_2.1.12_x64_en-US.msi /qn</code></pre>
-<p class="consola__titulo">卸载</p>
-<pre><code>msiexec /x Ozone.PDF_2.1.12_x64_en-US.msi /qn</code></pre>
-<p class="consola__nota">防火墙规则（可选）：</p>
-<pre><code>New-NetFirewallRule -DisplayName "Ozone PDF 2 - sin red" -Direction Outbound -Action Block -Program "C:\Program Files\Ozone PDF\ozone-pdf.exe"</code></pre>
+<p class="consola__titulo">工作方式</p>
+<ol class="org-pasos">
+<li><strong>告诉我你的需求：</strong>有多少台电脑，用 PDF 做什么。</li>
+<li><strong>我来制作你的版本</strong>，包含你的品牌、工具和模板。</li>
+<li><strong>IT 部门负责安装</strong>，用现成的安装程序部署到所有电脑。</li>
+<li><strong>我全程陪伴</strong>，提供培训、支持和更新。</li>
+</ol>
+</div>
+<div class="org-ejemplos">
+<h3 class="aparecer">在你的机构中可以是这样</h3>
+<p class="org-ejemplos__aclaracion aparecer">示例仅供说明，机构均为虚构。</p>
+<div class="org-ejemplos__lista aparecer">
+<article class="org-ej" style="--c:#1F7A4D">
+<div class="org-ej__barra"><span aria-hidden="true" class="org-ej__logo">VC</span><span class="org-ej__nombre">巴耶克拉罗市政府</span></div>
+<div class="org-ej__cuerpo">
+<ul class="org-ej__chips"><li>签名</li><li>涂黑</li><li>合并</li><li>添加页码</li><li>扫描</li></ul>
+<div class="org-ej__firma"><svg aria-hidden="true" class="org-ej__garabato" viewbox="0 0 160 40"><path d="M4 30 c10 -24 20 -24 18 -4 c-2 14 14 -20 22 -12 c6 6 -4 18 6 16 c10 -2 14 -20 24 -14 c6 4 4 12 14 9 c10 -3 18 -6 36 -10"></path></svg><strong>Ana Pérez</strong><span>税务处</span></div>
+<p class="org-ej__nota">收文窗口：案卷、签名和扫描件。</p>
+</div>
+</article>
+<article class="org-ej" style="--c:#23366F">
+<div class="org-ej__barra"><span aria-hidden="true" class="org-ej__logo">RA</span><span class="org-ej__nombre">里瓦斯律师事务所</span></div>
+<div class="org-ej__cuerpo">
+<ul class="org-ej__chips"><li>涂黑</li><li>合并</li><li>Word 转 PDF</li><li>PDF 转 Word</li><li>设置密码</li></ul>
+<div class="org-ej__firma"><svg aria-hidden="true" class="org-ej__garabato" viewbox="0 0 160 40"><path d="M4 30 c10 -24 20 -24 18 -4 c-2 14 14 -20 22 -12 c6 6 -4 18 6 16 c10 -2 14 -20 24 -14 c6 4 4 12 14 9 c10 -3 18 -6 36 -10"></path></svg><strong>Martín Rivas 律师</strong><span>律师 · 执业证号 4521</span></div>
+<p class="org-ej__nota">文书可直接提交，不含多余数据。</p>
+</div>
+</article>
+<article class="org-ej" style="--c:#0E7C86">
+<div class="org-ej__barra"><span aria-hidden="true" class="org-ej__logo">CR</span><span class="org-ej__nombre">里贝拉健康中心</span></div>
+<div class="org-ej__cuerpo">
+<ul class="org-ej__chips"><li>扫描</li><li>识别文字</li><li>压缩</li><li>涂黑</li><li>签名</li></ul>
+<div class="org-ej__firma"><svg aria-hidden="true" class="org-ej__garabato" viewbox="0 0 160 40"><path d="M4 30 c10 -24 20 -24 18 -4 c-2 14 14 -20 22 -12 c6 6 -4 18 6 16 c10 -2 14 -20 24 -14 c6 4 4 12 14 9 c10 -3 18 -6 36 -10"></path></svg><strong>Laura Gómez 医生</strong><span>内科 · 执业编号 1234</span></div>
+<p class="org-ej__nota">扫描的检查报告，体积小且可搜索。</p>
+</div>
+</article>
+</div>
 </div>
 </section>
 <!-- ============ SUGERENCIAS ============ -->
